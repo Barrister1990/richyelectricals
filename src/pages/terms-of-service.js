@@ -183,7 +183,7 @@ export default function TermsAndConditions() {
                 </p>
                 <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
                   <li>Cancellations must be made in writing at least 48 hours before the scheduled service.</li>
-                  <li>For cancellations made with less than 48 hours' notice, a cancellation fee of 25% of the quoted price may apply.</li>
+                  <li>For cancellations made with less than 48 hours notice, a cancellation fee of 25% of the quoted price may apply.</li>
                   <li>For product orders, cancellations must be made before the order is processed or shipped. Custom orders cannot be cancelled once production has begun.</li>
                   <li>Refunds for services will be issued only if the service has not been performed or materials have not been ordered.</li>
                   <li>Refunds for products are subject to a 15% restocking fee and will only be issued if the product is returned in its original, unopened packaging.</li>

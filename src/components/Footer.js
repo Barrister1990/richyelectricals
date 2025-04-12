@@ -50,7 +50,7 @@ export default function Footer() {
           <div>
             <div className="mb-6">
               <h2 className="text-xl font-bold text-white mb-1">Richy Electricals</h2>
-              <p className="text-gray-400">UK's Premier Electrical Engineering Company</p>
+              <p className="text-gray-400">Your Premier Electrical Engineering Company</p>
             </div>
             <p className="text-gray-400 mb-6">
               Specializing in generator repairs, sales, and comprehensive electrical services across the United Kingdom.

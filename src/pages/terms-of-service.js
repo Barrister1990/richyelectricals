@@ -75,7 +75,7 @@ export default function TermsAndConditions() {
                   <h2 className="text-2xl font-bold text-gray-900">Introduction</h2>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Welcome to Richy Electricals. These Terms and Conditions ("Terms") govern your use of our website and services provided by Richy Electricals, whether through our UK or Ghana operations, or elsewhere globally.
+                  Welcome to Richy Electricals. These Terms and Conditions (Terms) govern your use of our website and services provided by Richy Electricals, whether through our UK or Ghana operations, or elsewhere globally.
                 </p>
                 <p className="text-gray-700 mb-4">
                   By accessing our website or using our services, you agree to be bound by these Terms. If you disagree with any part of these Terms, please do not use our website or services.
@@ -97,11 +97,11 @@ export default function TermsAndConditions() {
                   For the purpose of these Terms:
                 </p>
                 <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-                  <li><strong>"Company"</strong>, "We", "Us", or "Our" refers to Richy Electricals, with operations in both the UK and Ghana.</li>
-                  <li><strong>"Services"</strong> refers to all electrical services, generator sales, repairs, maintenance, and other related services provided by Richy Electricals.</li>
-                  <li><strong>"Website"</strong> refers to the Richy Electricals website, accessible from www.richyelectricals.com.</li>
-                  <li><strong>"You"</strong> refers to the individual or entity accessing the website or using our services.</li>
-                  <li><strong>"Terms"</strong> refers to these Terms and Conditions that form the entire agreement between You and the Company regarding the use of our services.</li>
+                  <li><strong>Company</strong>, We, Us, or Our refers to Richy Electricals, with operations in both the UK and Ghana.</li>
+                  <li><strong>Services</strong> refers to all electrical services, generator sales, repairs, maintenance, and other related services provided by Richy Electricals.</li>
+                  <li><strong>Website</strong> refers to the Richy Electricals website, accessible from www.richyelectricals.com.</li>
+                  <li><strong>You</strong> refers to the individual or entity accessing the website or using our services.</li>
+                  <li><strong>Terms</strong> refers to these Terms and Conditions that form the entire agreement between You and the Company regarding the use of our services.</li>
                 </ul>
               </div>
 
@@ -163,7 +163,7 @@ export default function TermsAndConditions() {
                 </p>
                 <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
                   <li>All workmanship is guaranteed for a period of 12 months from the date of completion.</li>
-                  <li>Products and parts supplied by Richy Electricals carry their manufacturer's warranty, details of which will be provided at the time of purchase.</li>
+                  <li>Products and parts supplied by Richy Electricals carry their manufacturers warranty, details of which will be provided at the time of purchase.</li>
                   <li>Warranties do not cover damage caused by improper use, accidents, unauthorized repairs, or natural disasters.</li>
                   <li>To claim under warranty, you must provide proof of purchase and notify us of any defects in writing within 7 days of discovery.</li>
                   <li>Our liability is limited to the repair or replacement of defective parts or workmanship and does not extend to consequential losses.</li>
@@ -294,7 +294,7 @@ export default function TermsAndConditions() {
                   We reserve the right to modify these Terms at any time. When we make changes:
                 </p>
                 <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-                  <li>We will update the "Last Updated" date at the top of these Terms.</li>
+                  <li>We will update the Last Updated date at the top of these Terms.</li>
                   <li>We may notify you via email or by posting a notice on our website.</li>
                   <li>Your continued use of our services after the changes constitutes acceptance of the updated Terms.</li>
                   <li>We encourage you to review these Terms periodically to stay informed of any changes.</li>

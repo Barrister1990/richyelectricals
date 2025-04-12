@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Award, Building, ChevronRight, Clock, Globe, MapPin, Phone, Shield, Target, Users } from 'lucide-react';
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function About() {
@@ -50,9 +51,11 @@ export default function About() {
             >
               <div className="relative">
                 <div className="rounded-2xl overflow-hidden shadow-2xl">
-                  <img 
+                  <Image 
                     src="/api/placeholder/600/600" 
                     alt="Richy Electricals founder" 
+                    width={600}
+                    height={600}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -77,15 +80,15 @@ export default function About() {
               </div>
               
               <p className="text-lg text-gray-600 mb-6">
-                Founded in 2010 by Richard "Richy" Thompson, a certified electrical engineer with roots in both the UK and Ghana, Richy Electricals began as a small repair shop in London focusing on generator repairs and basic electrical services.
+                Founded in 2010 by Richard Thompson, a certified electrical engineer with roots in both the UK and Ghana, Richy Electricals began as a small repair shop in London focusing on generator repairs and basic electrical services.
               </p>
               
               <p className="text-lg text-gray-600 mb-6">
-                What started as a modest operation quickly grew as word spread about Richy's expertise, reliability, and exceptional customer service. By 2015, Richy Electricals had expanded to the UK and established our first international office in Accra, Ghana, connecting two continents with our expertise.
+                What started as a modest operation quickly grew as word spread about Richy expertise, reliability, and exceptional customer service. By 2015, Richy Electricals had expanded to the UK and established our first international office in Accra, Ghana, connecting two continents with our expertise.
               </p>
               
               <p className="text-lg text-gray-600 mb-6">
-                Today, we're proud to employ over 80 electrical professionals across our UK and Ghana locations, serving residential, commercial, and industrial clients worldwide with a comprehensive range of electrical services while maintaining the same commitment to quality and customer satisfaction that has been our hallmark since day one.
+                Today, we are proud to employ over 80 electrical professionals across our UK and Ghana locations, serving residential, commercial, and industrial clients worldwide with a comprehensive range of electrical services while maintaining the same commitment to quality and customer satisfaction that has been our hallmark since day one.
               </p>
               
               <div className="flex items-center space-x-6 text-gray-500 mb-8">
@@ -221,7 +224,7 @@ export default function About() {
               </div>
               
               <p className="text-lg text-gray-600 mb-8">
-                At Richy Electricals, we distinguish ourselves through unwavering commitment to quality, safety, and customer satisfaction across cultures and continents. Here's what sets us apart:
+                At Richy Electricals, we distinguish ourselves through unwavering commitment to quality, safety, and customer satisfaction across cultures and continents. Here is what sets us apart:
               </p>
               
               <div className="space-y-6">
@@ -277,24 +280,32 @@ export default function About() {
               className="relative"
             >
               <div className="grid grid-cols-2 gap-4">
-                <img 
+                <Image 
                   src="/atwork.jpg" 
                   alt="Richy Electricals engineer at work in UK" 
+                  width={300}
+                  height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md transform translate-y-6"
                 />
-                <img 
+                <Image 
                   src="/ingh.jpg" 
                   alt="Electrical installation in Ghana" 
+                  width={300}
+                  height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md"
                 />
-                <img 
+                <Image 
                   src="/source.jpg" 
                   alt="International generator project" 
+                  width={300}
+                  height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md"
                 />
-                <img 
+                <Image 
                   src="/panel.jpg" 
                   alt="Team working on electrical panel" 
+                  width={300}
+                  height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md transform translate-y-6"
                 />
               </div>
@@ -371,9 +382,11 @@ export default function About() {
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
               >
                 <div className="h-64 overflow-hidden">
-                  <img 
+                  <Image 
                     src={member.image} 
                     alt={member.name} 
+                    width={300}
+                    height={300}
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -599,29 +612,32 @@ export default function About() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
               >
-                <div className="h-48 bg-gray-200 relative">
-                  {/* This would typically have a map image */}
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                    <MapPin className="w-12 h-12" />
-                  </div></div>
                 <div className="p-6">
-                  <h4 className="text-xl font-bold text-gray-900 mb-1">{location.city}</h4>
-                  <p className="text-orange-500 font-medium mb-4">{location.country}</p>
-                  
+                  <div className="flex items-start mb-4">
+                    <div className="mr-3">
+                      <div className="bg-orange-100 rounded-full p-2">
+                        <MapPin className="w-5 h-5 text-orange-500" />
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900">{location.city}</h4>
+                      <p className="text-orange-500 font-medium">{location.country}</p>
+                    </div>
+                  </div>
                   <div className="space-y-3 text-gray-600">
-                    <div className="flex items-start">
-                      <MapPin className="w-5 h-5 text-orange-500 mr-3 mt-1 flex-shrink-0" />
-                      <p>{location.address}</p>
-                    </div>
-                    <div className="flex items-center">
-                      <Phone className="w-5 h-5 text-orange-500 mr-3 flex-shrink-0" />
-                      <p>{location.phone}</p>
-                    </div>
-                    <Link href={`mailto:${location.email}`} className="flex items-center hover:text-orange-500 transition-colors">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-orange-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <p className="flex items-center">
+                      <Building className="w-4 h-4 mr-2 text-gray-400" />
+                      {location.address}
+                    </p>
+                    <p className="flex items-center">
+                      <Phone className="w-4 h-4 mr-2 text-gray-400" />
+                      {location.phone}
+                    </p>
+                    <Link href={`mailto:${location.email}`} className="flex items-center text-orange-500 hover:underline">
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                       </svg>
-                      <p>{location.email}</p>
+                      {location.email}
                     </Link>
                   </div>
                 </div>
@@ -629,13 +645,13 @@ export default function About() {
             ))}
           </div>
           
-          <div className="text-center mt-12">
+          <div className="mt-12 text-center">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Link href="/contact" className="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-full shadow-md transition-all duration-300">
-                Contact Us
+              <Link href="/contact" className="inline-flex items-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-full shadow-md transition-all duration-300">
+                Contact Us Today
                 <ChevronRight className="ml-2 w-5 h-5" />
               </Link>
             </motion.div>
@@ -644,13 +660,8 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-900 relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('/circuit-pattern.png')] bg-repeat"></div>
-        </div>
-        
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <section className="py-20 bg-gray-900 text-white">
+        <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -658,13 +669,10 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ready to Experience Cross-Continental Electrical Excellence?
-              </h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Work with a Truly Global Electrical Team?</h2>
               <p className="text-xl text-gray-300 mb-10">
-                Partner with Richy Electricals for trusted electrical solutions across the UK, Ghana, and worldwide.
+                Let Richy Electricals bring our international expertise to your project, whether in the UK, Ghana, or anywhere around the world.
               </p>
-              
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -672,47 +680,18 @@ export default function About() {
                 >
                   <Link href="/contact" className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-full shadow-md transition-all duration-300 w-full sm:w-auto">
                     Get a Free Quote
-                    <ChevronRight className="ml-2 w-5 h-5" />
                   </Link>
                 </motion.div>
-                
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Link href="/services" className="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-gray-900 font-medium py-3 px-8 rounded-full shadow-md transition-all duration-300 w-full sm:w-auto">
+                  <Link href="/services" className="inline-flex items-center justify-center bg-transparent border-2 border-white hover:bg-white hover:text-gray-900 text-white font-medium py-3 px-8 rounded-full shadow-md transition-all duration-300 w-full sm:w-auto">
                     Explore Our Services
-                    <ChevronRight className="ml-2 w-5 h-5" />
                   </Link>
                 </motion.div>
               </div>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Affiliate Partners */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-gray-900">Our Trusted Partners</h2>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((partner, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex items-center justify-center h-16"
-              >
-                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center">
-                  <Building className="w-8 h-8 text-gray-400" />
-                </div>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>

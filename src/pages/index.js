@@ -512,7 +512,7 @@ export default function Home() {
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Don't just take our word for it - hear from some of our satisfied customers around the world.
+                Do not just take our word for it - hear from some of our satisfied customers around the world.
               </p>
             </motion.div>
           </div>
@@ -543,7 +543,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-xl shadow-md p-6 relative"
               >
-                <div className="absolute top-6 left-6 text-6xl text-orange-200">"</div>
+                <div className="absolute top-6 left-6 text-6xl text-orange-200"></div>
                 <div className="relative z-10">
                   <p className="text-gray-700 mb-6 pt-8">{testimonial.quote}</p>
                   <div className="flex items-center">

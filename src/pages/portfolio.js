@@ -716,7 +716,7 @@ export default function Gallery() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">No Images Found</h3>
                 <p className="text-gray-600 mb-6">
-                  We couldn't find any images matching your selected filter. Please try a different category.
+                  We could not find any images matching your selected filter. Please try a different category.
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}

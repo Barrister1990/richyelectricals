@@ -189,7 +189,7 @@ export default function PrivacyPolicy() {
                   <li>Withdrawal of consent at any time (where we rely on consent to process your information)</li>
                 </ul>
                 <p className="text-gray-700">
-                  To exercise these rights, please contact us using the details provided in the "Contact Us" section below.
+                  To exercise these rights, please contact us using the details provided in the Contact Us section below.
                 </p>
               </div>
 
@@ -246,7 +246,7 @@ export default function PrivacyPolicy() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                     </svg>
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900">Children's Privacy</h2>
+                  <h2 className="text-2xl font-bold text-gray-900">Childrens Privacy</h2>
                 </div>
                 <p className="text-gray-700">
                   Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us so that we can take necessary actions.
@@ -264,7 +264,7 @@ export default function PrivacyPolicy() {
                   <h2 className="text-2xl font-bold text-gray-900">Changes to This Privacy Policy</h2>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this page.
+                  We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the Last Updated date at the top of this page.
                 </p>
                 <p className="text-gray-700">
                   You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.

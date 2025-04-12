@@ -1,8 +1,18 @@
-import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, Clock, Facebook, Linkedin, Tag, Twitter, User } from 'lucide-react';
-import Head from 'next/head';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { motion } from "framer-motion";
+import {
+  ArrowLeft,
+  Calendar,
+  Clock,
+  Facebook,
+  Linkedin,
+  Tag,
+  Twitter,
+  User,
+} from "lucide-react";
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 // This function would typically be in a separate file or fetched from an API
 const getBlogPosts = () => {
@@ -13,7 +23,8 @@ const getBlogPosts = () => {
       date: "April 2, 2025",
       author: "Richard Thompson",
       readTime: "5 min read",
-      excerpt: "Learn the warning signs that indicate your generator requires professional attention before it fails when you need it most.",
+      excerpt:
+        "Learn the warning signs that indicate your generator requires professional attention before it fails when you need it most.",
       image: "/generator-maintain.jpg",
       slug: "generator-maintenance-signs",
       category: "Maintenance",
@@ -76,7 +87,7 @@ const getBlogPosts = () => {
         <p class="mb-6">At Richy Electricals, we provide expert generator maintenance, repair, and installation services across the UK. Our experienced technicians can help you establish a maintenance schedule tailored to your specific generator model and usage patterns.</p>
 
         <p>Don't wait until your generator fails during a critical power outage. Contact us today to schedule a comprehensive generator inspection and maintenance service.</p>
-      `
+      `,
     },
     {
       id: 2,
@@ -84,7 +95,8 @@ const getBlogPosts = () => {
       date: "March 25, 2025",
       author: "Sarah Johnson",
       readTime: "7 min read",
-      excerpt: "A guide to electrical regulations and compliance requirements for UK businesses and commercial properties.",
+      excerpt:
+        "A guide to electrical regulations and compliance requirements for UK businesses and commercial properties.",
       image: "/electrical-complaince.jp",
       slug: "commercial-electrical-compliance",
       category: "Compliance",
@@ -189,7 +201,7 @@ const getBlogPosts = () => {
         <p class="mb-6">At Richy Electricals, we offer comprehensive commercial electrical compliance services, including inspections, testing, certification, and remedial work. Our team of qualified electricians can help your business navigate the complex landscape of electrical regulations and maintain full compliance.</p>
 
         <p>Contact us today to discuss your commercial electrical compliance needs and ensure your business meets all necessary requirements.</p>
-      `
+      `,
     },
     {
       id: 3,
@@ -197,7 +209,8 @@ const getBlogPosts = () => {
       date: "March 15, 2025",
       author: "Michael Brooks",
       readTime: "6 min read",
-      excerpt: "Explore how businesses can benefit from integrating renewable energy sources into their electrical systems.",
+      excerpt:
+        "Explore how businesses can benefit from integrating renewable energy sources into their electrical systems.",
       image: "/solar-panel.jpg",
       slug: "renewable-energy-business-solutions",
       category: "Renewable Energy",
@@ -300,8 +313,8 @@ const getBlogPosts = () => {
         <p class="mb-6">At Richy Electricals, we specialize in designing and implementing custom renewable energy solutions for businesses across various sectors. Our team of qualified electrical engineers and renewable energy specialists can help you navigate the options, select the right technologies, and integrate them seamlessly with your existing systems.</p>
 
         <p>Contact us today for a free initial consultation to explore how renewable energy solutions can benefit your business.</p>
-      `
-    },// Add these to the getBlogPosts function after the existing 3 posts
+      `,
+    }, // Add these to the getBlogPosts function after the existing 3 posts
 
     {
       id: 4,
@@ -309,7 +322,8 @@ const getBlogPosts = () => {
       date: "March 5, 2025",
       author: "Thomas Reynolds",
       readTime: "8 min read",
-      excerpt: "Key factors to consider when selecting a generator that meets your business's specific power requirements.",
+      excerpt:
+        "Key factors to consider when selecting a generator that meets your business's specific power requirements.",
       image: "/choose-gen.jpg",
       slug: "choosing-business-generator",
       category: "Generators",
@@ -493,7 +507,7 @@ const getBlogPosts = () => {
         <p class="mb-6">At Richy Electricals, we provide comprehensive generator consultation, installation, and maintenance services for businesses throughout the UK. Our experienced technicians can help you analyze your power requirements, evaluate available options, and implement a solution that provides optimal reliability and value.</p>
     
         <p>Contact us today to schedule a professional assessment of your business's generator needs and discover how we can help ensure your operations never miss a beat, even when the power grid fails.</p>
-      `
+      `,
     },
     {
       id: 5,
@@ -501,7 +515,8 @@ const getBlogPosts = () => {
       date: "February 28, 2025",
       author: "Emma Lewis",
       readTime: "5 min read",
-      excerpt: "Essential electrical safety practices that every business should implement to protect employees and equipment.",
+      excerpt:
+        "Essential electrical safety practices that every business should implement to protect employees and equipment.",
       image: "/api/placeholder/1200/600",
       slug: "workplace-electrical-safety",
       category: "Safety",
@@ -646,7 +661,7 @@ const getBlogPosts = () => {
         <p class="mb-6">Remember that electrical safety is not a one-time effort but an ongoing commitment requiring regular assessment, training, and maintenance.</p>
     
         <p>At Richy Electricals, we provide comprehensive electrical safety services for businesses across the UK, including risk assessments, testing, certification, and staff training. Contact our team today to discuss how we can help make your workplace safer.</p>
-      `
+      `,
     },
     {
       id: 6,
@@ -654,7 +669,8 @@ const getBlogPosts = () => {
       date: "February 18, 2025",
       author: "Daniel Cooper",
       readTime: "6 min read",
-      excerpt: "Why preventative electrical maintenance is crucial for the longevity and safety of your electrical systems.",
+      excerpt:
+        "Why preventative electrical maintenance is crucial for the longevity and safety of your electrical systems.",
       image: "/api/placeholder/1200/600",
       slug: "regular-electrical-maintenance-benefits",
       category: "Maintenance",
@@ -808,8 +824,8 @@ const getBlogPosts = () => {
     <p class="mb-6">The cost of preventative maintenance is consistently outweighed by the benefits and savings it provides, making it one of the most valuable investments a business can make in its infrastructure.</p>
 
     <p>At Richy Electricals, we offer comprehensive electrical maintenance services tailored to your specific business needs. Our experienced team can develop and implement a maintenance program that maximizes system reliability while minimizing costs and disruptions. Contact us today to discuss how our preventative maintenance solutions can benefit your business.</p>
-  `
-}
+  `,
+    },
   ];
   return blogPosts;
 };
@@ -817,13 +833,13 @@ const getBlogPosts = () => {
 export default function BlogPost() {
   const router = useRouter();
   const { slug } = router.query;
-  
+
   // Get blog posts data
   const blogPosts = getBlogPosts();
-  
+
   // Find the current post based on slug
-  const post = blogPosts.find(post => post.slug === slug);
-  
+  const post = blogPosts.find((post) => post.slug === slug);
+
   // If post not found or slug is undefined (initial render)
   if (!post) {
     return (
@@ -834,11 +850,9 @@ export default function BlogPost() {
       </div>
     );
   }
-  
+
   // Related posts (excluding current post)
-  const relatedPosts = blogPosts
-    .filter(p => p.id !== post.id)
-    .slice(0, 3);
+  const relatedPosts = blogPosts.filter((p) => p.id !== post.id).slice(0, 3);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -850,7 +864,7 @@ export default function BlogPost() {
       {/* Hero Section */}
       <section className="relative py-32 bg-gray-900">
         <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10">
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
             style={{ backgroundImage: `url('${post.image}')` }}
           ></div>
@@ -862,7 +876,10 @@ export default function BlogPost() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <Link href="/blog" className="inline-flex items-center text-orange-400 hover:text-orange-300 font-medium mb-6 transition-colors">
+              <Link
+                href="/blog"
+                className="inline-flex items-center text-orange-400 hover:text-orange-300 font-medium mb-6 transition-colors"
+              >
                 <ArrowLeft className="mr-2 w-4 h-4" /> Back to Blog
               </Link>
               <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
@@ -901,7 +918,7 @@ export default function BlogPost() {
               transition={{ duration: 0.5 }}
             >
               <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
-                <div 
+                <div
                   className="prose prose-lg max-w-none"
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />
@@ -909,24 +926,26 @@ export default function BlogPost() {
 
               {/* Share Section */}
               <div className="mb-12">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Share This Article</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  Share This Article
+                </h3>
                 <div className="flex gap-4">
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors"
                     aria-label="Share on Facebook"
                   >
                     <Facebook className="w-5 h-5" />
                   </a>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="bg-sky-500 hover:bg-sky-600 text-white p-3 rounded-full transition-colors"
                     aria-label="Share on Twitter"
                   >
                     <Twitter className="w-5 h-5" />
                   </a>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="bg-blue-800 hover:bg-blue-900 text-white p-3 rounded-full transition-colors"
                     aria-label="Share on LinkedIn"
                   >
@@ -937,7 +956,9 @@ export default function BlogPost() {
 
               {/* Related Articles */}
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Related Articles</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Related Articles
+                </h3>
                 <div className="grid md:grid-cols-3 gap-8">
                   {relatedPosts.map((relatedPost, index) => (
                     <motion.div
@@ -949,9 +970,11 @@ export default function BlogPost() {
                     >
                       <Link href={`/blog/${relatedPost.slug}`}>
                         <div className="h-48 overflow-hidden">
-                          <img 
-                            src={relatedPost.image} 
-                            alt={relatedPost.title} 
+                          <Image
+                            src={relatedPost.image}
+                            alt={relatedPost.title}
+                            width={500}
+                            height={300}
                             className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
                           />
                         </div>
@@ -961,7 +984,9 @@ export default function BlogPost() {
                           <span className="text-xs font-medium bg-orange-100 text-orange-800 px-2 py-1 rounded-full">
                             {relatedPost.category}
                           </span>
-                          <span className="text-sm text-gray-500 ml-3">{relatedPost.date}</span>
+                          <span className="text-sm text-gray-500 ml-3">
+                            {relatedPost.date}
+                          </span>
                         </div>
                         <Link href={`/blog/${relatedPost.slug}`}>
                           <h4 className="text-lg font-bold text-gray-900 mb-2 hover:text-orange-600 transition-colors">
@@ -982,11 +1007,18 @@ export default function BlogPost() {
       <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Need Electrical Services?</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">
+              Need Electrical Services?
+            </h2>
             <p className="text-gray-300 mb-8">
-              From generator maintenance to full electrical installations, our team of certified electricians is ready to help with all your electrical needs.
+              From generator maintenance to full electrical installations, our
+              team of certified electricians is ready to help with all your
+              electrical needs.
             </p>
-            <Link href="/contact" className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg transition-all duration-300">
+            <Link
+              href="/contact"
+              className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg transition-all duration-300"
+            >
               Request a Quote
             </Link>
           </div>

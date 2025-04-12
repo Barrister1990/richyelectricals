@@ -301,7 +301,7 @@ export default function FAQ() {
               </h1>
               <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
                 Find answers to common questions about our electrical, generator, and solar services.
-                Can't find what you're looking for? Contact us directly.
+                Cannot find what you are looking for? Contact us directly.
               </p>
             </motion.div>
           </div>
@@ -356,7 +356,7 @@ export default function FAQ() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">No matching questions found</h3>
               <p className="text-lg text-gray-600 mb-8">
-                We couldn't find any questions matching "{searchTerm}". 
+                We could not find any questions matching {searchTerm}. 
                 Try different keywords or browse all categories below.
               </p>
               <button 
@@ -438,7 +438,7 @@ export default function FAQ() {
             <>
               <div className="mb-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                  Search Results for "{searchTerm}"
+                  Search Results for {searchTerm}
                 </h2>
                 <p className="text-gray-600">
                   Found {Object.values(filteredFaqs).reduce((total, faqs) => total + faqs.length, 0)} matching questions

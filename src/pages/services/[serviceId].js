@@ -1,11 +1,11 @@
 // pages/services/[serviceId].js
 import { motion } from 'framer-motion';
 import {
-    ArrowLeft, ArrowRight,
-    ChevronRight,
-    Phone,
-    Star, Sun,
-    Wrench, Zap
+  ArrowLeft, ArrowRight,
+  ChevronRight,
+  Phone,
+  Star, Sun,
+  Wrench, Zap
 } from 'lucide-react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -297,7 +297,7 @@ export default function ServiceDetail() {
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-700">Loading service details...</h1>
-          <p className="mt-4 text-gray-500">If this page doesn't load, the service may not exist.</p>
+          <p className="mt-4 text-gray-500">If this page does not load, the service may not exist.</p>
           <Link href="/services" className="mt-6 inline-block bg-orange-500 text-white px-6 py-3 rounded-full">
             Return to Services
           </Link>

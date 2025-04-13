@@ -244,7 +244,7 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-24">
       <Head>
         <title>Our Services | Richy Electricals | UK Electrical Engineering Experts</title>
         <meta name="description" content="Comprehensive electrical services including generator repairs, solar panel installation, and electrical maintenance throughout the UK." />
@@ -592,134 +592,6 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Commercial vs Residential Services */}
-      <section className="py-20 bg-gray-50 animate-on-scroll">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Solutions For Every Environment</h2>
-              <p className="text-lg text-gray-600">
-                We provide tailored electrical services for both commercial and residential clients
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-white rounded-xl shadow-md overflow-hidden"
-            >
-              <div className="h-64 bg-gray-200 relative">
-                <img 
-                  src="/api/placeholder/600/400" 
-                  alt="Commercial electrical services" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                  <h3 className="text-2xl font-bold text-white p-6">Commercial Solutions</h3>
-                </div>
-              </div>
-              <div className="p-6">
-                <p className="text-gray-600 mb-6">
-                  Our commercial electrical services are designed to meet the unique demands of businesses, 
-                  from small retail outlets to large industrial facilities. We understand that downtime costs 
-                  money, which is why we prioritize efficiency and minimal disruption.
-                </p>
-                <ul className="space-y-3 mb-6">
-                  {[
-                    "Industrial generator systems",
-                    "Commercial solar installations",
-                    "Factory electrical infrastructure",
-                    "Office building rewiring",
-                    "Compliance certification",
-                    "Emergency lighting systems"
-                  ].map((item, index) => (
-                    <motion.li 
-                      key={index}
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className="flex items-start"
-                    >
-                      <div className="bg-orange-100 rounded-full p-1 mr-3 mt-1">
-                        <ChevronRight className="w-4 h-4 text-orange-500" />
-                      </div>
-                      <span className="text-gray-700">{item}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                  <Link href="/commercial-services" className="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium">
-                    Explore Commercial Services
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="bg-white rounded-xl shadow-md overflow-hidden"
-              >
-                <div className="h-64 bg-gray-200 relative">
-                  <img 
-                    src="/api/placeholder/600/400" 
-                    alt="Residential electrical services" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-                    <h3 className="text-2xl font-bold text-white p-6">Residential Solutions</h3>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <p className="text-gray-600 mb-6">
-                    Our residential services focus on safety, reliability, and home comfort. From backup 
-                    power solutions to modern smart home systems, we help homeowners protect their families 
-                    and enhance their living environments.
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    {[
-                      "Home backup generators",
-                      "Residential solar power",
-                      "Home electrical rewiring",
-                      "Consumer unit upgrades",
-                      "Smart home electrical systems",
-                      "EV charging point installation"
-                    ].map((item, index) => (
-                      <motion.li 
-                        key={index}
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: index * 0.1 }}
-                        className="flex items-start"
-                      >
-                        <div className="bg-orange-100 rounded-full p-1 mr-3 mt-1">
-                          <ChevronRight className="w-4 h-4 text-orange-500" />
-                        </div>
-                        <span className="text-gray-700">{item}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                  <Link href="/residential-services" className="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium">
-                    Explore Residential Services
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Link>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
 
         {/* FAQ Section */}
         <section className="py-20 bg-white animate-on-scroll">

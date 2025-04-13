@@ -32,7 +32,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-24">
       <Head>
         <title>Contact Us | Richy Electricals</title>
         <meta name="description" content="Get in touch with Richy Electricals for expert electrical services, generator repairs and installation worldwide. Headquarters in UK and Ghana." />
@@ -357,47 +357,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-16 bg-gray-50 animate-on-scroll">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Global Presence</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                With headquarters in the UK and Ghana, we provide services worldwide through our network of partners and technicians.
-              </p>
-            </motion.div>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="bg-white p-4 rounded-2xl shadow-lg overflow-hidden"
-          >
-            {/* Replace this with an actual map integration */}
-            <div className="aspect-video relative bg-gray-300 rounded-xl overflow-hidden">
-              <img 
-                src="/api/placeholder/1200/600" 
-                alt="Map showing Richy Electricals presence in the UK, Ghana, and worldwide operations" 
-                className="w-full h-full object-cover" 
-              />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center px-6 py-4 bg-white/80 backdrop-blur-sm rounded-lg max-w-md">
-                  <p className="font-medium text-gray-900">Global Operations Map</p>
-                  <p className="text-sm text-gray-600">UK & Ghana Headquarters with Worldwide Service Capabilities</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Service Areas Section */}
       <section className="py-16 animate-on-scroll">

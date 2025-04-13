@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function PrivacyPolicy() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-24">
       <Head>
         <title>Privacy Policy | Richy Electricals</title>
         <meta name="description" content="Our commitment to protecting your privacy and personal data at Richy Electricals." />

@@ -242,7 +242,7 @@ export default function FAQ() {
   const hasSearchResults = Object.keys(filteredFaqs).length > 0;
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-24">
       <Head>
         <title>Frequently Asked Questions | Richy Electricals | UK Electrical Engineering Experts</title>
         <meta name="description" content="Find answers to common questions about our electrical, generator, and solar services. Expert solutions throughout the UK." />

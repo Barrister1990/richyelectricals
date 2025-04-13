@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function TermsAndConditions() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-24">
       <Head>
         <title>Terms and Conditions | Richy Electricals</title>
         <meta name="description" content="Terms and conditions for using Richy Electricals services, applicable across our UK and Ghana operations." />

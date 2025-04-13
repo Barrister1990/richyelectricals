@@ -1,16 +1,16 @@
 // pages/about.js
 import { motion } from 'framer-motion';
-import { Award, Building, ChevronRight, Clock, Globe, MapPin, Phone, Shield, Target, Users } from 'lucide-react';
+import { Award, Building, ChevronRight, Clock, MapPin, Phone, Shield, Target, Users } from 'lucide-react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function About() {
   return (
-    <div className="min-h-screen w-screen">
+    <div className="min-h-screen w-screen pt-24">
       <Head>
-        <title>About Us | Richy Electricals - Leading Electrical Engineering Company in UK & Ghana</title>
-        <meta name="description" content="Learn about Richy Electricals, our history, mission, values and the expert team behind electrical engineering solutions serving UK, Ghana and worldwide clients." />
+        <title>About Us | Richy Electricals - Leading Electrical Engineering Company in UK</title>
+        <meta name="description" content="Learn about Richy Electricals, our history, mission, values and the expert team behind electrical engineering solutions serving clients across the UK." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -33,7 +33,7 @@ export default function About() {
               <span className="text-orange-500">Richy Electricals</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8">
-              Our story, our mission, and the expert team powering electrical solutions in the UK, Ghana, and worldwide since 2010.
+              Our story, our mission, and the expert team powering electrical solutions across the United Kingdom since 2010.
             </p>
           </motion.div>
         </div>
@@ -76,19 +76,19 @@ export default function About() {
             >
               <div className="mb-6">
                 <h2 className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider border-b-2 border-orange-500 pb-1 mb-2">Our Story</h2>
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">From Local Roots to Global Reach: UK & Ghana-Based Electrical Excellence</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">From Local Roots to National Excellence: UK-Based Electrical Services</h3>
               </div>
               
               <p className="text-lg text-gray-600 mb-6">
-                Founded in 2010 by Richard Thompson, a certified electrical engineer with roots in both the UK and Ghana, Richy Electricals began as a small repair shop in London focusing on generator repairs and basic electrical services.
+                Founded in 2010 by Richard Thompson, a certified electrical engineer with deep roots in the UK, Richy Electricals began as a small repair shop in London focusing on generator repairs and basic electrical services.
               </p>
               
               <p className="text-lg text-gray-600 mb-6">
-                What started as a modest operation quickly grew as word spread about Richy expertise, reliability, and exceptional customer service. By 2015, Richy Electricals had expanded to the UK and established our first international office in Accra, Ghana, connecting two continents with our expertise.
+                What started as a modest operation quickly grew as word spread about Richy's expertise, reliability, and exceptional customer service. By 2015, we had expanded to multiple locations across the UK, connecting communities with our trusted electrical expertise.
               </p>
               
               <p className="text-lg text-gray-600 mb-6">
-                Today, we are proud to employ over 80 electrical professionals across our UK and Ghana locations, serving residential, commercial, and industrial clients worldwide with a comprehensive range of electrical services while maintaining the same commitment to quality and customer satisfaction that has been our hallmark since day one.
+                Today, we are proud to employ over 60 electrical professionals across our UK locations, serving residential, commercial, and industrial clients nationwide with a comprehensive range of electrical services while maintaining the same commitment to quality and customer satisfaction that has been our hallmark since day one.
               </p>
               
               <div className="flex items-center space-x-6 text-gray-500 mb-8">
@@ -97,8 +97,8 @@ export default function About() {
                   <span>Established in 2010</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Globe className="w-5 h-5" />
-                  <span>Global Operations</span>
+                  <Users className="w-5 h-5" />
+                  <span>Nationwide Service</span>
                 </div>
               </div>
               
@@ -148,7 +148,7 @@ export default function About() {
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h4>
               <p className="text-gray-600">
-                To provide superior electrical engineering solutions that enhance safety, reliability, and efficiency for homes and businesses across the UK, Ghana, and worldwide, delivered with integrity and exceptional customer care tailored to local and international standards.
+                To provide superior electrical engineering solutions that enhance safety, reliability, and efficiency for homes and businesses across the United Kingdom, delivered with integrity and exceptional customer care tailored to British standards.
               </p>
             </motion.div>
             
@@ -165,7 +165,7 @@ export default function About() {
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h4>
               <p className="text-gray-600">
-                To be a globally recognized name in electrical engineering, known for our technical expertise, innovation, and cultural understanding across diverse markets, while leading the industry in sustainable electrical solutions that bridge continents and communities.
+                To be the UK's most trusted name in electrical engineering, known for our technical expertise, innovation, and deep understanding of regional needs across the nation, while leading the industry in sustainable electrical solutions that benefit British communities.
               </p>
             </motion.div>
             
@@ -196,11 +196,11 @@ export default function About() {
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                  <span>Innovation and cross-cultural collaboration</span>
+                  <span>Innovation and collaboration</span>
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-orange-500 rounded-full mr-2"></div>
-                  <span>Respect for our clients and team members worldwide</span>
+                  <span>Respect for our clients and team members</span>
                 </li>
               </ul>
             </motion.div>
@@ -224,30 +224,30 @@ export default function About() {
               </div>
               
               <p className="text-lg text-gray-600 mb-8">
-                At Richy Electricals, we distinguish ourselves through unwavering commitment to quality, safety, and customer satisfaction across cultures and continents. Here is what sets us apart:
+                At Richy Electricals, we distinguish ourselves through unwavering commitment to quality, safety, and customer satisfaction throughout the UK. Here is what sets us apart:
               </p>
               
               <div className="space-y-6">
                 {[
                   {
                     icon: <Shield className="w-6 h-6 text-orange-500" />,
-                    title: "Fully Licensed & Insured Globally",
-                    description: "Complete peace of mind with comprehensive coverage and full regulatory compliance in both the UK, Ghana, and other operating regions."
+                    title: "Fully Licensed & Insured",
+                    description: "Complete peace of mind with comprehensive coverage and full regulatory compliance across the United Kingdom."
                   },
                   {
                     icon: <Users className="w-6 h-6 text-orange-500" />,
-                    title: "Cross-Cultural Technical Team",
-                    description: "Certified electrical engineers with specialized training and experience working across different regulatory systems and international standards."
+                    title: "Expert Technical Team",
+                    description: "Certified electrical engineers with specialized training and experience working with British standards and regulations."
                   },
                   {
                     icon: <Clock className="w-6 h-6 text-orange-500" />,
-                    title: "International Response Capability",
-                    description: "Prompt service with emergency response available 24/7 in the UK, Ghana, and coordinated support for our global clients."
+                    title: "Rapid Response Capability",
+                    description: "Prompt service with emergency response available 24/7 throughout the UK."
                   },
                   {
-                    icon: <Globe className="w-6 h-6 text-orange-500" />,
-                    title: "Global Expertise, Local Understanding",
-                    description: "Deep knowledge of both European and African electrical systems, standards, and practices for truly adaptable solutions."
+                    icon: <MapPin className="w-6 h-6 text-orange-500" />,
+                    title: "National Coverage, Local Expertise",
+                    description: "Deep knowledge of regional electrical systems, standards, and practices for truly adaptable solutions anywhere in Britain."
                   }
                 ].map((feature, index) => (
                   <motion.div 
@@ -282,28 +282,28 @@ export default function About() {
               <div className="grid grid-cols-2 gap-4">
                 <Image 
                   src="/atwork.jpg" 
-                  alt="Richy Electricals engineer at work in UK" 
+                  alt="Richy Electricals engineer at work in London" 
                   width={300}
                   height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md transform translate-y-6"
                 />
                 <Image 
                   src="/ingh.jpg" 
-                  alt="Electrical installation in Ghana" 
+                  alt="Electrical installation in Manchester" 
                   width={300}
                   height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md"
                 />
                 <Image 
                   src="/source.jpg" 
-                  alt="International generator project" 
+                  alt="Generator project in Birmingham" 
                   width={300}
                   height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md"
                 />
                 <Image 
                   src="/panel.jpg" 
-                  alt="Team working on electrical panel" 
+                  alt="Team working on electrical panel in Edinburgh" 
                   width={300}
                   height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md transform translate-y-6"
@@ -318,8 +318,8 @@ export default function About() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">6000+ Projects</p>
-                    <p className="text-sm text-gray-500">Across 15+ Countries</p>
+                    <p className="font-bold text-gray-900">5000+ Projects</p>
+                    <p className="text-sm text-gray-500">Across the UK</p>
                   </div>
                 </div>
               </div>
@@ -328,187 +328,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Meet Our Team Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2 className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider border-b-2 border-orange-500 pb-1 mb-2">Our Team</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Meet the Experts Behind Richy Electricals</h3>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Our international team of qualified professionals brings decades of combined experience across multiple continents
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                name: "Richard Thompson",
-                position: "Founder & CEO",
-                bio: "With roots in both the UK and Ghana, Richard's dual-cultural background and 20+ years in electrical engineering drive our global vision.",
-                image: "/api/placeholder/300/300"
-              },
-              {
-                name: "Sarah Mitchell",
-                position: "UK Technical Director",
-                bio: "A certified electrical engineer with specialized knowledge in European power systems and renewable energy technologies.",
-                image: "/api/placeholder/300/300"
-              },
-              {
-                name: "Kwame Osei",
-                position: "Ghana Operations Director",
-                bio: "Leading our African operations with extensive experience in industrial electrical systems and power stability solutions.",
-                image: "/api/placeholder/300/300"
-              },
-              {
-                name: "Emma Davis",
-                position: "International Relations",
-                bio: "Coordinating our global projects and ensuring seamless communication between our international offices and clients worldwide.",
-                image: "/api/placeholder/300/300"
-              }
-            ].map((member, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
-              >
-                <div className="h-64 overflow-hidden">
-                  <Image 
-                    src={member.image} 
-                    alt={member.name} 
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h4>
-                  <p className="text-orange-500 font-medium mb-3">{member.position}</p>
-                  <p className="text-gray-600">{member.bio}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link href="/team" className="inline-flex items-center text-gray-900 bg-gray-100 hover:bg-gray-200 font-medium py-3 px-8 rounded-full shadow-md transition-all duration-300">
-                Meet the Full Team
-                <ChevronRight className="ml-2 w-5 h-5" />
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Milestones Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2 className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider border-b-2 border-orange-500 pb-1 mb-2">Our Journey</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Key Milestones</h3>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Charting our growth from a small local business to an international electrical engineering company
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-100"></div>
-            
-            {/* Timeline items */}
-            {[
-              {
-                year: "2010",
-                title: "Company Founded",
-                description: "Richard Thompson establishes Richy Electricals as a small generator repair service in London, UK."
-              },
-              {
-                year: "2013",
-                title: "Service Expansion",
-                description: "Added comprehensive electrical installation services and expanded team to five engineers in the UK."
-              },
-              {
-                year: "2015",
-                title: "Ghana Expansion",
-                description: "Opened our first international office in Accra, Ghana, bringing our expertise to West Africa."
-              },
-              {
-                year: "2017",
-                title: "Cross-Continental Growth",
-                description: "Expanded UK operations and established a technical training center in Kumasi, Ghana."
-              },
-              {
-                year: "2020",
-                title: "Global Projects Initiative",
-                description: "Launched our international projects division, serving clients across Africa, Europe, and the Middle East."
-              },
-              {
-                year: "2023",
-                title: "Industry Recognition",
-                description: "Awarded 'International Electrical Contractor of the Year' for excellence in cross-continental projects."
-              }
-            ].map((milestone, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`flex flex-col md:flex-row mb-12 relative ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-              >
-                <div className="flex-1 md:text-right px-4 md:px-8">
-                  {index % 2 === 0 ? (
-                    <div>
-                      <h4 className="text-2xl font-bold text-orange-500 mb-2">{milestone.year}</h4>
-                      <h5 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h5>
-                      <p className="text-gray-600 md:ml-auto">{milestone.description}</p>
-                    </div>
-                  ) : (
-                    <div className="md:opacity-0"></div>
-                  )}
-                </div>
-                
-                {/* Center dot */}
-                <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center">
-                  <div className="w-6 h-6 rounded-full bg-orange-500 border-4 border-orange-100"></div>
-                </div>
-                
-                <div className="flex-1 px-4 md:px-8">
-                  {index % 2 === 1 ? (
-                    <div>
-                      <h4 className="text-2xl font-bold text-orange-500 mb-2">{milestone.year}</h4>
-                      <h5 className="text-xl font-bold text-gray-900 mb-2">{milestone.title}</h5>
-                      <p className="text-gray-600">{milestone.description}</p>
-                    </div>
-                  ) : (
-                    <div className="md:opacity-0"></div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Our Certifications */}
       <section className="py-20 bg-gray-50">
@@ -521,9 +340,9 @@ export default function About() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider border-b-2 border-orange-500 pb-1 mb-2">Credentials</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our International Certifications & Affiliations</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our UK Certifications & Affiliations</h3>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                We maintain the highest industry standards through professional certifications and memberships across multiple countries
+                We maintain the highest industry standards through professional certifications and memberships across the United Kingdom
               </p>
             </motion.div>
           </div>
@@ -548,7 +367,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Locations Section */}
       <section className="py-20">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -559,9 +377,9 @@ export default function About() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider border-b-2 border-orange-500 pb-1 mb-2">Where We Work</h2>
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Global Locations</h3>
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our UK Locations</h3>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Providing electrical services worldwide with strategic offices in the UK and Ghana, supporting projects across continents
+                Providing expert electrical services throughout the United Kingdom with strategically located offices to serve you better
               </p>
             </motion.div>
           </div>
@@ -570,38 +388,45 @@ export default function About() {
             {[
               {
                 city: "London",
-                country: "United Kingdom",
+                region: "South East England",
                 address: "123 Electric Avenue, London, EC1A 1BB",
                 phone: "+44 20 1234 5678",
                 email: "london@richyelectricals.co.uk"
               },
               {
                 city: "Manchester",
-                country: "United Kingdom",
+                region: "North West England",
                 address: "45 Power Street, Manchester, M1 2WX",
                 phone: "+44 161 987 6543",
                 email: "manchester@richyelectricals.co.uk"
               },
               {
-                city: "Accra",
-                country: "Ghana",
-                address: "15 Independence Road, Airport Residential Area, Accra",
-                phone: "+233 30 273 4590",
-                email: "accra@richyelectricals.com.gh"
+                city: "Birmingham",
+                region: "West Midlands",
+                address: "78 Generator Road, Birmingham, B1 1TA",
+                phone: "+44 121 456 7890",
+                email: "birmingham@richyelectricals.co.uk"
               },
               {
-                city: "Kumasi",
-                country: "Ghana",
-                address: "7 Harper Road, Ahodwo, Kumasi",
-                phone: "+233 32 202 5678",
-                email: "kumasi@richyelectricals.com.gh"
+                city: "Edinburgh",
+                region: "Scotland",
+                address: "23 Voltage Lane, Edinburgh, EH1 1YZ",
+                phone: "+44 131 987 6543",
+                email: "edinburgh@richyelectricals.co.uk"
               },
               {
-                city: "International Projects",
-                country: "Worldwide",
-                address: "Serving clients globally from our UK and Ghana bases",
-                phone: "+44 20 8765 4321",
-                email: "global@richyelectricals.com"
+                city: "Cardiff",
+                region: "Wales",
+                address: "12 Circuit Avenue, Cardiff, CF10 1DD",
+                phone: "+44 29 2087 6543",
+                email: "cardiff@richyelectricals.co.uk"
+              },
+              {
+                city: "Belfast",
+                region: "Northern Ireland",
+                address: "34 Power Lane, Belfast, BT1 1GA",
+                phone: "+44 28 9024 5678",
+                email: "belfast@richyelectricals.co.uk"
               }
             ].map((location, index) => (
               <motion.div
@@ -621,7 +446,7 @@ export default function About() {
                     </div>
                     <div>
                       <h4 className="text-xl font-bold text-gray-900">{location.city}</h4>
-                      <p className="text-orange-500 font-medium">{location.country}</p>
+                      <p className="text-orange-500 font-medium">{location.region}</p>
                     </div>
                   </div>
                   <div className="space-y-3 text-gray-600">
@@ -629,16 +454,22 @@ export default function About() {
                       <Building className="w-4 h-4 mr-2 text-gray-400" />
                       {location.address}
                     </p>
-                    <p className="flex items-center">
+                    <a 
+                      href={`tel:${location.phone.replace(/\s/g, '')}`}
+                      className="flex items-center hover:text-orange-500 transition-colors"
+                    >
                       <Phone className="w-4 h-4 mr-2 text-gray-400" />
                       {location.phone}
-                    </p>
-                    <Link href={`mailto:${location.email}`} className="flex items-center text-orange-500 hover:underline">
+                    </a>
+                    <a 
+                      href={`mailto:${location.email}`} 
+                      className="flex items-center text-orange-500 hover:underline"
+                    >
                       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                       </svg>
                       {location.email}
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -669,9 +500,9 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Work with a Truly Global Electrical Team?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Work with the UK's Trusted Electrical Team?</h2>
               <p className="text-xl text-gray-300 mb-10">
-                Let Richy Electricals bring our international expertise to your project, whether in the UK, Ghana, or anywhere around the world.
+                Let Richy Electricals bring our national expertise to your project, anywhere in the United Kingdom.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
                 <motion.div
@@ -697,4 +528,4 @@ export default function About() {
       </section>
     </div>
   );
-}
+} 

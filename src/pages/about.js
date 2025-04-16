@@ -84,7 +84,7 @@ export default function About() {
         </p>
         
         <p className="text-lg text-gray-600 mb-6">
-          What started as a modest operation quickly grew as word spread about Richy's expertise, reliability, and exceptional customer service. By 2015, we had expanded our operations across London, connecting communities with our trusted electrical services including new installations, fault finding, and garden lighting solutions.
+          What started as a modest operation quickly grew as word spread about Richys expertise, reliability, and exceptional customer service. By 2015, we had expanded our operations across London, connecting communities with our trusted electrical services including new installations, fault finding, and garden lighting solutions.
         </p>
         
         <p className="text-lg text-gray-600 mb-6">
@@ -165,7 +165,7 @@ export default function About() {
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h4>
               <p className="text-gray-600">
-                To be London's most trusted name in electrical engineering, known for our technical expertise, innovation, and deep understanding of the city's unique needs, while leading the industry in sustainable electrical solutions that benefit London communities.
+                To be London most trusted name in electrical engineering, known for our technical expertise, innovation, and deep understanding of the city's unique needs, while leading the industry in sustainable electrical solutions that benefit London communities.
               </p>
             </motion.div>
             
@@ -454,7 +454,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Work with London's Trusted Electrical Team?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Work with London Trusted Electrical Team?</h2>
               <p className="text-xl text-gray-300 mb-10">
                 Let Richy Electricals bring our London expertise to your project, anywhere in the city.
               </p>

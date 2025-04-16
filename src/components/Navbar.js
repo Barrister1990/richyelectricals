@@ -53,17 +53,27 @@ const Navbar = () => {
             : 'bg-orange-50 py-2'
         }`}>
           <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
-            <Link 
-              href="/faq" 
-              className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
-            >
-              Frequently Asked Questions
-            </Link>
+            <div className="flex space-x-4">
+              <Link 
+                href="/faq" 
+                className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
+              >
+                Frequently Asked Questions
+              </Link>
+              <a 
+                href="https://richyelectricals.com.gh" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
+              >
+                RichyElectricals Ghana
+              </a>
+            </div>
             <a 
-              href="tel:+1234567890" 
+              href="tel:+447491565676" 
               className="flex items-center text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
             >
-              <Phone className="h-4 w-4 mr-2" /> (123) 456-7890
+              <Phone className="h-4 w-4 mr-2" /> + (44) 7491565676
             </a>
           </div>
         </div>
@@ -162,6 +172,15 @@ const Navbar = () => {
           <MobileNavLink href="/about" text="About Us" onClick={toggleMenu} />
           <MobileNavLink href="/services" text="Services" onClick={toggleMenu} />
           <MobileNavLink href="/faq" text="FAQ" onClick={toggleMenu} />
+          <a 
+            href="https://richyelectricals.com.gh" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="w-full max-w-xs text-center text-gray-800 hover:text-orange-500 px-4 py-4 rounded-lg text-lg font-medium border-b border-gray-100 transition-all duration-300 hover:bg-orange-50"
+            onClick={toggleMenu}
+          >
+            RichyElectricals Ghana
+          </a>
           <Link 
             href="/contact" 
             className="w-full max-w-xs text-center bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-3 rounded-full font-medium shadow-lg shadow-orange-300/20 transition-all duration-300 mt-6 hover:shadow-orange-300/40 transform hover:scale-105"

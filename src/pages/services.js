@@ -1,6 +1,6 @@
 // pages/services.js
 import { motion } from 'framer-motion';
-import { ArrowRight, Battery, BatteryCharging, CalendarClock, ChevronRight, Clock, Download, HelpCircle, MessageSquare, Phone, ScrollText, Settings, ShieldCheck, Sun, Wrench, Zap } from 'lucide-react';
+import { CalendarClock, ChevronRight, Clock, Download, HelpCircle, MessageSquare, Phone, ScrollText, Settings, ShieldCheck, Sun, Wrench, Zap } from 'lucide-react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -36,183 +36,105 @@ export default function Services() {
 
   // Service data
   const serviceCategories = [
+   // Updated Electrical Services section for the services.js file
+{
+  id: "electrical-services",
+  title: "Electrical Services",
+  description: "Comprehensive electrical solutions delivered by certified professionals",
+  services: [
     {
-      id: "generator-services",
-      title: "Generator Services",
-      description: "Professional generator solutions for homes and businesses across the UK",
-      services: [
-        {
-          id: "generator-repairs",
-          icon: <Wrench className="w-10 h-10 text-orange-500" />,
-          title: "Generator Repairs",
-          description: "Our certified technicians diagnose and repair all types of generator issues, from mechanical faults to electrical problems. We service all major brands and models with rapid response times.",
-          features: [
-            "24/7 emergency repair service",
-            "Comprehensive diagnostic assessment",
-            "Genuine manufacturer parts",
-            "Performance testing and validation",
-            "Post-repair maintenance advice"
-          ]
-        },
-        {
-          id: "generator-sales",
-          icon: <Zap className="w-10 h-10 text-orange-500" />,
-          title: "Generator Sales",
-          description: "Find the perfect generator for your needs with our extensive range of new and reconditioned units. We offer diesel, petrol, and gas generators for residential, commercial, and industrial applications.",
-          features: [
-            "Personalized power requirement assessment",
-            "Extensive range of leading brands",
-            "New and reconditioned options",
-            "Competitive pricing and financing",
-            "Installation and setup included"
-          ]
-        },
-        {
-          id: "generator-installations",
-          icon: <Settings className="w-10 h-10 text-orange-500" />,
-          title: "Generator Installations",
-          description: "Our expert team handles every aspect of generator installation, from site assessment and preparation to final testing and handover, ensuring optimal performance and safety compliance.",
-          features: [
-            "Site survey and power requirement analysis",
-            "Professional installation by certified technicians",
-            "Full integration with existing electrical systems",
-            "Compliance with all UK regulations",
-            "User training and documentation"
-          ]
-        },
-        {
-          id: "generator-maintenance",
-          icon: <Wrench className="w-10 h-10 text-orange-500" />,
-          title: "Generator Maintenance",
-          description: "Keep your generator running at peak efficiency with our preventative maintenance programs. Regular servicing extends equipment life and ensures reliability when you need it most.",
-          features: [
-            "Scheduled maintenance packages",
-            "Fluid and filter replacements",
-            "Component inspection and testing",
-            "Performance optimization",
-            "Detailed service reports"
-          ]
-        }
+      id: "fuse-board-upgrades",
+      icon: <Zap className="w-10 h-10 text-orange-500" />,
+      title: "Fuse Board Upgrades",
+      description: "Modern, safe consumer units to replace outdated fuse boxes, ensuring compliance with the latest regulations and improved electrical safety for your property.",
+      features: [
+        "Complete fuse board/consumer unit replacements",
+        "Upgrades to meet current regulations",
+        "RCBO protection for individual circuits",
+        "Full safety testing and certification",
+        "Professional installation by qualified electricians"
       ]
     },
     {
-      id: "electrical-services",
-      title: "Electrical Services",
-      description: "Comprehensive electrical solutions delivered by certified professionals",
-      services: [
-        {
-          id: "electrical-installations",
-          icon: <Settings className="w-10 h-10 text-orange-500" />,
-          title: "Electrical Installations",
-          description: "From new builds to renovations, our electrical installation services cover all aspects of wiring, fixtures, and systems for both residential and commercial properties.",
-          features: [
-            "Full property wiring and rewiring",
-            "Consumer unit installation and upgrades",
-            "External and garden electrical installations",
-            "Smart home electrical systems",
-            "Industrial machinery installations"
-          ]
-        },
-        {
-          id: "maintenance",
-          icon: <Wrench className="w-10 h-10 text-orange-500" />,
-          title: "Maintenance Services",
-          description: "Proactive electrical maintenance helps prevent costly breakdowns and ensures safety. Our maintenance programs are tailored to your specific property and usage requirements.",
-          features: [
-            "Scheduled electrical inspections",
-            "Preventative component replacement",
-            "Thermal imaging diagnostics",
-            "Load testing and analysis",
-            "Maintenance documentation and reporting"
-          ]
-        },
-        {
-          id: "safety",
-          icon: <ShieldCheck className="w-10 h-10 text-orange-500" />,
-          title: "Safety Inspections",
-          description: "Our comprehensive electrical safety checks identify potential hazards and ensure your property meets all current regulations and safety standards.",
-          features: [
-            "EICR (Electrical Installation Condition Report)",
-            "PAT testing for portable appliances",
-            "Landlord electrical safety certificates",
-            "Commercial property compliance checks",
-            "Fire alarm and emergency lighting testing"
-          ]
-        },
-        {
-          id: "emergency",
-          icon: <Clock className="w-10 h-10 text-orange-500" />,
-          title: "Emergency Call-outs",
-          description: "Electrical emergencies require immediate attention. Our 24/7 emergency service provides rapid response to urgent electrical issues across the UK.",
-          features: [
-            "24-hour emergency response team",
-            "Rapid fault identification",
-            "Temporary and permanent solutions",
-            "Safe isolation of dangerous situations",
-            "Post-emergency follow-up service"
-          ]
-        }
+      id: "electrical-inspections",
+      icon: <ShieldCheck className="w-10 h-10 text-orange-500" />,
+      title: "Electrical Inspections",
+      description: "Thorough assessment of your electrical systems to identify potential hazards and ensure compliance with current safety standards and regulations.",
+      features: [
+        "EICR (Electrical Installation Condition Reports)",
+        "Landlord electrical safety certificates",
+        "Pre-purchase property inspections",
+        "Commercial electrical safety compliance",
+        "Detailed reports with recommendations"
       ]
     },
     {
-      id: "solar-services",
-      title: "Solar Energy Solutions",
-      description: "Sustainable solar power systems for residential and commercial properties",
-      services: [
-        {
-          id: "solar-panel-installation",
-          icon: <Sun className="w-10 h-10 text-orange-500" />,
-          title: "Solar Panel Installation",
-          description: "Harness the power of the sun with our professional solar PV installations. We design and install custom solar systems to maximize energy production for your property.",
-          features: [
-            "Custom system design and sizing",
-            "High-efficiency solar panels",
-            "Professional installation by MCS-certified technicians",
-            "Grid connection and commissioning",
-            "Performance monitoring setup"
-          ]
-        },
-        {
-          id: "solar-battery-storage",
-          icon: <Battery className="w-10 h-10 text-orange-500" />,
-          title: "Solar Battery Storage",
-          description: "Maximize your solar investment with battery storage solutions that allow you to store excess energy for use when the sun isn't shining, reducing grid reliance.",
-          features: [
-            "Leading battery technologies (Tesla, LG, Sonnen)",
-            "Seamless integration with existing solar systems",
-            "Smart energy management systems",
-            "Backup power configuration",
-            "Scalable capacity options"
-          ]
-        },
-        {
-          id: "solar-maintenance",
-          icon: <BatteryCharging className="w-10 h-10 text-orange-500" />,
-          title: "Solar System Maintenance",
-          description: "Keep your solar investment performing at its best with our professional maintenance services, ensuring optimal energy production and system longevity.",
-          features: [
-            "Panel cleaning and inspection",
-            "Performance analysis and optimization",
-            "Inverter and electrical component checks",
-            "System health reports",
-            "Warranty support and management"
-          ]
-        },
-        {
-          id: "solar-upgrades",
-          icon: <ArrowRight className="w-10 h-10 text-orange-500" />,
-          title: "System Upgrades & Expansion",
-          description: "Expand or upgrade your existing solar system to increase capacity, improve efficiency, or add new features like battery storage or EV charging.",
-          features: [
-            "System assessment and upgrade planning",
-            "Panel efficiency improvements",
-            "Inverter upgrades and replacements",
-            "Integration of new technologies",
-            "Smart home energy management additions"
-          ]
-        }
+      id: "new-installations",
+      icon: <Settings className="w-10 h-10 text-orange-500" />,
+      title: "New Installations",
+      description: "Complete electrical installations for new builds, renovations, and extensions, designed and implemented to meet your specific requirements and comply with all regulations.",
+      features: [
+        "Full property wiring for new builds",
+        "Extensions and renovation electrical work",
+        "Smart home electrical systems",
+        "Commercial property installations",
+        "Design and implementation services"
+      ]
+    },
+    {
+      id: "fault-finding",
+      icon: <HelpCircle className="w-10 h-10 text-orange-500" />,
+      title: "Fault Finding",
+      description: "Expert diagnostic services to quickly identify and resolve electrical faults, from tripping circuits to intermittent power issues.",
+      features: [
+        "Rapid response troubleshooting",
+        "Advanced diagnostic equipment",
+        "Circuit tracing and testing",
+        "Intermittent fault resolution",
+        "Comprehensive electrical system checks"
+      ]
+    },
+    {
+      id: "garden-lighting",
+      icon: <Sun className="w-10 h-10 text-orange-500" />,
+      title: "Garden Lighting",
+      description: "Enhance your outdoor spaces with professionally installed garden lighting solutions that are both beautiful and energy-efficient.",
+      features: [
+        "Outdoor lighting design services",
+        "Weather-resistant installations",
+        "LED and energy-efficient options",
+        "Security lighting solutions",
+        "Timer and sensor controls"
+      ]
+    },
+    {
+      id: "rewiring",
+      icon: <ScrollText className="w-10 h-10 text-orange-500" />,
+      title: "Rewiring",
+      description: "Complete or partial rewiring services to update outdated or unsafe electrical systems, improving safety and functionality throughout your property.",
+      features: [
+        "Full house rewiring services",
+        "Partial rewiring solutions",
+        "Minimal disruption approaches",
+        "Upgrade to modern standards",
+        "Detailed planning and implementation"
+      ]
+    },
+    {
+      id: "emergency-services",
+      icon: <Clock className="w-10 h-10 text-orange-500" />,
+      title: "Emergency Services",
+      description: "24/7 emergency electrical services providing rapid response to urgent electrical issues to restore safety and functionality to your property.",
+      features: [
+        "24-hour emergency call-outs",
+        "Rapid response team",
+        "Immediate safety measures",
+        "Temporary and permanent solutions",
+        "Post-emergency safety checks"
       ]
     }
+  ]
+}
   ];
 
   // FAQs specific to services
@@ -682,7 +604,7 @@ export default function Services() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Link href="tel:02079460000" className="inline-flex items-center bg-orange-600 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-orange-700 transition-all duration-300">
+                  <Link href="tel:+447491565676" className="inline-flex items-center bg-orange-600 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:bg-orange-700 transition-all duration-300">
                     <Phone className="mr-2 w-5 h-5" />
                     Call Us Now
                   </Link>

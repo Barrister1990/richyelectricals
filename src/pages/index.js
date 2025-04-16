@@ -3,22 +3,63 @@ import {
   Award,
   ChevronRight,
   Clock,
-  Globe,
+  FileText,
+  Home,
+  Lightbulb,
   MapPin,
   Phone,
   Power,
-  Settings,
+  Search,
   ShieldCheck,
-  Wrench,
   Zap,
 } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
-export default function Home() {
+export default function HomePage() {
   // For counting animation
   const [counting, setCounting] = useState(false);
+
+  const handleContactFormSubmit = async (e) => {
+    e.preventDefault();
+  
+    const loadingToast = toast.loading("Sending your message...");
+  
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      service: e.target.service.value,
+      message: e.target.message.value,
+      timestamp: new Date().toISOString(),
+    };
+  
+    try {
+      const response = await fetch('https://richyelectricals.vercel.app/api/home', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+  
+      toast.dismiss(loadingToast);
+      toast.success("Message sent successfully! We'll get back to you soon.");
+  
+      e.target.reset();
+    } catch (error) {
+      toast.dismiss(loadingToast);
+      toast.error("Failed to send message. Please try again later.");
+      console.error("Error sending message:", error);
+    }
+  };
+  
 
   // Intersection Observer for animation triggers
   useEffect(() => {
@@ -82,12 +123,12 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen">
       <Head>
-        <title>Richy Electricals | UK Electrical Engineering Solutions</title>
+        <title>Richy Electricals | London Electrical Engineering Solutions</title>
         <meta
           name="description"
-          content="Expert electrical engineering services and generator solutions across the United Kingdom."
+          content="Expert electrical engineering services including fuse board upgrades, electrical inspections, and emergency call-outs in London."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -140,12 +181,10 @@ export default function Home() {
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               <span className="block">Premier Electrical Solutions</span>
-              <span className="text-orange-500">Across the UK</span>
+              <span className="text-orange-500">in London</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8">
-              Specializing in generator repairs, sales, and comprehensive
-              electrical services with expert teams covering all regions of the
-              United Kingdom.
+              Specializing in fuse board upgrades, electrical inspections, and complete electrical installations for homes and businesses across London.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <motion.div
@@ -164,7 +203,7 @@ export default function Home() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="tel:+1234567890"
+                  href="tel:+447491565676"
                   className="inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-medium py-3 px-8 rounded-full border border-white/30 transition-all duration-300 items-center"
                 >
                   Call Us Now
@@ -190,10 +229,10 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* UK Presence Section */}
+      {/* London Location Section */}
       <section className="py-16 bg-gray-900 text-white animate-on-scroll">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-16">
+          <div className="flex flex-col md:flex-row items-center justify-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -204,35 +243,7 @@ export default function Home() {
               <MapPin className="w-8 h-8 text-orange-500 mr-3" />
               <div>
                 <h3 className="text-xl font-bold">London Headquarters</h3>
-                <p className="text-gray-300">Central London, UK</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex items-center"
-            >
-              <MapPin className="w-8 h-8 text-orange-500 mr-3" />
-              <div>
-                <h3 className="text-xl font-bold">Manchester Office</h3>
-                <p className="text-gray-300">North England</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex items-center"
-            >
-              <Globe className="w-8 h-8 text-orange-500 mr-3" />
-              <div>
-                <h3 className="text-xl font-bold">Nationwide Coverage</h3>
-                <p className="text-gray-300">Serving All UK Regions</p>
+                <p className="text-gray-300">Serving all of London and surrounding areas</p>
               </div>
             </motion.div>
           </div>
@@ -253,8 +264,7 @@ export default function Home() {
                 Our Expert Services
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Comprehensive electrical solutions delivered throughout the
-                United Kingdom by our team of certified professionals.
+                Comprehensive electrical solutions delivered throughout London by our team of certified professionals.
               </p>
             </motion.div>
           </div>
@@ -263,44 +273,58 @@ export default function Home() {
             {[
               {
                 icon: <Power className="w-10 h-10 text-orange-500" />,
-                title: "Generator Repairs",
+                title: "Fuse Board Upgrades",
                 description:
-                  "Expert diagnosis and repair of all generator types and brands, with fast response times across the UK.",
-                link: "/services#generator-repairs",
+                  "Modern fuse board installations to improve safety and meet current electrical regulations in your London property.",
+                link: "/services#fuse-board-upgrades",
+              },
+              {
+                icon: <FileText className="w-10 h-10 text-orange-500" />,
+                title: "Electrical Inspections",
+                description:
+                  "Thorough condition reports and periodic inspections to ensure your electrical systems are safe and compliant.",
+                link: "/services#electrical-inspections",
+              },
+              {
+                icon: <Home className="w-10 h-10 text-orange-500" />,
+                title: "New Installations",
+                description:
+                  "Complete electrical system installations for new builds, renovations, and property developments in London.",
+                link: "/services#new-installations",
+              },
+              {
+                icon: <Search className="w-10 h-10 text-orange-500" />,
+                title: "Fault Finding",
+                description:
+                  "Expert diagnosis and resolution of electrical faults, trips, and other electrical issues in your home or business.",
+                link: "/services#fault-finding",
+              },
+              {
+                icon: <Lightbulb className="w-10 h-10 text-orange-500" />,
+                title: "Garden Lighting",
+                description:
+                  "Beautiful and functional outdoor lighting solutions for gardens, pathways, and exterior spaces in London properties.",
+                link: "/services#garden-lighting",
               },
               {
                 icon: <Zap className="w-10 h-10 text-orange-500" />,
-                title: "Generator Sales",
+                title: "Rewiring Services",
                 description:
-                  "Quality new and reconditioned generators for residential, commercial and industrial use throughout Britain.",
-                link: "/services#generator-sales",
-              },
-              {
-                icon: <Settings className="w-10 h-10 text-orange-500" />,
-                title: "Electrical Installations",
-                description:
-                  "Professional installation of electrical systems for homes and businesses across England, Scotland, and Wales.",
-                link: "/services#installations",
-              },
-              {
-                icon: <Wrench className="w-10 h-10 text-orange-500" />,
-                title: "Maintenance Services",
-                description:
-                  "Preventative maintenance programs for clients throughout the UK, from London to Edinburgh.",
-                link: "/services#maintenance",
+                  "Partial or full property rewiring with minimal disruption, upgrading old or dangerous wiring systems.",
+                link: "/services#rewiring",
               },
               {
                 icon: <ShieldCheck className="w-10 h-10 text-orange-500" />,
-                title: "Safety Inspections",
+                title: "Renewable Energy",
                 description:
-                  "Comprehensive electrical safety checks and certifications meeting all UK regulatory standards.",
-                link: "/services#safety",
+                  "Installation of eco-friendly electrical systems including solar panels and EV charging points for London residents.",
+                link: "/services#renewable-energy",
               },
               {
                 icon: <Clock className="w-10 h-10 text-orange-500" />,
                 title: "Emergency Call-outs",
                 description:
-                  "24/7 emergency electrical assistance with rapid response teams stationed throughout the UK.",
+                  "24/7 emergency electrical assistance with rapid response throughout London when you need it most.",
                 link: "/services#emergency",
               },
             ].map((service, index) => (
@@ -358,8 +382,8 @@ export default function Home() {
                     <Award className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Projects in</p>
-                    <p className="font-bold text-gray-900">All UK Regions</p>
+                    <p className="text-sm text-gray-500">Serving</p>
+                    <p className="font-bold text-gray-900">All London Areas</p>
                   </div>
                 </div>
               </div>
@@ -372,24 +396,22 @@ export default function Home() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                UK Electrical Engineering Experts
+                London's Trusted Electrical Experts
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                With over 15 years of experience across the United Kingdom,
-                Richy Electricals has built a reputation for excellence,
-                reliability, and exceptional service throughout Britain.
+                With over 15 years of experience across London, Richy Electricals has built a reputation for excellence,
+                reliability, and exceptional service throughout the capital.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                Our team of certified electrical engineers specializes in
-                generator repairs and sales, providing high-quality solutions
-                tailored to UK standards and regulations.
+                Our team of certified electrical engineers specializes in complete electrical solutions,
+                providing high-quality services tailored to UK standards and regulations.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  "Headquarters in London with regional offices across the UK",
-                  "Nationwide team of certified electrical engineers",
-                  "Projects completed throughout England, Scotland, Wales and Northern Ireland",
-                  "Equipment sourced from trusted British and European suppliers",
+                  "Headquarters in Central London serving all boroughs",
+                  "Team of certified electrical engineers",
+                  "Residential and commercial projects throughout London",
+                  "Equipment sourced from trusted British suppliers",
                   "Comprehensive warranties on all work and products",
                 ].map((item, index) => (
                   <motion.li
@@ -446,8 +468,8 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: 15, suffix: "+", label: "Years Experience" },
-              { value: 3000, suffix: "+", label: "UK Projects Completed" },
-              { value: 25, suffix: "+", label: "UK Counties Served" },
+              { value: 2000, suffix: "+", label: "London Projects Completed" },
+              { value: 32, suffix: "+", label: "London Boroughs Served" },
               { value: 98, suffix: "%", label: "Customer Satisfaction" },
             ].map((stat, index) => (
               <motion.div
@@ -492,8 +514,8 @@ export default function Home() {
                     Ready for Electrical Solutions?
                   </h2>
                   <p className="text-lg text-gray-300 mb-6 md:mb-0 max-w-xl">
-                    Contact our UK office today for a free consultation and
-                    quote. Our team of British experts is ready to help with all
+                    Contact our London office today for a free consultation and
+                    quote. Our team of experts is ready to help with all
                     your electrical needs.
                   </p>
                 </div>
@@ -519,7 +541,7 @@ export default function Home() {
                       className="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-medium py-3 px-8 rounded-full transition-all duration-300 w-full"
                     >
                       <Phone className="w-5 h-5 mr-2" />
-                      Call Us: +44 123 456 789
+                      Call Us: +44 749 1565676
                     </Link>
                   </motion.div>
                 </div>
@@ -529,15 +551,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partners/Certifications Section */}
+      {/* Certifications Section */}
       <section className="py-16 border-t border-gray-200 animate-on-scroll">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
-              Our UK Partners & Certifications
+              Our Certifications
             </h2>
             <p className="text-gray-600">
-              Trusted by leading British brands and organizations
+              Fully certified and compliant with all UK electrical standards
             </p>
           </div>
 
@@ -553,7 +575,7 @@ export default function Home() {
               >
                 <div className="bg-gray-200 h-16 w-32 rounded flex items-center justify-center">
                   <span className="text-gray-500 font-semibold">
-                    UK Partner {item}
+                    Certification {item}
                   </span>
                 </div>
               </motion.div>
@@ -576,8 +598,7 @@ export default function Home() {
                 Frequently Asked Questions
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Find answers to common questions about our UK electrical
-                services
+                Find answers to common questions about our electrical services in London
               </p>
             </motion.div>
           </div>
@@ -585,32 +606,29 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             {[
               {
-                question: "Where are your UK operations located?",
+                question: "Do you serve all London areas?",
                 answer:
-                  "Our main headquarters is in London with regional offices in Manchester and Birmingham, allowing us to efficiently serve clients throughout England, Scotland, Wales, and Northern Ireland.",
+                  "Yes, we offer our electrical services throughout all London boroughs and some surrounding areas. Our central London headquarters allows us to respond quickly to clients across the capital.",
               },
               {
-                question: "Do you handle installation across the entire UK?",
+                question: "How often should I have an electrical inspection?",
                 answer:
-                  "Yes, we handle installation, logistics, and on-site commissioning for all our electrical equipment across the entire United Kingdom. Our strategically positioned teams enable us to provide responsive service nationwide.",
+                  "For homeowners, we recommend an Electrical Installation Condition Report (EICR) every 10 years. For rental properties, UK regulations require an EICR every 5 years. Commercial properties should have inspections more frequently, typically every 3-5 years depending on the type of business.",
               },
               {
-                question:
-                  "Are your electrical engineers certified for UK work?",
+                question: "What does a fuse board upgrade involve?",
                 answer:
-                  "All our electrical engineers are fully certified and licensed to work in the UK. We comply with all British electrical standards and regulations, including BS 7671 (IET Wiring Regulations).",
+                  "A fuse board upgrade involves replacing your old fuse box with a modern consumer unit that includes residual current devices (RCDs) and miniature circuit breakers (MCBs) for improved safety. The process typically takes a day to complete and will bring your electrical system up to current UK standards.",
               },
               {
-                question:
-                  "What types of generators do you repair and sell in the UK?",
+                question: "Do you offer emergency electrical services?",
                 answer:
-                  "We repair and sell a wide range of generators suitable for UK power standards, including diesel, petrol, gas, and renewable energy generators for residential, commercial, and industrial applications across Britain.",
+                  "Yes, we provide 24/7 emergency electrical services throughout London. For electrical emergencies, our technicians aim to respond within 1-2 hours to address potentially dangerous situations quickly and safely.",
               },
               {
-                question:
-                  "How quickly can you respond to emergencies in the UK?",
+                question: "Are your electricians qualified and certified?",
                 answer:
-                  "We provide 24/7 emergency support with technicians strategically located throughout the UK. For most areas, we aim to respond within 2-4 hours, and we maintain emergency response teams in all major cities.",
+                  "All our electricians are fully qualified, certified, and registered with relevant UK electrical governing bodies. They regularly undergo training to stay updated with the latest regulations and safety standards, ensuring all work is compliant with British Standards.",
               },
             ].map((faq, index) => (
               <motion.div
@@ -677,7 +695,8 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 animate-on-scroll">
+
+<section className="py-20 animate-on-scroll">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -691,7 +710,7 @@ export default function Home() {
               </h2>
               <p className="text-lg text-gray-600 mb-8">
                 Have questions about our services or ready to schedule a
-                consultation? Our UK team is here to help with all your
+                consultation? Our London team is here to help with all your
                 electrical needs.
               </p>
 
@@ -724,7 +743,7 @@ export default function Home() {
                       Our Location
                     </h3>
                     <p className="text-gray-600">
-                      123 Electric Avenue, London, UK, EC1A 1BB
+                    115 Butts Road, Walsall, West Midlands, WS4 2BL, United Kingdom
                     </p>
                   </div>
                 </div>
@@ -750,7 +769,11 @@ export default function Home() {
                     <h3 className="font-bold text-gray-900 mb-1">
                       Phone Number
                     </h3>
-                    <p className="text-gray-600">+44 123 456 789</p>
+                    <p className="text-gray-600">
+                      <a href="tel:+44123456789" className="hover:text-orange-500 transition-colors">
+                        +44 7491 565676
+                      </a>
+                    </p>
                   </div>
                 </div>
 
@@ -775,7 +798,11 @@ export default function Home() {
                     <h3 className="font-bold text-gray-900 mb-1">
                       Email Address
                     </h3>
-                    <p className="text-gray-600">info@richyelectricals.co.uk</p>
+                    <p className="text-gray-600">
+                      <a href="mailto:info@richyelectricals.com" className="hover:text-orange-500 transition-colors">
+                        info@richyelectricals.com
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -799,87 +826,102 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="bg-white rounded-xl p-8 shadow-xl"
+              className="bg-white rounded-xl shadow-xl p-6 md:p-8"
             >
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Send Us a Message
+                Send Us A Message
               </h3>
 
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <form className="space-y-4" onSubmit={handleContactFormSubmit}>
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label
-                      htmlFor="name"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
-                      Full Name
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                      Your Name
                     </label>
                     <input
                       type="text"
                       id="name"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                       placeholder="John Smith"
+                      required
                     />
                   </div>
                   <div>
-                    <label
-                      htmlFor="email"
-                      className="block text-sm font-medium text-gray-700 mb-1"
-                    >
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                       Email Address
                     </label>
                     <input
                       type="email"
                       id="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                       placeholder="john@example.com"
+                      required
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="subject"
-                    className="block text-sm font-medium text-gray-700 mb-1"
-                  >
-                    Subject
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Phone Number
                   </label>
                   <input
-                    type="text"
-                    id="subject"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    placeholder="How can we help?"
+                    type="tel"
+                    id="phone"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                    placeholder="+44 123 456 789"
                   />
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-1"
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
+                    Service Required
+                  </label>
+                  <select
+                    id="service"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                   >
-                    Message
+                    <option value="">Select a service</option>
+                    <option value="fuse-board">Fuse Board Upgrade</option>
+                    <option value="inspection">Electrical Inspection</option>
+                    <option value="installation">New Installation</option>
+                    <option value="fault">Fault Finding</option>
+                    <option value="garden">Garden Lighting</option>
+                    <option value="rewiring">Rewiring</option>
+                    <option value="renewable">Renewable Energy</option>
+                    <option value="emergency">Emergency Call-out</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    Your Message
                   </label>
                   <textarea
                     id="message"
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
-                    placeholder="Tell us about your electrical needs..."
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                    placeholder="Tell us about your electrical requirements..."
+                    required
                   ></textarea>
                 </div>
 
                 <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   type="submit"
+                  className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 rounded-lg shadow-md transition-all duration-300"
                 >
                   Send Message
                 </motion.button>
               </form>
+              
+              {/* Toast container - needed for the notifications to appear */}
+              <Toaster position="bottom-center" />
             </motion.div>
           </div>
         </div>
       </section>
+
     </div>
   );
 }

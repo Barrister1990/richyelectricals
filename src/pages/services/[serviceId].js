@@ -3,7 +3,12 @@ import { motion } from 'framer-motion';
 import {
   ArrowLeft, ArrowRight,
   ChevronRight,
+  Clock,
+  HelpCircle,
   Phone,
+  ScrollText,
+  Settings,
+  ShieldCheck,
   Star, Sun,
   Wrench, Zap
 } from 'lucide-react';
@@ -15,241 +20,557 @@ import { useEffect, useState } from 'react';
 // Service data - this could be moved to a separate data file
 const servicesData = {
   // Generator Services
-  "generator-repairs": {
-    id: "generator-repairs",
-    category: "Generator Services",
-    icon: <Wrench className="w-10 h-10 text-orange-500" />,
-    title: "Generator Repairs",
-    headline: "Expert Generator Repair Services Across the UK",
-    description: "Our certified technicians diagnose and repair all types of generator issues, from mechanical faults to electrical problems. We service all major brands and models with rapid response times.",
-    longDescription: "At Richy Electricals, we understand that a malfunctioning generator can lead to significant disruptions and costs. Our comprehensive generator repair service is designed to quickly identify and resolve issues, minimizing downtime and restoring your power backup capabilities. Our team of certified technicians has extensive experience working with all types of generators, from small residential units to large industrial systems.",
-    features: [
-      "24/7 emergency repair service",
-      "Comprehensive diagnostic assessment",
-      "Genuine manufacturer parts",
-      "Performance testing and validation",
-      "Post-repair maintenance advice"
-    ],
-    benefitsHeading: "Why Choose Our Generator Repair Services?",
-    benefits: [
-      {
-        title: "Rapid Response Times",
-        description: "Our emergency response team is available 24/7, with technicians dispatched quickly to your location to minimize downtime."
-      },
-      {
-        title: "Multi-Brand Expertise",
-        description: "We service all major generator brands including Cummins, Caterpillar, Kohler, SDMO, FG Wilson, and more."
-      },
-      {
-        title: "Comprehensive Diagnostics",
-        description: "Our technicians use advanced diagnostic equipment to quickly identify issues and determine the most efficient repair solution."
-      },
-      {
-        title: "Quality Replacement Parts",
-        description: "We use only genuine or high-quality compatible parts to ensure reliable performance and longevity."
-      }
-    ],
-    processSteps: [
-      {
-        title: "Initial Assessment",
-        description: "We begin with a thorough assessment of your generator to identify all issues affecting performance."
-      },
-      {
-        title: "Detailed Quote",
-        description: "After diagnosis, we provide a comprehensive quote outlining the necessary repairs and associated costs."
-      },
-      {
-        title: "Expert Repairs",
-        description: "Our certified technicians perform all needed repairs using industry-best practices and quality parts."
-      },
-      {
-        title: "Testing & Validation",
-        description: "We conduct extensive testing to ensure the generator operates at optimal performance levels."
-      },
-      {
-        title: "Maintenance Advice",
-        description: "We provide guidance on proper maintenance to prevent future issues and extend your generator's lifespan."
-      }
-    ],
-    faq: [
-      {
-        question: "How quickly can you respond to an emergency generator breakdown?",
-        answer: "For emergency situations, we aim to have a technician at your location within 2-4 hours for most areas across the UK. Our priority response service for critical infrastructure can provide even faster response times."
-      },
-      {
-        question: "What types of generator issues can you repair?",
-        answer: "Our technicians are equipped to handle a comprehensive range of generator problems, including engine failures, electrical faults, control panel issues, fuel system problems, cooling system malfunctions, starting problems, and more."
-      },
-      {
-        question: "Do you provide warranty on generator repairs?",
-        answer: "Yes, all our generator repairs come with a warranty. Labor is typically warranted for 90 days, while replacement parts carry the manufacturer's warranty, which can range from 6 months to 1 year depending on the component."
-      },
-      {
-        question: "Can you repair generators at remote locations?",
-        answer: "Yes, our mobile service teams are equipped to perform repairs at virtually any location across the UK, including remote sites and difficult-to-access areas."
-      }
-    ],
-    relatedServices: ["generator-maintenance", "generator-installations", "generator-sales"],
-    callToAction: "Need generator repair services?"
-  },
-  "generator-sales": {
-    id: "generator-sales",
-    category: "Generator Services",
-    icon: <Zap className="w-10 h-10 text-orange-500" />,
-    title: "Generator Sales",
-    headline: "Find the Perfect Generator for Your Power Needs",
-    description: "Find the perfect generator for your needs with our extensive range of new and reconditioned units. We offer diesel, petrol, and gas generators for residential, commercial, and industrial applications.",
-    longDescription: "Whether you're looking for backup power for your home, a reliable power source for your business, or industrial-grade generators for critical operations, Richy Electricals has you covered. We offer an extensive selection of generators from leading manufacturers, with options to suit every requirement and budget. Our expert team will help you determine the right size and type of generator for your specific needs, ensuring you get the most cost-effective and reliable solution.",
-    features: [
-      "Personalized power requirement assessment",
-      "Extensive range of leading brands",
-      "New and reconditioned options",
-      "Competitive pricing and financing",
-      "Installation and setup included"
-    ],
-    benefitsHeading: "The Benefits of Our Generator Sales Service",
-    benefits: [
-      {
-        title: "Expert Guidance",
-        description: "Our specialists help you navigate the complex world of generators to find the perfect match for your specific requirements."
-      },
-      {
-        title: "Quality Assurance",
-        description: "All our generators, whether new or reconditioned, undergo rigorous testing to ensure reliability and performance."
-      },
-      {
-        title: "Comprehensive Solutions",
-        description: "Beyond just selling generators, we offer complete power solutions including installation, maintenance plans, and accessories."
-      },
-      {
-        title: "After-Sales Support",
-        description: "Our relationship doesn't end with the sale—we provide ongoing support, maintenance, and repair services for all generators we sell."
-      }
-    ],
-    processSteps: [
-      {
-        title: "Needs Assessment",
-        description: "We begin by understanding your power requirements, including load demands, application type, and operational environment."
-      },
-      {
-        title: "Solution Design",
-        description: "Our team designs a power solution tailored to your specific needs, considering factors like power output, fuel type, and noise requirements."
-      },
-      {
-        title: "Product Selection",
-        description: "We help you select from our range of generators, explaining the benefits and features of each option."
-      },
-      {
-        title: "Installation Planning",
-        description: "We develop a comprehensive installation plan, addressing site requirements, access, and integration with existing systems."
-      },
-      {
-        title: "Commissioning & Training",
-        description: "After installation, we commission the generator and provide training on safe operation and basic maintenance."
-      }
-    ],
-    faq: [
-      {
-        question: "What size generator do I need for my home/business?",
-        answer: "The size of generator you need depends on your specific power requirements. For homes, we typically recommend 7-22kW units depending on what you want to power. For businesses, requirements can range from 20kW to several hundred kW. Our team can perform a detailed load analysis to determine the perfect size for your needs."
-      },
-      {
-        question: "What's the difference between standby, prime, and continuous power generators?",
-        answer: "Standby generators are designed to provide emergency power during outages and aren't meant for continuous use. Prime power generators can run for extended periods but with variable loads. Continuous power generators are designed to run constantly at full load. We'll help you choose the right type based on your application."
-      },
-      {
-        question: "Do you offer financing options for generator purchases?",
-        answer: "Yes, we offer various financing options including leasing, hire purchase, and payment plans. We can help you select a financing solution that aligns with your budget and business requirements."
-      },
-      {
-        question: "What's included with the purchase of a generator?",
-        answer: "Our generator packages typically include the generator unit, delivery, basic installation, commissioning, testing, operator training, manufacturer's warranty, and first service. Optional extras include extended warranties, maintenance packages, remote monitoring, and acoustic enclosures."
-      }
-    ],
-    relatedServices: ["generator-installations", "generator-maintenance", "generator-repairs"],
-    callToAction: "Looking to purchase a generator?"
-  },
-  
-  // Additional services would be added here following the same pattern
-  
-  // Solar Energy Solutions example
-  "solar-panel-installation": {
-    id: "solar-panel-installation",
-    category: "Solar Energy Solutions",
-    icon: <Sun className="w-10 h-10 text-orange-500" />,
-    title: "Solar Panel Installation",
-    headline: "Harness the Power of the Sun with Professional Solar Installation",
-    description: "Harness the power of the sun with our professional solar PV installations. We design and install custom solar systems to maximize energy production for your property.",
-    longDescription: "Transitioning to solar energy is one of the most effective ways to reduce your carbon footprint while significantly cutting your energy bills. At Richy Electricals, we provide end-to-end solar panel installation services, from initial site assessment and system design to installation and grid connection. Our MCS-certified installers ensure your solar PV system meets the highest quality standards, optimizing energy generation for your specific location and requirements.",
-    features: [
-      "Custom system design and sizing",
-      "High-efficiency solar panels",
-      "Professional installation by MCS-certified technicians",
-      "Grid connection and commissioning",
-      "Performance monitoring setup"
-    ],
-    benefitsHeading: "Benefits of Our Solar Panel Installation Service",
-    benefits: [
-      {
-        title: "Reduced Energy Bills",
-        description: "Generate your own electricity and significantly reduce your dependency on the grid, leading to substantial savings on your energy bills."
-      },
-      {
-        title: "Environmentally Friendly",
-        description: "Solar power is clean, renewable energy that reduces your carbon footprint and helps combat climate change."
-      },
-      {
-        title: "Increased Property Value",
-        description: "Solar panel installations can increase your property's value by demonstrating energy efficiency and lower operating costs."
-      },
-      {
-        title: "Long-Term Investment",
-        description: "With 25+ year lifespans and minimal maintenance, solar panels offer excellent return on investment through energy savings."
-      }
-    ],
-    processSteps: [
-      {
-        title: "Site Assessment",
-        description: "We evaluate your property's solar potential, considering roof orientation, shading, and structural integrity."
-      },
-      {
-        title: "System Design",
-        description: "Our engineers design a custom solar system to maximize energy production based on your energy needs and site conditions."
-      },
-      {
-        title: "Proposal & Planning",
-        description: "We provide a detailed proposal outlining system specifications, expected performance, costs, and savings."
-      },
-      {
-        title: "Installation",
-        description: "Our MCS-certified technicians professionally install your solar panels, inverter, and associated equipment."
-      },
-      {
-        title: "Commissioning & Handover",
-        description: "We test the system, connect it to the grid, set up monitoring, and provide comprehensive user training."
-      }
-    ],
-    faq: [
-      {
-        question: "How much can I save with solar panels?",
-        answer: "Savings depend on system size, your energy consumption, and electricity rates. Typically, UK homeowners can save £300-£700 annually on electricity bills. Businesses often see higher savings proportional to their energy usage."
-      },
-      {
-        question: "How long does a solar panel installation take?",
-        answer: "Most residential installations (3-4kW) take 1-2 days to complete once all permissions and equipment are in place. Larger commercial installations typically take 3-7 days depending on system size and complexity."
-      },
-      {
-        question: "Do solar panels work in the UK climate?",
-        answer: "Yes! Solar panels don't require direct sunlight to generate electricity—they use daylight. Even during cloudy days, modern solar panels continue to produce electricity, though at reduced efficiency compared to sunny days."
-      },
-      {
-        question: "What maintenance do solar panels require?",
-        answer: "Solar panels require minimal maintenance. An annual inspection and occasional cleaning (usually once or twice a year) to remove debris is typically sufficient to maintain optimal performance."
-      }
-    ],
-    relatedServices: ["solar-battery-storage", "solar-maintenance", "solar-upgrades"],
-    callToAction: "Ready to switch to solar power?"
-  }
+ "fuse-board-upgrades": {
+  id: "fuse-board-upgrades",
+  category: "Electrical Services",
+  icon: <Zap className="w-10 h-10 text-orange-500" />,
+  title: "Fuse Board Upgrades",
+  headline: "Modern Fuse Board Upgrades for Enhanced Safety and Compliance",
+  description: "Modern, safe consumer units to replace outdated fuse boxes, ensuring compliance with the latest regulations and improved electrical safety for your property.",
+  longDescription: "Upgrading your fuse board (consumer unit) is one of the most important safety improvements you can make to your property's electrical system. At Richy Electricals, we specialize in replacing outdated and potentially dangerous fuse boxes with modern consumer units that offer enhanced protection through RCDs (Residual Current Devices) and RCBOs (Residual Current Breaker with Overload). Our upgrades ensure your electrical system complies with the latest BS 7671 wiring regulations and provides superior protection against electric shocks, fires, and overloads.",
+  features: [
+    "Complete fuse board/consumer unit replacements",
+    "Upgrades to meet current regulations",
+    "RCBO protection for individual circuits",
+    "Full safety testing and certification",
+    "Professional installation by qualified electricians"
+  ],
+  benefitsHeading: "Benefits of Our Fuse Board Upgrade Service",
+  benefits: [
+    {
+      title: "Enhanced Safety",
+      description: "Modern consumer units provide superior protection against electric shocks and electrical fires through advanced circuit protection devices."
+    },
+    {
+      title: "Regulatory Compliance",
+      description: "Our upgrades ensure your property meets current BS 7671 wiring regulations and Part P of the Building Regulations."
+    },
+    {
+      title: "Selective Isolation",
+      description: "RCBO-equipped consumer units allow individual circuits to be isolated, meaning a fault on one circuit won't affect the entire property."
+    },
+    {
+      title: "Insurance Compatibility",
+      description: "Many insurance companies require updated consumer units that meet current regulations, potentially affecting claim validity."
+    }
+  ],
+  processSteps: [
+    {
+      title: "Initial Assessment",
+      description: "We assess your current fuse board, electrical load requirements, and circuit distribution to determine the appropriate replacement."
+    },
+    {
+      title: "Detailed Quote",
+      description: "We provide a comprehensive quote outlining the proposed consumer unit specifications, installation process, and costs."
+    },
+    {
+      title: "Professional Installation",
+      description: "Our qualified electricians install your new consumer unit with minimal disruption, ensuring all circuits are properly protected."
+    },
+    {
+      title: "Testing and Verification",
+      description: "We thoroughly test each circuit and the overall installation to verify proper functioning and safety compliance."
+    },
+    {
+      title: "Documentation and Certification",
+      description: "You'll receive full certification for the installation, including electrical safety certificates required for regulatory compliance."
+    }
+  ],
+  faq: [
+    {
+      question: "How long does a fuse board upgrade take?",
+      answer: "A typical domestic fuse board upgrade takes approximately 4-6 hours to complete. For larger properties or more complex electrical systems, it may take a full day. We aim to minimize disruption and will need to turn off power during the installation."
+    },
+    {
+      question: "How do I know if my fuse board needs upgrading?",
+      answer: "Signs that your fuse board needs upgrading include: it's over 25 years old, it has wooden backing, contains ceramic fuses, lacks RCD protection, shows signs of damage or burning, trips frequently, or cannot accommodate additional circuits for home improvements."
+    },
+    {
+      question: "Will I need to redecorate after a fuse board upgrade?",
+      answer: "Our engineers work neatly and typically the consumer unit fits in the same location as your old fuse board. In most cases, no redecoration is necessary. If any additional work is required that might affect your décor, we'll discuss this with you before proceeding."
+    },
+    {
+      question: "Is a fuse board upgrade a legal requirement?",
+      answer: "While there's no legal requirement to upgrade an existing fuse board that was compliant when installed, any new work or modifications to your electrical system must meet current regulations. Additionally, landlords are legally required to ensure electrical installations in rental properties are safe, which often necessitates upgrading older fuse boards."
+    }
+  ],
+  relatedServices: ["electrical-inspections", "rewiring", "new-installations"],
+  callToAction: "Ready to upgrade your fuse board?"
+},
+
+// Electrical Inspections
+"electrical-inspections": {
+  id: "electrical-inspections",
+  category: "Electrical Services",
+  icon: <ShieldCheck className="w-10 h-10 text-orange-500" />,
+  title: "Electrical Inspections",
+  headline: "Comprehensive Electrical Inspection Services for Peace of Mind",
+  description: "Thorough assessment of your electrical systems to identify potential hazards and ensure compliance with current safety standards and regulations.",
+  longDescription: "Regular electrical inspections are essential for maintaining the safety and compliance of your property's electrical systems. At Richy Electricals, our qualified inspectors conduct thorough examinations to identify any defects or non-compliance issues that might pose safety risks. From domestic EICR (Electrical Installation Condition Reports) to commercial inspections and landlord certificates, our services help you meet legal obligations and ensure the safety of your property's occupants. Our detailed reports provide clear recommendations for any necessary remedial work.",
+  features: [
+    "EICR (Electrical Installation Condition Reports)",
+    "Landlord electrical safety certificates",
+    "Pre-purchase property inspections",
+    "Commercial electrical safety compliance",
+    "Detailed reports with recommendations"
+  ],
+  benefitsHeading: "Why Choose Our Electrical Inspection Service",
+  benefits: [
+    {
+      title: "Certified Inspectors",
+      description: "All our inspections are conducted by qualified electricians registered with recognized industry bodies, ensuring thorough and compliant assessments."
+    },
+    {
+      title: "Comprehensive Testing",
+      description: "We conduct extensive testing of all accessible circuits, fixtures, and components to identify any hidden issues or potential hazards."
+    },
+    {
+      title: "Clear Documentation",
+      description: "Our reports are easy to understand, highlighting any issues found with clear recommendations and categorization of risks."
+    },
+    {
+      title: "Legal Compliance",
+      description: "Our inspections ensure you meet regulatory requirements, particularly important for landlords and commercial property owners."
+    }
+  ],
+  processSteps: [
+    {
+      title: "Initial Consultation",
+      description: "We discuss your requirements and schedule an appropriate time for the inspection with minimal disruption."
+    },
+    {
+      title: "Visual Inspection",
+      description: "Our inspector conducts a thorough visual examination of all accessible electrical installations and fittings."
+    },
+    {
+      title: "Technical Testing",
+      description: "We perform comprehensive testing of circuits, RCDs, earthing arrangements, and other critical components."
+    },
+    {
+      title: "Report Preparation",
+      description: "A detailed report is prepared, highlighting any defects, non-compliance issues, or recommendations for improvement."
+    },
+    {
+      title: "Explanation and Advice",
+      description: "We explain the findings clearly and provide professional advice on any remedial work required."
+    }
+  ],
+  faq: [
+    {
+      question: "How often should I have an electrical inspection?",
+      answer: "For domestic properties, we recommend an EICR every 10 years or when changing occupancy. For rented properties, the law requires inspections every 5 years. Commercial properties typically need inspections every 3-5 years depending on the type of business, and industrial properties usually require annual inspections."
+    },
+    {
+      question: "What's the difference between an EICR and a PAT test?",
+      answer: "An EICR (Electrical Installation Condition Report) examines the fixed wiring and electrical installations in a property. PAT (Portable Appliance Testing) focuses specifically on movable electrical appliances and equipment. Both are important for comprehensive electrical safety, especially in commercial environments."
+    },
+    {
+      question: "What happens if issues are found during an inspection?",
+      answer: "Any issues found will be documented in the report and classified according to their severity (C1 - danger present, C2 - potentially dangerous, C3 - improvement recommended). For C1 and C2 issues, we can provide a separate quote for remedial work to address these safety concerns promptly."
+    },
+    {
+      question: "Is an electrical inspection required by law?",
+      answer: "For landlords in England, electrical safety inspections are legally required every 5 years under the Electrical Safety Standards in the Private Rented Sector Regulations 2020. For homeowners, there's no legal requirement, but insurers may require regular inspections. Commercial properties must have regular inspections to comply with the Electricity at Work Regulations 1989."
+    }
+  ],
+  relatedServices: ["fuse-board-upgrades", "rewiring", "fault-finding"],
+  callToAction: "Book your electrical inspection today"
+},
+
+// New Installations
+"new-installations": {
+  id: "new-installations",
+  category: "Electrical Services",
+  icon: <Settings className="w-10 h-10 text-orange-500" />,
+  title: "New Installations",
+  headline: "Professional Electrical Installations for New Properties and Extensions",
+  description: "Complete electrical installations for new builds, renovations, and extensions, designed and implemented to meet your specific requirements and comply with all regulations.",
+  longDescription: "Whether you're building a new property, renovating an existing one, or adding an extension, Richy Electricals provides comprehensive electrical installation services to meet your needs. Our qualified electricians handle everything from initial design and planning to final testing and certification. We work closely with you to understand your requirements, recommend energy-efficient solutions, and implement installations that are safe, compliant, and tailored to your lifestyle or business needs. All our work complies with the latest BS 7671 wiring regulations and Building Regulations.",
+  features: [
+    "Full property wiring for new builds",
+    "Extensions and renovation electrical work",
+    "Smart home electrical systems",
+    "Commercial property installations",
+    "Design and implementation services"
+  ],
+  benefitsHeading: "Benefits of Our New Installation Service",
+  benefits: [
+    {
+      title: "Bespoke Design",
+      description: "We create custom electrical designs tailored to your specific requirements, lifestyle, and future needs."
+    },
+    {
+      title: "Regulatory Compliance",
+      description: "All installations fully comply with current regulations, including BS 7671 and Part P of the Building Regulations."
+    },
+    {
+      title: "Energy Efficiency",
+      description: "We recommend and implement energy-efficient solutions to reduce your carbon footprint and energy costs."
+    },
+    {
+      title: "Future-Proofing",
+      description: "Our installations consider future technology needs, providing adequate capacity and infrastructure for expanding requirements."
+    }
+  ],
+  processSteps: [
+    {
+      title: "Consultation & Planning",
+      description: "We discuss your requirements in detail and develop an electrical plan that meets your needs and complies with regulations."
+    },
+    {
+      title: "Design & Quotation",
+      description: "Our team creates a detailed electrical design with a comprehensive quotation outlining all aspects of the installation."
+    },
+    {
+      title: "Installation Work",
+      description: "Our qualified electricians implement the installation according to the agreed design and schedule."
+    },
+    {
+      title: "Testing & Inspection",
+      description: "All installations undergo rigorous testing to ensure safety and compliance with current regulations."
+    },
+    {
+      title: "Certification & Handover",
+      description: "We provide full certification for the installation and explain the operation of all installed systems."
+    }
+  ],
+  faq: [
+    {
+      question: "How early should I involve an electrician in my new build or renovation project?",
+      answer: "Ideally, we should be involved from the planning stage. Early consultation allows us to provide input on the electrical design, helping optimize the layout for efficiency, convenience, and future needs. This can prevent costly changes later in the project."
+    },
+    {
+      question: "Can you work with my architect or builder?",
+      answer: "Absolutely. We regularly collaborate with architects, builders, and other tradespeople on projects of all sizes. Clear communication among all parties ensures that the electrical installation integrates seamlessly with the overall project and meets all requirements."
+    },
+    {
+      question: "Do you handle all the necessary permits and notifications?",
+      answer: "Yes, we take care of all regulatory aspects of your electrical installation. This includes Building Control notifications under Part P regulations and providing all necessary certificates upon completion to ensure your installation is fully compliant and properly documented."
+    },
+    {
+      question: "Can you install smart home systems?",
+      answer: "Yes, we specialize in modern smart home installations. From basic smart lighting to comprehensive home automation systems, we can integrate various technologies to enhance convenience, energy efficiency, and security in your property."
+    }
+  ],
+  relatedServices: ["fuse-board-upgrades", "garden-lighting", "rewiring"],
+  callToAction: "Plan your new electrical installation"
+},
+
+// Fault Finding
+"fault-finding": {
+  id: "fault-finding",
+  category: "Electrical Services",
+  icon: <HelpCircle className="w-10 h-10 text-orange-500" />,
+  title: "Fault Finding",
+  headline: "Expert Electrical Fault Finding and Troubleshooting",
+  description: "Expert diagnostic services to quickly identify and resolve electrical faults, from tripping circuits to intermittent power issues.",
+  longDescription: "Electrical faults can be frustrating, disruptive, and potentially dangerous. At Richy Electricals, our experienced technicians use advanced diagnostic equipment and methodical approaches to quickly identify the source of electrical problems in your home or business. From tripping circuit breakers and power outages to flickering lights and intermittent faults, we trace issues to their root cause and implement effective solutions. Our efficient fault-finding service minimizes disruption and restores your electrical system to safe, reliable operation.",
+  features: [
+    "Rapid response troubleshooting",
+    "Advanced diagnostic equipment",
+    "Circuit tracing and testing",
+    "Intermittent fault resolution",
+    "Comprehensive electrical system checks"
+  ],
+  benefitsHeading: "Benefits of Our Fault Finding Service",
+  benefits: [
+    {
+      title: "Precise Diagnosis",
+      description: "Our systematic approach and specialized equipment allow us to pinpoint faults accurately, avoiding unnecessary work."
+    },
+    {
+      title: "Quick Resolution",
+      description: "Years of experience enable our technicians to efficiently identify and resolve common and complex electrical faults."
+    },
+    {
+      title: "Safety Assurance",
+      description: "We don't just fix the immediate problem – we check for underlying issues that could pose safety risks."
+    },
+    {
+      title: "Cost-Effective Solutions",
+      description: "Accurate diagnosis means targeted repairs, saving you money on unnecessary component replacements or extensive works."
+    }
+  ],
+  processSteps: [
+    {
+      title: "Initial Assessment",
+      description: "We gather information about the symptoms, when they occur, and any relevant history of your electrical system."
+    },
+    {
+      title: "Visual Inspection",
+      description: "Our technicians examine visible components and connections for signs of damage or deterioration."
+    },
+    {
+      title: "Diagnostic Testing",
+      description: "Using specialized equipment, we test circuits, connections, and components to identify the fault."
+    },
+    {
+      title: "Fault Isolation",
+      description: "Once identified, we isolate the fault and explain the issue and recommended solution."
+    },
+    {
+      title: "Resolution & Testing",
+      description: "After implementing the solution, we thoroughly test the system to ensure the fault is fully resolved."
+    }
+  ],
+  faq: [
+    {
+      question: "How long does fault finding typically take?",
+      answer: "The time required varies significantly depending on the nature and complexity of the fault. Simple issues might be diagnosed within 30 minutes, while intermittent or complex faults could take several hours. We work efficiently to minimize both time and disruption."
+    },
+    {
+      question: "My circuit breaker keeps tripping – what could be causing this?",
+      answer: "Circuit breakers trip for safety reasons when they detect overloads, short circuits, or earth leakage. Common causes include faulty appliances, damaged cables, water ingress, or simply too many devices on one circuit. Our fault finding service will identify which of these is causing your specific issue."
+    },
+    {
+      question: "Can you find faults in wiring hidden behind walls?",
+      answer: "Yes, we use non-invasive techniques where possible, including thermal imaging cameras and advanced circuit tracers to locate faults in concealed wiring. When necessary, we can perform targeted investigations to minimize damage to your property."
+    },
+    {
+      question: "Do you charge for fault finding if you can't fix the problem immediately?",
+      answer: "Yes, there is a charge for our diagnostic service as it requires professional expertise and specialized equipment. Once we've identified the issue, we'll provide a clear quote for the necessary repairs, which you can choose to proceed with or not. If you approve the repair work, the diagnostic fee is often discounted from the total cost."
+    }
+  ],
+  relatedServices: ["electrical-inspections", "fuse-board-upgrades", "emergency-services"],
+  callToAction: "Need help with an electrical fault?"
+},
+
+// Garden Lighting
+"garden-lighting": {
+  id: "garden-lighting",
+  category: "Electrical Services",
+  icon: <Sun className="w-10 h-10 text-orange-500" />,
+  title: "Garden Lighting",
+  headline: "Transform Your Outdoor Space with Professional Garden Lighting",
+  description: "Enhance your outdoor spaces with professionally installed garden lighting solutions that are both beautiful and energy-efficient.",
+  longDescription: "Garden lighting transforms your outdoor space, creating ambiance, enhancing security, and extending the usability of your garden into the evening hours. At Richy Electricals, we design and install bespoke outdoor lighting solutions tailored to your garden's landscape and your personal preferences. From subtle path lighting and accent spotlights to decorative features and security floodlights, our waterproof and energy-efficient installations are built to withstand the British weather while minimizing energy consumption. All our outdoor electrical work complies with relevant regulations and includes proper IP-rated components for safety and longevity.",
+  features: [
+    "Outdoor lighting design services",
+    "Weather-resistant installations",
+    "LED and energy-efficient options",
+    "Security lighting solutions",
+    "Timer and sensor controls"
+  ],
+  benefitsHeading: "Benefits of Our Garden Lighting Service",
+  benefits: [
+    {
+      title: "Enhanced Aesthetics",
+      description: "Well-designed garden lighting accentuates landscaping features and creates a magical atmosphere in your outdoor space."
+    },
+    {
+      title: "Extended Usability",
+      description: "Proper lighting extends the use of your garden, patio, or deck into the evening hours, maximizing your outdoor living area."
+    },
+    {
+      title: "Improved Security",
+      description: "Strategic outdoor lighting deters intruders and improves safety by illuminating pathways and potential hazards."
+    },
+    {
+      title: "Energy Efficiency",
+      description: "Our LED lighting solutions and smart controls minimize energy consumption while providing optimal illumination."
+    }
+  ],
+  processSteps: [
+    {
+      title: "Design Consultation",
+      description: "We discuss your vision, assess your outdoor space, and develop a lighting design that enhances your garden's features."
+    },
+    {
+      title: "Technical Planning",
+      description: "Our team plans the electrical requirements, including cable routing, power needs, and control systems."
+    },
+    {
+      title: "Installation Work",
+      description: "Our qualified electricians carefully install all lighting components with minimal disruption to your garden."
+    },
+    {
+      title: "System Configuration",
+      description: "We set up and configure any controllers, timers, or sensors to ensure optimal operation."
+    },
+    {
+      title: "Demonstration & Handover",
+      description: "We demonstrate the system's operation and provide guidance on maintenance and future adjustments."
+    }
+  ],
+  faq: [
+    {
+      question: "Is outdoor lighting expensive to run?",
+      answer: "Modern LED garden lighting is highly energy-efficient. A typical LED garden lighting system costs just pennies per day to operate. With timer and sensor controls, this can be reduced even further. We can provide estimates of running costs based on your specific installation during the quoting process."
+    },
+    {
+      question: "Will installation damage my garden?",
+      answer: "We take great care to minimize disruption to your garden. Cables are typically buried in narrow trenches or run along existing structures. Our team is experienced in working around established plants and landscape features, and we clean up thoroughly after installation is complete."
+    },
+    {
+      question: "Can garden lighting be installed in winter?",
+      answer: "Yes, garden lighting can be installed year-round, weather permitting. Winter installations can actually be advantageous as they allow you to see the lighting effect when darkness falls earlier. The only limitations might be frozen ground, which can make cable trenching more difficult."
+    },
+    {
+      question: "How long does a garden lighting installation typically last?",
+      answer: "Quality outdoor lighting fixtures and proper installation should provide many years of service. LED lights typically last 15-25 years, and our weather-resistant fixtures and connections are designed to withstand UK weather conditions. We provide guarantees on our workmanship and can advise on maintenance to maximize system longevity."
+    }
+  ],
+  relatedServices: ["new-installations", "electrical-inspections", "fault-finding"],
+  callToAction: "Illuminate your garden with expert lighting"
+},
+
+// Rewiring
+"rewiring": {
+  id: "rewiring",
+  category: "Electrical Services",
+  icon: <ScrollText className="w-10 h-10 text-orange-500" />,
+  title: "Rewiring",
+  headline: "Complete House Rewiring Services for Safety and Modernization",
+  description: "Complete or partial rewiring services to update outdated or unsafe electrical systems, improving safety and functionality throughout your property.",
+  longDescription: "If your property has old wiring, frequent electrical issues, or you're planning a major renovation, rewiring may be necessary to ensure safety and meet modern electrical demands. At Richy Electricals, we provide comprehensive rewiring services for homes and businesses of all sizes. Our experienced electricians replace outdated wiring, upgrade distribution boards, and install additional sockets and circuits to meet your current and future needs. We work methodically to minimize disruption, coordinating with other trades when necessary, and ensure all work complies with the latest BS 7671 wiring regulations and Building Regulations.",
+  features: [
+    "Full house rewiring services",
+    "Partial rewiring solutions",
+    "Minimal disruption approaches",
+    "Upgrade to modern standards",
+    "Detailed planning and implementation"
+  ],
+  benefitsHeading: "Benefits of Our Rewiring Service",
+  benefits: [
+    {
+      title: "Enhanced Safety",
+      description: "Modern wiring systems with proper circuit protection significantly reduce the risk of electrical fires and shocks."
+    },
+    {
+      title: "Increased Capacity",
+      description: "Updated wiring can handle the demands of modern appliances and technology, preventing overloads and performance issues."
+    },
+    {
+      title: "Property Value",
+      description: "Updated electrical systems can increase property value and may be required when selling older properties."
+    },
+    {
+      title: "Future-Proofing",
+      description: "Our rewiring includes planning for future electrical needs, with additional capacity and strategically placed sockets and switches."
+    }
+  ],
+  processSteps: [
+    {
+      title: "Initial Assessment",
+      description: "We evaluate your current electrical system and discuss your requirements to determine the scope of rewiring needed."
+    },
+    {
+      title: "Detailed Planning",
+      description: "Our team creates a comprehensive rewiring plan, including socket placements, lighting circuits, and special requirements."
+    },
+    {
+      title: "First Fix",
+      description: "We install new cabling throughout the property, working methodically to minimize disruption to the structure."
+    },
+    {
+      title: "Second Fix",
+      description: "After any plastering or decorating, we fit sockets, switches, light fittings, and the consumer unit."
+    },
+    {
+      title: "Testing and Certification",
+      description: "All circuits are thoroughly tested, and you receive full certification for the new installation."
+    }
+  ],
+  faq: [
+    {
+      question: "How disruptive is a full house rewire?",
+      answer: "A full rewire does involve a significant level of disruption as we need access to run cables throughout the property. This typically requires lifting floorboards and cutting channels in walls. We work methodically to minimize disruption, and many clients choose to rewire during other renovation work or while the property is vacant. For occupied properties, we can often work in phases to ensure parts of the property remain usable."
+    },
+    {
+      question: "How long does a house rewire take?",
+      answer: "The timeframe depends on the size and complexity of your property. A typical 3-bedroom house might take 7-10 working days for a full rewire. Partial rewires are quicker, often completed in 3-5 days. We'll provide a specific timeframe during the quotation process based on your property's requirements."
+    },
+    {
+      question: "How do I know if my house needs rewiring?",
+      answer: "Signs that rewiring may be necessary include: cloth-covered cables, round pin sockets, fuses mounted on boards instead of modern circuit breakers, aluminum wiring instead of copper, frequent electrical issues, flickering lights, or if the property hasn't been rewired in the last 25-30 years."
+    },
+    {
+      question: "Can you rewire just part of my house?",
+      answer: "Yes, partial rewiring is possible and often appropriate. For instance, we can rewire high-risk areas like kitchens and bathrooms or add new circuits for extensions while leaving intact wiring in good condition. We'll advise on the most cost-effective approach based on the condition of your existing wiring."
+    }
+  ],
+  relatedServices: ["fuse-board-upgrades", "electrical-inspections", "new-installations"],
+  callToAction: "Discuss your rewiring requirements"
+},
+
+// Emergency Services
+"emergency-services": {
+  id: "emergency-services",
+  category: "Electrical Services",
+  icon: <Clock className="w-10 h-10 text-orange-500" />,
+  title: "Emergency Services",
+  headline: "24/7 Emergency Electrical Services When You Need Them Most",
+  description: "24/7 emergency electrical services providing rapid response to urgent electrical issues to restore safety and functionality to your property.",
+  longDescription: "Electrical emergencies can occur at any time and require immediate attention to prevent danger and damage. At Richy Electricals, our emergency electricians are available 24 hours a day, 7 days a week, providing rapid response to critical electrical issues across the UK. From power outages and fire hazards to dangerous wiring and circuit failures, our fully equipped emergency team quickly assesses the situation, makes the area safe, and implements effective solutions. We prioritize your safety and work efficiently to minimize disruption while ensuring all emergency repairs meet required safety standards.",
+  features: [
+    "24-hour emergency call-outs",
+    "Rapid response team",
+    "Immediate safety measures",
+    "Temporary and permanent solutions",
+    "Post-emergency safety checks"
+  ],
+  benefitsHeading: "Benefits of Our Emergency Electrical Service",
+  benefits: [
+    {
+      title: "Immediate Assistance",
+      description: "Our emergency electricians respond quickly to your call, typically arriving within 2-4 hours for most UK locations."
+    },
+    {
+      title: "Comprehensive Solutions",
+      description: "We come prepared with tools and common parts to resolve a wide range of electrical emergencies on the first visit."
+    },
+    {
+      title: "Safety First Approach",
+      description: "Our priority is making your property safe, implementing immediate measures to prevent injury or damage."
+    },
+    {
+      title: "24/7 Availability",
+      description: "Electrical emergencies don't wait for business hours – neither do we. Our team is available around the clock, including weekends and holidays."
+    }
+  ],
+  processSteps: [
+    {
+      title: "Emergency Call",
+      description: "Contact our 24/7 emergency number and provide details of the situation for appropriate response planning."
+    },
+    {
+      title: "Rapid Dispatch",
+      description: "We dispatch the nearest qualified emergency electrician to your location with appropriate equipment."
+    },
+    {
+      title: "Safety Assessment",
+      description: "Upon arrival, our electrician assesses the situation and implements immediate safety measures if required."
+    },
+    {
+      title: "Problem Resolution",
+      description: "We work efficiently to resolve the emergency, providing either temporary or permanent solutions as appropriate."
+    },
+    {
+      title: "Follow-up Services",
+      description: "After resolving the immediate emergency, we can schedule follow-up work for any permanent repairs or improvements needed."
+    }
+  ],
+  faq: [
+    {
+      question: "What constitutes an electrical emergency?",
+      answer: "Electrical emergencies include situations that pose immediate safety risks or critical functionality issues, such as: burning smells from electrical components, exposed wiring, persistent tripping of the main circuit breaker, power outages affecting critical equipment (medical devices, security systems), electrical shocks from appliances or fixtures, signs of electrical fire, and flood-damaged electrical systems."
+    },
+    {
+      question: "How quickly can you respond to an emergency call?",
+      answer: "We aim to have an emergency electrician at your location within 2-4 hours for most areas across the UK. In densely populated areas, response times may be quicker. For critical infrastructure clients with service agreements, we offer guaranteed response times."
+    },
+    {
+      question: "Is there an extra charge for emergency call-outs outside normal working hours?",
+      answer: "Yes, emergency call-outs during evenings, weekends, and holidays typically incur a higher call-out fee than standard working hours. However, our emergency rates are clearly communicated when you call, and we provide an estimate before dispatching a technician. The additional cost reflects the immediate availability of our qualified electricians outside normal working hours."
+    },
+    {
+      question: "What should I do while waiting for the emergency electrician to arrive?",
+      answer: "Safety is paramount. If possible and safe to do so, turn off the power at the main switch. Keep everyone away from the affected area, especially if there are exposed wires or signs of electrical fire. Don't use water on electrical fires - use a proper fire extinguisher rated for electrical fires. If there's serious danger, evacuate the premises and call emergency services on 999."
+    }
+  ],
+  relatedServices: ["fault-finding", "electrical-inspections", "fuse-board-upgrades"],
+  callToAction: "Need emergency electrical help?"
+}
 };
 
 export default function ServiceDetail() {
@@ -307,7 +628,7 @@ export default function ServiceDetail() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-10">
       <Head>
         <title>{service.title} | Richy Electricals | UK Electrical Engineering Experts</title>
         <meta name="description" content={service.description} />
@@ -392,7 +713,7 @@ export default function ServiceDetail() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Link href="tel:02079460000" className="inline-flex items-center bg-white text-gray-900 font-medium py-3 px-8 rounded-full border border-gray-300 hover:border-gray-400 shadow-md transition-all duration-300">
+                  <Link href="tel:+447491565676" className="inline-flex items-center bg-white text-gray-900 font-medium py-3 px-8 rounded-full border border-gray-300 hover:border-gray-400 shadow-md transition-all duration-300">
                     <Phone className="w-5 h-5 mr-2" />
                     Call for Immediate Service
                   </Link>
@@ -546,11 +867,11 @@ export default function ServiceDetail() {
                   </Link>
                   
                   <Link 
-                    href="tel:02079460000" 
+                    href="tel:+447491565676" 
                     className="flex items-center justify-center w-full bg-white border border-gray-300 hover:border-orange-300 text-gray-800 text-center font-medium py-3 px-4 rounded-lg transition-colors duration-300"
                   >
                     <Phone className="w-4 h-4 mr-2" />
-                    020 7946 0000
+                    +44 749 156 5676
                   </Link>
                 </div>
                 
@@ -597,102 +918,6 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* Image Gallery Section - Placeholder */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Work</h2>
-            <p className="text-lg text-gray-600">
-              View examples of our recent {service.title.toLowerCase()} projects
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="bg-white p-2 rounded-lg shadow-sm">
-                <div className="bg-gray-200 rounded aspect-video flex items-center justify-center">
-                  <span className="text-gray-500">Project Image {item}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-8">
-            <Link href="/portfolio" className="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium">
-              View Our Full Portfolio
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials - Placeholder */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Customer Testimonials</h2>
-            <p className="text-lg text-gray-600">
-              See what our customers say about our
-              {service.title.toLowerCase()} services
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "James Wilson",
-                location: "Manchester",
-                rating: 5,
-                text: "The team provided excellent service from start to finish. Professional, knowledgeable, and efficient!"
-              },
-              {
-                name: "Sarah Thompson",
-                location: "London",
-                rating: 5,
-                text: "Extremely satisfied with the quality of work. They completed the job ahead of schedule and left everything tidy."
-              },
-              {
-                name: "Robert Lewis",
-                location: "Edinburgh",
-                rating: 4,
-                text: "Great communication throughout the project. Would definitely recommend their services to others."
-              }
-            ].map((testimonial, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gray-50 p-6 rounded-xl shadow-sm"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center mr-3">
-                    <span className="text-gray-500 font-medium">{testimonial.name.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.location}</p>
-                  </div>
-                  <div className="ml-auto flex">
-                    {Array.from({ length: testimonial.rating }).map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                </div>
-                <p className="text-gray-700">{testimonial.text}</p>
-              </motion.div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-8">
-            <Link href="/testimonials" className="inline-flex items-center text-orange-500 hover:text-orange-600 font-medium">
-              View All Testimonials
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-orange-500 to-orange-600">
@@ -715,7 +940,7 @@ export default function ServiceDetail() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Link href="tel:02079460000" className="block bg-orange-700 hover:bg-orange-800 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-orange-900/30 transition-all duration-300">
+                <Link href="tel:+447491565676" className="block bg-orange-700 hover:bg-orange-800 text-white font-medium py-3 px-8 rounded-full shadow-lg hover:shadow-orange-900/30 transition-all duration-300">
                   Call Us Now
                 </Link>
               </motion.div>

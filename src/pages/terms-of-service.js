@@ -81,7 +81,7 @@ export default function TermsAndConditions() {
                   By accessing our website or using our services, you agree to be bound by these Terms. If you disagree with any part of these Terms, please do not use our website or services.
                 </p>
                 <p className="text-gray-700">
-                  Last updated: April 12, 2025
+                  Last updated: April 25, 2025
                 </p>
               </div>
 

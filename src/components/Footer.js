@@ -1,5 +1,15 @@
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube } from 'lucide-react';
+import {
+  Clock,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+  Youtube
+} from 'lucide-react';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -48,47 +58,44 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="mb-6">
-              <h2 className="text-xl font-bold text-white mb-1">Richy Electricals</h2>
-              <p className="text-gray-400">Your Premier Electrical Engineering Company</p>
-            </div>
+            <h3 className="text-xl font-bold mb-6">Richy Electricals</h3>
             <p className="text-gray-400 mb-6">
-              Specializing in generator repairs, sales, and comprehensive electrical services across the United Kingdom.
+              Professional electrical services throughout London, providing high-quality solutions for your home and business.
             </p>
-            <div className="flex space-x-3">
-              <a href="#" className="bg-gray-800 hover:bg-orange-600 rounded-full p-2 transition-colors" aria-label="Facebook">
+            <div className="flex space-x-4">
+              <a href="#facebook" className="bg-gray-800 hover:bg-orange-500 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300">
                 <Facebook size={18} />
+                <span className="sr-only">Facebook</span>
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-orange-600 rounded-full p-2 transition-colors" aria-label="Twitter">
+              <a href="#twitter" className="bg-gray-800 hover:bg-orange-500 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300">
                 <Twitter size={18} />
+                <span className="sr-only">Twitter</span>
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-orange-600 rounded-full p-2 transition-colors" aria-label="Instagram">
+              <a href="#instagram" className="bg-gray-800 hover:bg-orange-500 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300">
                 <Instagram size={18} />
+                <span className="sr-only">Instagram</span>
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-orange-600 rounded-full p-2 transition-colors" aria-label="LinkedIn">
+              <a href="#linkedin" className="bg-gray-800 hover:bg-orange-500 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300">
                 <Linkedin size={18} />
+                <span className="sr-only">LinkedIn</span>
               </a>
-              <a href="#" className="bg-gray-800 hover:bg-orange-600 rounded-full p-2 transition-colors" aria-label="YouTube">
+              <a href="#youtube" className="bg-gray-800 hover:bg-orange-500 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300">
                 <Youtube size={18} />
+                <span className="sr-only">YouTube</span>
               </a>
             </div>
           </div>
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-6 relative after:content-[''] after:absolute after:w-12 after:h-1 after:bg-orange-500 after:-bottom-2 after:left-0">
+            <h3 className="text-lg font-bold mb-6 relative after:content-[''] after:absolute after:w-12 after:h-1 after:bg-orange-500 after:-bottom-2 after:left-0">
               Quick Links
             </h3>
             <ul className="space-y-3">
-              {[
-                { text: 'Home', href: '/' },
-                { text: 'About Us', href: '/about' },
-                { text: 'FAQ', href: '/faq' },
-                { text: 'Contact Us', href: '/contact' }
-              ].map((link, index) => (
+              {['Home', 'About Us', 'Services', 'Projects', 'Testimonials', 'Contact'].map((link, index) => (
                 <li key={index}>
-                  <Link href={link.href} className="text-gray-400 hover:text-orange-500 transition-colors flex items-center">
-                    <span className="mr-2">›</span> {link.text}
+                  <Link href={`/${link.toLowerCase().replace(/\s+/g, '-')}`} className="text-gray-400 hover:text-orange-500 transition-colors flex items-center">
+                    <span className="mr-2">›</span> {link}
                   </Link>
                 </li>
               ))}
@@ -97,21 +104,24 @@ export default function Footer() {
           
           {/* Services */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-6 relative after:content-[''] after:absolute after:w-12 after:h-1 after:bg-orange-500 after:-bottom-2 after:left-0">
-              Our Services
+            <h3 className="text-lg font-bold mb-6 relative after:content-[''] after:absolute after:w-12 after:h-1 after:bg-orange-500 after:-bottom-2 after:left-0">
+              Services
             </h3>
             <ul className="space-y-3">
               {[
-                { text: 'Generator Repairs', href: '/services#generator-repairs' },
-                { text: 'Generator Sales', href: '/services#generator-sales' },
-                { text: 'Electrical Installations', href: '/services#installations' },
-                { text: 'Maintenance Services', href: '/services#maintenance' },
-                { text: 'Safety Inspections', href: '/services#safety' },
-                { text: 'Emergency Call-outs', href: '/services#emergency' }
+                'Fuse Board Upgrades', 
+                'Electrical Inspections', 
+                'New Installations', 
+                'Fault Finding', 
+                'Garden Lighting', 
+                'Rewiring'
               ].map((service, index) => (
                 <li key={index}>
-                  <Link href={service.href} className="text-gray-400 hover:text-orange-500 transition-colors flex items-center">
-                    <span className="mr-2">›</span> {service.text}
+                  <Link 
+                    href={`/services#${service.toLowerCase().replace(/\s+/g, '-')}`} 
+                    className="text-gray-400 hover:text-orange-500 transition-colors flex items-center"
+                  >
+                    <span className="mr-2">›</span> {service}
                   </Link>
                 </li>
               ))}
@@ -120,57 +130,57 @@ export default function Footer() {
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-6 relative after:content-[''] after:absolute after:w-12 after:h-1 after:bg-orange-500 after:-bottom-2 after:left-0">
-              Contact Information
+            <h3 className="text-lg font-bold mb-6 relative after:content-[''] after:absolute after:w-12 after:h-1 after:bg-orange-500 after:-bottom-2 after:left-0">
+              Contact Info
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin size={18} className="text-orange-500 mr-3 mt-1" />
+                <MapPin className="w-5 h-5 text-orange-500 mr-3 mt-1" />
                 <span className="text-gray-400">
-                  123 Electric Avenue, London, UK, EC1A 1BB
+                115 Butts Road, Walsall<br /> West Midlands, WS4 2BL,<br />United Kingdom
                 </span>
+                 
               </li>
               <li className="flex items-center">
-                <Phone size={18} className="text-orange-500 mr-3" />
+                <Phone className="w-5 h-5 text-orange-500 mr-3" />
                 <a href="tel:+44123456789" className="text-gray-400 hover:text-orange-500 transition-colors">
                   +44 123 456 789
                 </a>
               </li>
               <li className="flex items-center">
-                <Mail size={18} className="text-orange-500 mr-3" />
+                <Mail className="w-5 h-5 text-orange-500 mr-3" />
                 <a href="mailto:info@richyelectricals.co.uk" className="text-gray-400 hover:text-orange-500 transition-colors">
                   info@richyelectricals.co.uk
                 </a>
               </li>
+              <li className="flex items-center">
+                <Clock className="w-5 h-5 text-orange-500 mr-3" />
+                <span className="text-gray-400">Mon-Fri: 8AM - 7PM</span>
+              </li>
             </ul>
-            <div className="mt-6">
-              <h4 className="font-semibold text-white mb-2">Working Hours</h4>
-              <p className="text-gray-400">Monday - Friday: 8:00 AM - 6:00 PM</p>
+            <div className="mt-4">
               <p className="text-orange-500 font-medium">24/7 Emergency Service Available</p>
             </div>
           </div>
         </div>
         
         {/* Divider */}
-        <hr className="border-gray-800 my-10" />
-        
-        {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0 text-center md:text-left">
-            <p className="text-gray-500">
-              © {currentYear} Richy Electricals. All Rights Reserved.
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+              © {currentYear} Richy Electricals. All rights reserved.
             </p>
-          </div>
-          <div className="flex space-x-4 text-sm text-gray-500">
-            <Link href="/privacy-policy" className="hover:text-orange-500 transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms-of-service" className="hover:text-orange-500 transition-colors">
-              Terms of Service
-            </Link>
-            <Link href="/sitemap" className="hover:text-orange-500 transition-colors">
-              Sitemap
-            </Link>
+            <div className="flex space-x-6">
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-orange-500 text-sm transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-of-service" className="text-gray-400 hover:text-orange-500 text-sm transition-colors">
+                Terms of Service
+              </Link>
+              <Link href="/cookies" className="text-gray-400 hover:text-orange-500 text-sm transition-colors">
+                Cookies
+              </Link>
+            </div>
           </div>
         </div>
       </div>

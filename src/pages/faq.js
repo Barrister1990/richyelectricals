@@ -524,9 +524,9 @@ export default function FAQ() {
                 icon: <Phone className="w-10 h-10 text-orange-500" />,
                 title: "Call Us",
                 description: "Speak directly with our friendly support team",
-                action: "02079460000",
+                action: "+447491565676",
                 actionLabel: "Call Now",
-                link: "tel:02079460000"
+                link: "tel:+447491565676"
               },
               {
                 icon: <Mail className="w-10 h-10 text-orange-500" />,

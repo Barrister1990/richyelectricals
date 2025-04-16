@@ -1,11 +1,88 @@
 // pages/contact.js
 import { motion } from 'framer-motion';
-import { AlertCircle, ChevronRight, Globe, Mail, MapPin, Phone } from 'lucide-react';
+import { AlertCircle, Globe, Mail, MapPin, Phone } from 'lucide-react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Contact() {
+  // State for form data
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    address: '',
+    service: '',
+    message: '',
+    privacyConsent: false
+  });
+
+  // State for form submission
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { id, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [id === 'first_name' ? 'firstName' : 
+       id === 'last_name' ? 'lastName' : 
+       id === 'privacy' ? 'privacyConsent' : id]: type === 'checkbox' ? checked : value
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+  
+    try {
+      // Send data to the API route
+      const response = await fetch('https://richyelectricals.vercel.app/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+  
+      const result = await response.json();
+  console.log(response)
+      if (response.ok) {
+        // Show success toast
+        toast.success('Message sent successfully! We will contact you soon.', {
+          duration: 5000,
+          position: 'bottom-center',
+        });
+  
+        // Reset form
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          company: '',
+          address: '',
+          service: '',
+          message: '',
+          privacyConsent: false,
+        });
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast.error('Failed to send message. Please try again later.', {
+        duration: 5000,
+        position: 'bottom-center',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+  
+
   // Intersection Observer for animation triggers
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,7 +112,7 @@ export default function Contact() {
     <div className="min-h-screen pt-24">
       <Head>
         <title>Contact Us | Richy Electricals</title>
-        <meta name="description" content="Get in touch with Richy Electricals for expert electrical services, generator repairs and installation worldwide. Headquarters in UK and Ghana." />
+        <meta name="description" content="Get in touch with Richy Electricals for expert electrical services and generator repairs and installation in London, UK." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -89,22 +166,12 @@ export default function Contact() {
               Contact <span className="text-orange-500">Richy Electricals</span>
             </h1>
             <p className="text-lg text-gray-200">
-              Get in touch with our global team of experts for all your electrical needs
+              Get in touch with our team of experts for all your electrical needs in London
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Breadcrumb */}
-      <div className="bg-gray-100 py-3 border-b border-gray-200">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="flex items-center text-sm text-gray-600">
-            <Link href="/" className="hover:text-orange-500 transition-colors">Home</Link>
-            <ChevronRight className="mx-2 w-4 h-4" />
-            <span className="text-gray-900 font-medium">Contact Us</span>
-          </div>
-        </div>
-      </div>
 
       {/* Main Contact Section */}
       <section className="py-16 md:py-20 animate-on-scroll">
@@ -120,7 +187,7 @@ export default function Contact() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
               <p className="text-lg text-gray-600 mb-8">
                 Have questions about our services? Need a quote for your electrical project? 
-                Our team is ready to assist you from our offices in the UK and Ghana, with service capabilities worldwide.
+                Our team is ready to assist you from our office in London.
               </p>
               
               <div className="space-y-8 mb-10">
@@ -129,8 +196,8 @@ export default function Contact() {
                     <Globe className="w-6 h-6 text-orange-500" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Global Operations</h3>
-                    <p className="text-gray-600">Proudly headquartered in UK and Ghana, with service capabilities worldwide</p>
+                    <h3 className="font-bold text-gray-900 mb-1">Our Base</h3>
+                    <p className="text-gray-600">Proudly serving London and surrounding areas</p>
                   </div>
                 </div>
                 
@@ -139,18 +206,8 @@ export default function Contact() {
                     <MapPin className="w-6 h-6 text-orange-500" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1">UK Headquarters</h3>
-                    <p className="text-gray-600">123 Electric Avenue, London, UK, EC1A 1BB</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-orange-100 rounded-full p-3 mr-4">
-                    <MapPin className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-1">Ghana Headquarters</h3>
-                    <p className="text-gray-600">45 Independence Road, Accra, Ghana</p>
+                    <h3 className="font-bold text-gray-900 mb-1">London Office</h3>
+                    <p className="text-gray-600">115 Butts Road, Walsall, West Midlands, WS4 2BL, United Kingdom</p>
                   </div>
                 </div>
                 
@@ -160,9 +217,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">UK: +44 123 456 789</p>
-                    <p className="text-gray-600">Ghana: +233 24 123 4567</p>
-                    <p className="text-gray-600">International: +44 123 456 999</p>
+                    <p className="text-gray-600">+44 749 156 5676</p>
                   </div>
                 </div>
                 
@@ -174,7 +229,6 @@ export default function Contact() {
                     <h3 className="font-bold text-gray-900 mb-1">Email</h3>
                     <p className="text-gray-600">General: info@richyelectricals.com</p>
                     <p className="text-gray-600">Support: support@richyelectricals.com</p>
-                    <p className="text-gray-600">International Projects: global@richyelectricals.com</p>
                   </div>
                 </div>
                 
@@ -186,11 +240,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Working Hours</h3>
-                    <p className="text-gray-600">UK & Ghana Offices:</p>
-                    <p className="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM (Local Time)</p>
-                    <p className="text-gray-600">Saturday: 9:00 AM - 1:00 PM (Local Time)</p>
+                    <p className="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                    <p className="text-gray-600">Saturday: 9:00 AM - 1:00 PM</p>
                     <p className="text-gray-600">Sunday: Closed</p>
-                    <p className="text-orange-600 font-medium mt-1">24/7 Emergency Service Available Worldwide</p>
+                    <p className="text-orange-600 font-medium mt-1">24/7 Emergency Service Available</p>
                   </div>
                 </div>
               </div>
@@ -232,7 +285,7 @@ export default function Contact() {
             >
               <div className="bg-white p-8 rounded-2xl shadow-xl">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit} id="contact-form">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="first_name" className="block text-sm font-medium text-gray-700 mb-1">First Name*</label>
@@ -242,6 +295,8 @@ export default function Contact() {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors" 
                         placeholder="John"
                         required
+                        value={formData.firstName}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div>
@@ -252,6 +307,8 @@ export default function Contact() {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors" 
                         placeholder="Smith"
                         required
+                        value={formData.lastName}
+                        onChange={handleInputChange}
                       />
                     </div>
                   </div>
@@ -265,6 +322,8 @@ export default function Contact() {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors" 
                         placeholder="john@example.com"
                         required
+                        value={formData.email}
+                        onChange={handleInputChange}
                       />
                     </div>
                     <div>
@@ -273,8 +332,10 @@ export default function Contact() {
                         type="tel" 
                         id="phone" 
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors" 
-                        placeholder="Your phone number with country code"
+                        placeholder="Your phone number"
                         required
+                        value={formData.phone}
+                        onChange={handleInputChange}
                       />
                     </div>
                   </div>
@@ -286,17 +347,21 @@ export default function Contact() {
                       id="company" 
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors" 
                       placeholder="Your Company (Optional)"
+                      value={formData.company}
+                      onChange={handleInputChange}
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">Country*</label>
+                    <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">Address*</label>
                     <input 
                       type="text" 
-                      id="country" 
+                      id="address" 
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors" 
-                      placeholder="Your Country"
+                      placeholder="Your Address in London"
                       required
+                      value={formData.address}
+                      onChange={handleInputChange}
                     />
                   </div>
                   
@@ -306,15 +371,18 @@ export default function Contact() {
                       id="service" 
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                       required
+                      value={formData.service}
+                      onChange={handleInputChange}
                     >
                       <option value="">Select a service</option>
-                      <option value="generator-repair">Generator Repair</option>
-                      <option value="generator-sales">Generator Sales</option>
-                      <option value="electrical-installations">Electrical Installations</option>
-                      <option value="maintenance">Maintenance Services</option>
-                      <option value="safety">Safety Inspections</option>
-                      <option value="international">International Projects</option>
-                      <option value="emergency">Emergency Call-out</option>
+                    <option value="fuse-board">Fuse Board Upgrade</option>
+                    <option value="inspection">Electrical Inspection</option>
+                    <option value="installation">New Installation</option>
+                    <option value="fault">Fault Finding</option>
+                    <option value="garden">Garden Lighting</option>
+                    <option value="rewiring">Rewiring</option>
+                    <option value="renewable">Renewable Energy</option>
+                    <option value="emergency">Emergency Call-out</option>
                       <option value="other">Other Services</option>
                     </select>
                   </div>
@@ -327,6 +395,8 @@ export default function Contact() {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors" 
                       placeholder="Please provide details about your requirements..."
                       required
+                      value={formData.message}
+                      onChange={handleInputChange}
                     ></textarea>
                   </div>
                   
@@ -336,6 +406,8 @@ export default function Contact() {
                       type="checkbox" 
                       className="h-5 w-5 mt-1 text-orange-500 border-gray-300 rounded focus:ring-orange-500" 
                       required
+                      checked={formData.privacyConsent}
+                      onChange={handleInputChange}
                     />
                     <label htmlFor="privacy" className="ml-3 text-sm text-gray-600">
                       I agree to the <Link href="/privacy-policy" className="text-orange-500 hover:underline">Privacy Policy</Link> and consent to my data being processed.
@@ -346,95 +418,27 @@ export default function Contact() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     type="submit"
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all duration-300"
+                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-medium py-3 px-6 rounded-lg shadow-md transition-all duration-300 flex justify-center items-center"
+                    disabled={isSubmitting}
                   >
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      'Send Message'
+                    )}
                   </motion.button>
                 </form>
               </div>
             </motion.div>
           </div>
         </div>
-      </section>
-
-
-      {/* Service Areas Section */}
-      <section className="py-16 animate-on-scroll">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Global Service Areas</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Richy Electricals provides electrical engineering services to residential and commercial 
-                clients across the globe, with primary operations in:
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {[
-              {
-                region: "United Kingdom",
-                cities: ["London", "Manchester", "Birmingham", "Edinburgh", "Glasgow"]
-              },
-              {
-                region: "Ghana",
-                cities: ["Accra", "Kumasi", "Takoradi", "Tamale", "Cape Coast"]
-              },
-              {
-                region: "West Africa",
-                cities: ["Lagos, Nigeria", "Dakar, Senegal", "Abidjan, Ivory Coast", "Lomé, Togo", "Monrovia, Liberia"]
-              },
-              {
-                region: "East Africa",
-                cities: ["Nairobi, Kenya", "Dar es Salaam, Tanzania", "Kampala, Uganda", "Addis Ababa, Ethiopia", "Kigali, Rwanda"]
-              },
-              {
-                region: "Europe",
-                cities: ["Paris, France", "Berlin, Germany", "Madrid, Spain", "Rome, Italy", "Amsterdam, Netherlands"]
-              },
-              {
-                region: "Middle East",
-                cities: ["Dubai, UAE", "Doha, Qatar", "Riyadh, Saudi Arabia", "Kuwait City, Kuwait", "Muscat, Oman"]
-              },
-              {
-                region: "Asia",
-                cities: ["Singapore", "Kuala Lumpur, Malaysia", "Bangkok, Thailand", "Hong Kong", "Tokyo, Japan"]
-              },
-              {
-                region: "Americas",
-                cities: ["New York, USA", "Toronto, Canada", "Mexico City, Mexico", "São Paulo, Brazil", "Buenos Aires, Argentina"]
-              }
-            ].map((area, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{area.region}</h3>
-                <ul className="space-y-2">
-                  {area.cities.map((city, cityIndex) => (
-                    <li key={cityIndex} className="text-gray-600 flex items-center">
-                      <svg className="w-4 h-4 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                      {city}
-                    </li>
-                  ))}
-                
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <Toaster />
       </section>
 
       {/* Emergency Contact Banner */}
@@ -453,133 +457,48 @@ export default function Contact() {
               </div>
               <div>
                 <h2 className="text-2xl font-bold text-white">24/7 Emergency Service</h2>
-                <p className="text-white/90">Available worldwide for urgent electrical needs</p>
+                <p className="text-white/90">Available across London for urgent electrical needs</p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+441234567890" className="bg-white text-orange-600 font-medium px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition-colors flex items-center justify-center">
+              <a href="tel:+447491565676" className="bg-white text-orange-600 font-medium px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition-colors flex items-center justify-center">
                 <Phone className="w-5 h-5 mr-2" />
-                <span>UK: +44 123 456 789</span>
-              </a>
-              <a href="tel:+233241234567" className="bg-white text-orange-600 font-medium px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition-colors flex items-center justify-center">
-                <Phone className="w-5 h-5 mr-2" />
-                <span>Ghana: +233 24 123 4567</span>
+                <span>+44 749 156 5676</span>
               </a>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Call to Action */}
       <section className="py-16 animate-on-scroll">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Find answers to common questions about our services and operations
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            {[
-              {
-                question: "What areas do you service?",
-                answer: "Richy Electricals provides electrical services worldwide, with primary operations in the UK, Ghana, and across Africa. Our team of experts can travel to any location globally for major projects and our network of partners ensures consistent quality service wherever you are."
-              },
-              {
-                question: "Do you offer emergency services?",
-                answer: "Yes, we provide 24/7 emergency electrical services worldwide. Our dedicated emergency response team is available round-the-clock to address urgent electrical issues, generator breakdowns, and power emergencies."
-              },
-              {
-                question: "How do I request a quote for a project?",
-                answer: "You can request a quote by filling out our contact form on this page, calling our offices directly, or sending an email to info@richyelectricals.com with details of your project. Our team will get back to you within 24 hours with a detailed quotation."
-              },
-              {
-                question: "Do you handle international projects?",
-                answer: "Absolutely! We specialize in international electrical engineering projects. Our global team has experience working across different continents and complying with various international electrical standards and regulations."
-              },
-              {
-                question: "What types of generators do you service and install?",
-                answer: "We service, repair, and install all major brands and types of generators including diesel, gas, portable, standby, industrial, and commercial generators. Our technicians are certified and experienced with leading brands such as Caterpillar, Cummins, Honda, Generac, and more."
-              }
-            ].map((faq, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="mb-6"
-              >
-                <div className="bg-white rounded-xl shadow-md overflow-hidden">
-                  <details className="group">
-                    <summary className="flex justify-between items-center p-6 cursor-pointer">
-                      <h3 className="text-lg font-medium text-gray-900">{faq.question}</h3>
-                      <span className="text-orange-500 group-open:rotate-180 transition-transform duration-300">
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                      </span>
-                    </summary>
-                    <div className="px-6 pb-6 pt-0 text-gray-600">
-                      <p>{faq.answer}</p>
-                    </div>
-                  </details>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-10">
-            <Link 
-              href="/faq" 
-              className="inline-flex items-center text-orange-500 font-medium hover:text-orange-600 transition-colors"
-            >
-              View all FAQs
-              <ChevronRight className="ml-1 w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gray-900 animate-on-scroll">
-        <div className="container mx-auto px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className="text-center max-w-3xl mx-auto"
+            className="bg-gradient-to-r from-blue-600 to-orange-500 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Work with Us?</h2>
-            <p className="text-xl text-gray-300 mb-8">
-              From generator installations to comprehensive electrical solutions, our team of experts is ready to handle your project with professionalism and expertise.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
+              Contact our team today for expert electrical services and generator solutions across London
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <a 
+                href="tel:+447491565676" 
+                className="bg-white text-blue-600 hover:bg-gray-100 font-medium px-8 py-3 rounded-lg transition-colors flex items-center justify-center"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Call Us Now
+              </a>
+              <a 
                 href="#contact-form" 
-                className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-8 py-4 rounded-lg shadow-md transition-all duration-300"
+                className="bg-orange-600 hover:bg-orange-700 text-white font-medium px-8 py-3 rounded-lg transition-colors flex items-center justify-center"
               >
-                Get a Free Quote
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="/services" 
-                className="bg-transparent border-2 border-white text-white font-medium px-8 py-4 rounded-lg shadow-md hover:bg-white/10 transition-all duration-300"
-              >
-                Explore Our Services
-              </motion.a>
+                <Mail className="w-5 h-5 mr-2" />
+                Request a Quote
+              </a>
             </div>
           </motion.div>
         </div>

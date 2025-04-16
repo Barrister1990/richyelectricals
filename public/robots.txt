@@ -1,0 +1,12 @@
+# robotstxt.org
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://richyelectricals.com/sitemap.xml
+Sitemap: https://richyelectricals.com/sitemap-services.xml
+
+# Block access to admin areas
+Disallow: /admin/
+Disallow: /private/

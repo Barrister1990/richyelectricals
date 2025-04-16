@@ -1,18 +1,19 @@
 // pages/about.js
 import { motion } from 'framer-motion';
 import { Award, Building, ChevronRight, Clock, MapPin, Phone, Shield, Target, Users } from 'lucide-react';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import Seo from '../components/Seo';
 export default function About() {
   return (
+    <>
+    <Seo 
+        title="About Our Electrical Team & Company" 
+        description="Meet the certified electrical engineers at Richy Electricals. Our experienced team delivers high-quality electrical services across the UK with over 15 years of industry experience."
+        canonical="/about"
+      />
     <div className="min-h-screen w-screen pt-24">
-      <Head>
-        <title>About Us | Richy Electricals - Leading Electrical Engineering Company in London</title>
-        <meta name="description" content="Learn about Richy Electricals, our history, mission, values and the expert team behind electrical engineering solutions serving clients across London." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+     
 
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] flex items-center overflow-hidden">
@@ -165,7 +166,7 @@ export default function About() {
               </div>
               <h4 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h4>
               <p className="text-gray-600">
-                To be London most trusted name in electrical engineering, known for our technical expertise, innovation, and deep understanding of the city's unique needs, while leading the industry in sustainable electrical solutions that benefit London communities.
+                To be London most trusted name in electrical engineering, known for our technical expertise, innovation, and deep understanding of the city&#39;s unique needs, while leading the industry in sustainable electrical solutions that benefit London communities.
               </p>
             </motion.div>
             
@@ -481,5 +482,6 @@ export default function About() {
         </div>
       </section>
     </div>
+    </>
   );
 }

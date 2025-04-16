@@ -1,11 +1,10 @@
 // pages/contact.js
 import { motion } from 'framer-motion';
 import { AlertCircle, Globe, Mail, MapPin, Phone } from 'lucide-react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-
+import Seo from '../components/Seo';
 export default function Contact() {
   // State for form data
   const [formData, setFormData] = useState({
@@ -109,12 +108,14 @@ export default function Contact() {
   }, []);
 
   return (
+    <>
+     <Seo 
+        title="Contact Our Electrical Engineers" 
+        description="Get in touch with Richy Electricals for free quotes, emergency electrical services, and expert electrical advice. Available 24/7 across the United Kingdom."
+        canonical="/contact"
+      />
     <div className="min-h-screen pt-24">
-      <Head>
-        <title>Contact Us | Richy Electricals</title>
-        <meta name="description" content="Get in touch with Richy Electricals for expert electrical services and generator repairs and installation in London, UK." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
 
       {/* Header/Hero Section */}
       <section className="relative w-full h-64 md:h-80 flex items-center overflow-hidden">
@@ -504,5 +505,6 @@ export default function Contact() {
         </div>
       </section>
     </div>
+    </>
   );
 }

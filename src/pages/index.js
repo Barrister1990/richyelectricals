@@ -13,11 +13,10 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
-import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
-
+import Seo from '../components/Seo';
 export default function HomePage() {
   // For counting animation
   const [counting, setCounting] = useState(false);
@@ -123,15 +122,14 @@ export default function HomePage() {
   };
 
   return (
+    <>
+     <Seo 
+        title="Professional Electrical Services in the UK" 
+        description="Richy Electricals provides expert electrical services across the UK including emergency repairs, installations, and maintenance for residential and commercial properties."
+        canonical="/"
+      />
     <div className="min-h-screen">
-      <Head>
-        <title>Richy Electricals | London Electrical Engineering Solutions</title>
-        <meta
-          name="description"
-          content="Expert electrical engineering services including fuse board upgrades, electrical inspections, and emergency call-outs in London."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+     
 
       {/* Hero Section */}
       <section className="relative w-full h-screen flex items-center overflow-hidden">
@@ -396,7 +394,7 @@ export default function HomePage() {
               transition={{ duration: 0.7 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                London's Trusted Electrical Experts
+                London&#39;s Trusted Electrical Experts
               </h2>
               <p className="text-lg text-gray-600 mb-6">
                 With over 15 years of experience across London, Richy Electricals has built a reputation for excellence,
@@ -923,5 +921,6 @@ export default function HomePage() {
       </section>
 
     </div>
+    </>
   );
 }

@@ -1,9 +1,9 @@
 // pages/services.js
 import { motion } from 'framer-motion';
 import { CalendarClock, ChevronRight, Clock, Download, HelpCircle, MessageSquare, Phone, ScrollText, Settings, ShieldCheck, Sun, Wrench, Zap } from 'lucide-react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Seo from '../components/Seo';
 
 export default function Services() {
   // State for FAQ accordion
@@ -166,12 +166,14 @@ export default function Services() {
   ];
 
   return (
+    <>
+    <Seo 
+        title="Our Professional Electrical Services" 
+        description="Comprehensive electrical services including fuse board upgrades, electrical inspections, new installations, fault finding, garden lighting, rewiring, and 24/7 emergency electrical services."
+        canonical="/services"
+      />
     <div className="min-h-screen pt-24">
-      <Head>
-        <title>Our Services | Richy Electricals | UK Electrical Engineering Experts</title>
-        <meta name="description" content="Comprehensive electrical services including generator repairs, solar panel installation, and electrical maintenance throughout the UK." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+     
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-20 overflow-hidden">
@@ -643,5 +645,6 @@ export default function Services() {
           </div>
         </section>
       </div>
+      </>
     );
 }

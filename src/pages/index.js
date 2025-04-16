@@ -13,6 +13,7 @@ import {
   ShieldCheck,
   Zap,
 } from "lucide-react";
+import Image from 'next/image';
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
@@ -111,7 +112,7 @@ export default function HomePage() {
       animationFrame = requestAnimationFrame(updateCount);
 
       return () => cancelAnimationFrame(animationFrame);
-    }, [counting, end, duration]);
+    }, [end, duration]);
 
     return (
       <span>
@@ -367,11 +368,14 @@ export default function HomePage() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
-                <img
-                  src="/atwork.jpg"
-                  alt="Richy Electricals engineers at work"
-                  className="w-full h-full object-cover"
-                />
+                <Image
+  src="/atwork.jpg" // The image source
+  alt="Richy Electricals engineers at work" // Alt text for the image
+  className="w-full h-full object-cover" // Tailwind CSS classes for styling
+  width={1200} // Specify the width of the image
+  height={800} // Specify the height of the image
+  layout="intrinsic" // Optional: keeps aspect ratio intact
+/>
               </div>
               {/* Floating badge */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-lg p-4 z-20">

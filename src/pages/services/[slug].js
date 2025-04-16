@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Seo from '../../components/Seo';
 import ServiceSchemaMarkup from '../../components/ServiceSchemaMarkup';
-import { getServiceData } from '../lib/services';
+import { getServiceData } from '../../lib/services';
 
 export default function ServiceDetail({ serviceData }) {
   const router = useRouter();

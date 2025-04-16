@@ -6,7 +6,7 @@ export default function Seo({
   description, 
   canonical, 
   ogType = "website",
-  ogImage = "/images/richy-electricals-og.jpg" 
+  ogImage = "/images/logo.jpg" 
 }) {
   const siteTitle = `${title} | Richy Electricals`;
   

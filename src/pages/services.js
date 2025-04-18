@@ -1,6 +1,24 @@
 // pages/services.js
 import { motion } from 'framer-motion';
-import { CalendarClock, ChevronRight, Clock, Download, HelpCircle, MessageSquare, Phone, ScrollText, Settings, ShieldCheck, Sun, Wrench, Zap } from 'lucide-react';
+import {
+  Award,
+  BookOpen,
+  Briefcase,
+  CalendarClock,
+  CheckCircle,
+  CheckSquare,
+  ChevronRight,
+  ClipboardCheck,
+  Clock, Download,
+  GraduationCap,
+  HelpCircle, MessageSquare, Phone, ScrollText, Settings,
+  Shield,
+  ShieldCheck,
+  Star,
+  Sun,
+  Users,
+  Wrench, Zap
+} from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Seo from '../components/Seo';
@@ -427,94 +445,181 @@ export default function Services() {
       </section>
 
       {/* Certifications & Compliance */}
-      <section className="py-20 bg-white animate-on-scroll">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Certifications & Industry Compliance</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                At Richy Electricals, we maintain the highest standards of quality and safety. 
-                Our work complies with all relevant UK regulations and industry standards.
-              </p>
-              
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                {[
-                  "NICEIC Approved Contractor",
-                  "MCS Certified Installer",
-                  "18th Edition Qualified Engineers",
-                  "SafeContractor Approved",
-                  "Construction Line Gold Member",
-                  "ISO 9001:2015 Certified",
-                  "ECA Member",
-                  "City & Guilds Qualified Team"
-                ].map((cert, index) => (
-                  <motion.div 
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-center"
-                  >
-                    <div className="bg-green-100 rounded-full p-1 mr-3">
-                      <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                    </div>
-                    <span className="text-gray-700">{cert}</span>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link href="/about" className="inline-flex items-center bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-full shadow-md transition-all duration-300">
-                  About Our Standards
-                  <ChevronRight className="ml-2 w-5 h-5" />
-                </Link>
-              </motion.div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="relative"
-            >
-              <div className="grid grid-cols-3 gap-4">
-                {[1, 2, 3, 4, 5, 6].map((item, index) => (
-                  <div key={index} className="bg-gray-100 p-4 rounded-lg flex items-center justify-center">
-                    <div className="w-full h-20 bg-gray-200 rounded flex items-center justify-center">
-                      <span className="text-gray-500 font-semibold">Cert {item}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Floating badge */}
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-lg p-4 z-20">
-                <div className="flex items-center">
-                  <div className="bg-orange-500 rounded-full p-2 mr-3">
-                    <ShieldCheck className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Fully Licensed &</p>
-                    <p className="font-bold text-gray-900">Insured Services</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+ {/* Our Certifications */}
+<section className="py-20 bg-gray-50">
+  <div className="container mx-auto px-6 lg:px-8">
+    <div className="text-center mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
+        <h2 className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider border-b-2 border-orange-500 pb-1 mb-2">Credentials</h2>
+        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our London Certifications & Affiliations</h3>
+        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          We maintain the highest industry standards through professional certifications and memberships across London
+        </p>
+      </motion.div>
+    </div>
+    
+    {/* Professional Qualifications */}
+    <div className="mb-16">
+      <h4 className="text-xl font-semibold text-gray-800 mb-6 text-center">Professional Qualifications</h4>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        {/* EAL Level 3 Diploma */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
+        >
+          <div className="w-16 h-16 bg-orange-100 rounded-full mb-4 flex items-center justify-center">
+            <Award className="w-8 h-8 text-orange-500" />
           </div>
+          <h4 className="text-center font-medium text-gray-900 mb-1">EAL Level 3 Diploma</h4>
+          <p className="text-sm text-gray-600 text-center">Electrical Installation (600/9331/6)</p>
+        </motion.div>
+        
+        {/* City & Guilds Initial Verification */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
+        >
+          <div className="w-16 h-16 bg-blue-100 rounded-full mb-4 flex items-center justify-center">
+            <CheckCircle className="w-8 h-8 text-blue-500" />
+          </div>
+          <h4 className="text-center font-medium text-gray-900 mb-1">City & Guilds 2391-50</h4>
+          <p className="text-sm text-gray-600 text-center">Initial Verification of Electrical Installations</p>
+        </motion.div>
+        
+        {/* Periodic Inspection & Testing */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
+        >
+          <div className="w-16 h-16 bg-green-100 rounded-full mb-4 flex items-center justify-center">
+            <ClipboardCheck className="w-8 h-8 text-green-500" />
+          </div>
+          <h4 className="text-center font-medium text-gray-900 mb-1">City & Guilds 2391-51</h4>
+          <p className="text-sm text-gray-600 text-center">Periodic Inspection & Testing</p>
+        </motion.div>
+        
+        {/* Building Regulations */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
+        >
+          <div className="w-16 h-16 bg-purple-100 rounded-full mb-4 flex items-center justify-center">
+            <Briefcase className="w-8 h-8 text-purple-500" />
+          </div>
+          <h4 className="text-center font-medium text-gray-900 mb-1">Building Regulations</h4>
+          <p className="text-sm text-gray-600 text-center">Part P (2393-10)</p>
+        </motion.div>
+        
+        {/* EV Charging Points */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
+        >
+          <div className="w-16 h-16 bg-red-100 rounded-full mb-4 flex items-center justify-center">
+            <Zap className="w-8 h-8 text-red-500" />
+          </div>
+          <h4 className="text-center font-medium text-gray-900 mb-1">EAL Level 3 Award</h4>
+          <p className="text-sm text-gray-600 text-center">Electric Vehicle Charging Points Installation</p>
+        </motion.div>
+        
+        {/* BPEC Solar PV */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center justify-center hover:shadow-lg transition-shadow"
+        >
+          <div className="w-16 h-16 bg-yellow-100 rounded-full mb-4 flex items-center justify-center">
+            <Sun className="w-8 h-8 text-yellow-500" />
+          </div>
+          <h4 className="text-center font-medium text-gray-900 mb-1">BPEC Certification</h4>
+          <p className="text-sm text-gray-600 text-center">Solar PV & Energy Storage Systems</p>
+        </motion.div>
+      </div>
+    </div>
+    
+    {/* Industry Memberships */}
+    <div>
+      <h4 className="text-xl font-semibold text-gray-800 mb-6 text-center">Industry Memberships & Approvals</h4>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { name: "NICEIC Approved Contractor", icon: <Shield className="w-6 h-6 text-blue-500" /> },
+          { name: "MCS Certified Installer", icon: <CheckSquare className="w-6 h-6 text-green-500" /> },
+          { name: "18th Edition Qualified Engineers", icon: <BookOpen className="w-6 h-6 text-purple-500" /> },
+          { name: "SafeContractor Approved", icon: <ShieldCheck className="w-6 h-6 text-red-500" /> },
+          { name: "Construction Line Gold Member", icon: <Star className="w-6 h-6 text-yellow-500" /> },
+          { name: "ISO 9001:2015 Certified", icon: <Award className="w-6 h-6 text-orange-500" /> },
+          { name: "ECA Member", icon: <Users className="w-6 h-6 text-indigo-500" /> },
+          { name: "City & Guilds Qualified Team", icon: <GraduationCap className="w-6 h-6 text-teal-500" /> }
+        ].map((cert, index) => (
+          <motion.div 
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.05 }}
+            className="bg-white rounded-lg shadow-sm p-4 flex items-center hover:shadow-md transition-shadow"
+          >
+            <div className="bg-gray-100 rounded-full p-2 mr-3 flex-shrink-0">
+              {cert.icon}
+            </div>
+            <span className="text-gray-800 text-sm font-medium">{cert.name}</span>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+    
+    <motion.div 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, delay: 0.7 }}
+      className="mt-12 text-center"
+    >
+      <p className="text-gray-600 italic">All our technicians are fully qualified and regularly update their certifications</p>
+    </motion.div>
+    
+    {/* Floating badge */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.8 }}
+      className="mt-12 flex justify-center"
+    >
+      <div className="bg-white rounded-xl shadow-lg p-4 flex items-center">
+        <div className="bg-orange-500 rounded-full p-3 mr-4">
+          <ShieldCheck className="w-8 h-8 text-white" />
         </div>
-      </section>
+        <div>
+          <p className="text-sm text-gray-500">Fully Licensed &</p>
+          <p className="font-bold text-xl text-gray-900">Insured Services</p>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
 
         {/* FAQ Section */}

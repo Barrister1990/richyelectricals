@@ -1,8 +1,8 @@
 // components/Navbar.js
 import { Menu, Phone, X } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -61,7 +61,7 @@ const Navbar = () => {
                 Frequently Asked Questions
               </Link>
               <a 
-                href="https://richyelectricals.com.gh" 
+                href="https://ghana-richyelectricals.vercel.app/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
@@ -90,23 +90,27 @@ const Navbar = () => {
             <div className="flex justify-between items-center">
               {/* Logo */}
               <div className="flex-shrink-0 group">
-                <Link href="/" className="flex items-center">
-                  {/* Company Logo Container */}
-                  <div className={`relative h-12 w-12 rounded-xl overflow-hidden flex items-center justify-center mr-3 shadow-lg group-hover:shadow-orange-300/50 transition-all duration-300 transform group-hover:scale-105 ${
-                    scrolled ? 'bg-white' : 'bg-white/90'
-                  }`}>
-                    {/* Replace this with your actual logo image */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-orange-600 opacity-10"></div>
-                    <div className="relative z-10 font-extrabold text-xl bg-gradient-to-br from-orange-500 to-orange-700 text-transparent bg-clip-text">RE</div>
-                  </div>
-                  <div className="flex flex-col">
-                    <span className={`text-lg font-bold transition-colors duration-300 ${scrolled ? 'text-orange-600' : 'text-orange-500'}`}>
-                      RichyElectricals
-                    </span>
-                    <span className="text-xs text-gray-500">Powering Your Future</span>
-                  </div>
-                </Link>
-              </div>
+  <Link href="/" className="flex items-center">
+    {/* Company Logo Container */}
+    <div className={`relative h-12 w-12 rounded-xl overflow-hidden flex items-center justify-center mr-3 shadow-lg group-hover:shadow-orange-300/50 transition-all duration-300 transform group-hover:scale-105 ${
+      scrolled ? 'bg-white' : 'bg-white/90'
+    }`}>
+      {/* Using the actual logo image */}
+      <Image 
+  src="/images/logo.jpg" 
+  alt="RichyElectricals Logo" 
+  layout="fill"
+  objectFit="cover"
+/>
+    </div>
+    <div className="flex flex-col">
+      <span className={`text-lg font-bold transition-colors duration-300 ${scrolled ? 'text-orange-600' : 'text-orange-500'}`}>
+        RichyElectricals
+      </span>
+      <span className="text-xs text-gray-500">Powering Your Future</span>
+    </div>
+  </Link>
+</div>
 
               {/* Desktop Navigation */}
               <div className="hidden md:flex md:items-center">
@@ -173,7 +177,7 @@ const Navbar = () => {
           <MobileNavLink href="/services" text="Services" onClick={toggleMenu} />
           <MobileNavLink href="/faq" text="FAQ" onClick={toggleMenu} />
           <a 
-            href="https://richyelectricals.com.gh" 
+            href="https://ghana-richyelectricals.vercel.app/" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="w-full max-w-xs text-center text-gray-800 hover:text-orange-500 px-4 py-4 rounded-lg text-lg font-medium border-b border-gray-100 transition-all duration-300 hover:bg-orange-50"

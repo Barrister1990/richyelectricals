@@ -213,7 +213,6 @@ export default function FAQ() {
       ]
     }
   ];
-
   // Filter FAQs based on search term
   useEffect(() => {
     if (searchTerm.trim() === '') {

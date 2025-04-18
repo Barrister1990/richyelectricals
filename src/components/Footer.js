@@ -6,8 +6,8 @@ import {
   Linkedin,
   Mail,
   MapPin,
+  Music,
   Phone,
-  Twitter,
   Youtube
 } from 'lucide-react';
 import Link from 'next/link';
@@ -67,11 +67,11 @@ export default function Footer() {
                 <Facebook size={18} />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a href="#twitter" className="bg-gray-800 hover:bg-orange-500 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300">
-                <Twitter size={18} />
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a href="#instagram" className="bg-gray-800 hover:bg-orange-500 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300">
+              <a href="https://www.tiktok.com/@richy_electric?_t=ZN-8vbqj7KYN4o&_r=1" className="bg-gray-800 hover:bg-orange-500 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300">
+              <Music size={18} />
+  <span className="sr-only">TikTok</span>
+</a>
+              <a href="https://www.instagram.com/richyelectricalservices?igsh=Z2I5eXdoMWgwNHAw&utm_source=qr" className="bg-gray-800 hover:bg-orange-500 h-10 w-10 rounded-full flex items-center justify-center transition-colors duration-300">
                 <Instagram size={18} />
                 <span className="sr-only">Instagram</span>
               </a>

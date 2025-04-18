@@ -182,7 +182,7 @@ export default function HomePage() {
               <span className="block">Premier Electrical Solutions</span>
               <span className="text-orange-500">in London</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 mb-8">
+            <p className="text-lg md:text-xl text-orange-400 mb-8">
               Specializing in fuse board upgrades, electrical inspections, and complete electrical installations for homes and businesses across London.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -552,39 +552,107 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+      <section class="py-16 border-t border-gray-200">
+  <div class="container mx-auto px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-3">
+        Our Certifications
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Fully certified and compliant with all UK electrical standards to ensure the highest quality and safety in every project
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      {/* Certifications Section */}
-      <section className="py-16 border-t border-gray-200 animate-on-scroll">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
-              Our Certifications
-            </h2>
-            <p className="text-gray-600">
-              Fully certified and compliant with all UK electrical standards
-            </p>
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div class="bg-blue-600 h-2"></div>
+        <div class="p-6">
+          <div class="flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
           </div>
-
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-            {[1, 2, 3, 4, 5].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="grayscale hover:grayscale-0 transition-all duration-300"
-              >
-                <div className="bg-gray-200 h-16 w-32 rounded flex items-center justify-center">
-                  <span className="text-gray-500 font-semibold">
-                    Certification {item}
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <h3 class="text-xl font-bold text-center text-gray-800 mb-2">EAL Level 3 Diploma</h3>
+          <p class="text-gray-600 text-center">Electrical Installation (600/9331/6)</p>
         </div>
-      </section>
+      </div>
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div class="bg-green-600 h-2"></div>
+        <div class="p-6">
+          <div class="flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-center text-gray-800 mb-2">City & Guilds 2391-50</h3>
+          <p class="text-gray-600 text-center">Initial Verification of Electrical Installations</p>
+        </div>
+      </div>
+      
+   
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div class="bg-purple-600 h-2"></div>
+        <div class="p-6">
+          <div class="flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-center text-gray-800 mb-2">City & Guilds 2391-51</h3>
+          <p class="text-gray-600 text-center">Periodic Inspection & Testing of Electrical Installations</p>
+        </div>
+      </div>
+      
+  
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div class="bg-red-600 h-2"></div>
+        <div class="p-6">
+          <div class="flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-center text-gray-800 mb-2">Building Regulations</h3>
+          <p class="text-gray-600 text-center">Part P (2393 – 10)</p>
+        </div>
+      </div>
+      
+
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div class="bg-yellow-600 h-2"></div>
+        <div class="p-6">
+          <div class="flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-center text-gray-800 mb-2">EAL Level 3 Award</h3>
+          <p class="text-gray-600 text-center">Requirements for the Installation of Electric Vehicle Charging Points</p>
+        </div>
+      </div>
+      
+   
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div class="bg-teal-600 h-2"></div>
+        <div class="p-6">
+          <div class="flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-center text-gray-800 mb-2">BPEC Certification</h3>
+          <p class="text-gray-600 text-center">Solar PV Installer (Level 3) & Electricity Energy Storage Systems</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mt-12 text-center">
+      <p class="text-gray-500 italic">Our team maintains up-to-date qualifications to provide you with the highest standard of electrical services</p>
+    </div>
+  </div>
+</section>
 
       {/* FAQ Section */}
       <section className="py-20 animate-on-scroll">

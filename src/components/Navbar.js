@@ -61,7 +61,7 @@ const Navbar = () => {
                 Frequently Asked Questions
               </Link>
               <a 
-                href="https://ghana-richyelectricals.vercel.app/" 
+                href="https://richyelectricalsgh.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
@@ -179,7 +179,7 @@ const Navbar = () => {
           <MobileNavLink href="/gallery" text="Gallery" onClick={toggleMenu} />
           <MobileNavLink href="/faq" text="FAQ" onClick={toggleMenu} />
           <a 
-            href="https://ghana-richyelectricals.vercel.app/" 
+            href="https://richyelectricalsgh.com" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="w-full max-w-xs text-center text-gray-800 hover:text-orange-500 px-4 py-4 rounded-lg text-lg font-medium border-b border-gray-100 transition-all duration-300 hover:bg-orange-50"

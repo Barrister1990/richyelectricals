@@ -228,8 +228,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">General: info@richyelectricals.com</p>
-                    <p className="text-gray-600">Support: support@richyelectricals.com</p>
+                    <p className="text-gray-600">General: info@richyelectricals.co.uk</p>
                   </div>
                 </div>
                 

@@ -1101,8 +1101,8 @@ export default function HomePage() {
                       Email Address
                     </h3>
                     <p className="text-gray-600">
-                      <a href="mailto:info@richyelectricals.com" className="hover:text-orange-500 transition-colors">
-                        info@richyelectricals.com
+                      <a href="mailto:info@richyelectricals.co.uk" className="hover:text-orange-500 transition-colors">
+                        info@richyelectricals.co.uk
                       </a>
                     </p>
                   </div>

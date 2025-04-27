@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     // 1. Send notification email to business (Richy Electricals)
     await resend.emails.send({
       to: 'info@richyelectricals.co.uk',
-      from: 'noreply@richyelectricals.co.uk', // Replace with verified Resend sender
+      from: 'Richy Electricals <noreply@richyelectricals.co.uk>', // Replace with verified Resend sender
       subject: `New Contact Message: ${name}`,
       html: `
         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; max-width: 650px; margin: auto;">
@@ -99,7 +99,7 @@ export default async function handler(req, res) {
     // 2. Send auto-reply to user
     await resend.emails.send({
       to: email,
-      from: 'noreply@richyelectricals.co.uk', // Same verified sender
+      from: 'Richy Electricals <noreply@richyelectricals.co.uk>', // Same verified sender
       subject: 'Thank You for Contacting Richy Electricals',
       html: `
         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; max-width: 650px; margin: auto;">
@@ -156,7 +156,7 @@ export default async function handler(req, res) {
                     <strong style="color: #333; display: block; margin-bottom: 8px; font-size: 16px;">Contact Us</strong>
                     <span>Phone: +447491565676</span><br>
                     <a href="mailto:info@richyelectricals.co.uk" style="color: #FF9933; text-decoration: none;">info@richyelectricals.co.uk</a><br>
-                    <span style="display: block; margin-top: 8px;">123 Main Street, Accra, Ghana</span>
+                    <span style="display: block; margin-top: 8px;">115 Butts Road, Walsall, West Midlands, WS4 2BL, United Kingdom</span>
                   </div>
                 </td>
                 <td style="text-align: center; padding: 10px; width: 50%; vertical-align: top;">
@@ -171,17 +171,7 @@ export default async function handler(req, res) {
             </table>
           </div>
           
-          <!-- Social Media -->
-          <div style="background-color: #ffffff; padding: 20px; text-align: center; border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0;">
-            <p style="color: #666; margin-bottom: 10px; font-size: 14px;">Follow us on social media:</p>
-            <div>
-              <!-- Social media icons represented as colored buttons -->
-              <a href="#" style="display: inline-block; background-color: #3b5998; color: white; width: 35px; height: 35px; line-height: 35px; text-align: center; border-radius: 50%; margin: 0 5px; text-decoration: none; font-weight: bold;">f</a>
-              <a href="#" style="display: inline-block; background-color: #1da1f2; color: white; width: 35px; height: 35px; line-height: 35px; text-align: center; border-radius: 50%; margin: 0 5px; text-decoration: none; font-weight: bold;">t</a>
-              <a href="#" style="display: inline-block; background-color: #0077b5; color: white; width: 35px; height: 35px; line-height: 35px; text-align: center; border-radius: 50%; margin: 0 5px; text-decoration: none; font-weight: bold;">in</a>
-              <a href="#" style="display: inline-block; background-color: #c32aa3; color: white; width: 35px; height: 35px; line-height: 35px; text-align: center; border-radius: 50%; margin: 0 5px; text-decoration: none; font-weight: bold;">ig</a>
-            </div>
-          </div>
+         
           
           <!-- Footer -->
           <div style="background-color: #333; color: white; padding: 20px; border-radius: 0 0 8px 8px; text-align: center;">

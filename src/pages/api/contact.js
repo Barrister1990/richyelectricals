@@ -147,7 +147,7 @@ export default async function handler(req, res) {
       // 1. Send email to Richy Electricals
       await resend.emails.send({
         to: 'info@richyelectricals.co.uk',
-        from: 'noreply@richyelectricals.co.uk', // Use a verified domain from Resend
+        from: 'Richy Electricals <noreply@richyelectricals.co.uk>', // Use a verified domain from Resend
         subject: 'New Quote Request from Richy Electricals Website',
         html: emailContent,
       });
@@ -155,7 +155,7 @@ export default async function handler(req, res) {
       // 2. Auto-reply to user
       await resend.emails.send({
         to: email,
-        from: 'noreply@richyelectricals.co.uk', // Must be same or another verified sender
+        from: 'Richy Electricals <noreply@richyelectricals.co.uk>', // Must be same or another verified sender
         subject: 'We Received Your Request - Richy Electricals',
         html: autoReplyContent,
       });

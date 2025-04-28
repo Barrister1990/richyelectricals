@@ -285,19 +285,19 @@ export default function PrivacyPolicy() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-bold text-gray-900 mb-2">UK Office:</h4>
-                    <p className="text-gray-700">123 Electric Avenue</p>
+                    <p className="text-gray-700">1115 Butts Road, Walsall West Midlands, WS4 2BL</p>
                     <p className="text-gray-700">London, EC1A 1BB</p>
                     <p className="text-gray-700">United Kingdom</p>
                     <p className="text-gray-700 mt-2">Phone: +44 123 456 789</p>
-                    <p className="text-gray-700">Email: privacy@richyelectricals.com</p>
+                    <p className="text-gray-700">Email: info@richyelectricals.co.uk</p>
                   </div>
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-bold text-gray-900 mb-2">Ghana Office:</h4>
-                    <p className="text-gray-700">45 Power Street</p>
+                    <p className="text-gray-700">Regimanuel estate balloon gate 4th link house 9</p>
                     <p className="text-gray-700">Accra</p>
                     <p className="text-gray-700">Ghana</p>
-                    <p className="text-gray-700 mt-2">Phone: +233 123 456 789</p>
-                    <p className="text-gray-700">Email: privacy.ghana@richyelectricals.com</p>
+                    <p className="text-gray-700 mt-2">Phone: +233 20 922 2856</p>
+                    <p className="text-gray-700">Email: info@richyelectricals.co.uk</p>
                   </div>
                 </div>
               </div>

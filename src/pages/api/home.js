@@ -2,8 +2,15 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const allowedOrigins = [
+  'https://richyelectricals.co.uk',
+  'https://richyelectricalsgh.com'
+];
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', 'https://richyelectricals.co.uk'); // Allow your specific domain
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Allowed methods
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   

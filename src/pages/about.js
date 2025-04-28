@@ -513,13 +513,13 @@ export default function About() {
                     +44 20 1234 5678
                   </a>
                   <a 
-                    href="mailto:london@richyelectricals.co.uk" 
+                    href="mailto:info@richyelectricals.co.uk" 
                     className="flex items-center text-orange-500 hover:underline"
                   >
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
-                    london@richyelectricals.co.uk
+                    info@richyelectricals.co.uk
                   </a>
                 </div>
               </div>

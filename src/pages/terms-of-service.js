@@ -244,19 +244,20 @@ export default function TermsAndConditions() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="bg-gray-50 p-5 rounded-lg">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">UK Office</h3>
-                    <p className="text-gray-700 mb-2">123 Electric Avenue</p>
-                    <p className="text-gray-700 mb-2">London, EC1A 1BB</p>
+                    <p className="text-gray-700 mb-2">115 Butts Road, Walsall
+                    West Midlands, WS4 2BL</p>
+                    <p className="text-gray-700 mb-2">London</p>
                     <p className="text-gray-700 mb-2">United Kingdom</p>
-                    <p className="text-gray-700 mb-2">Phone: +44 20 1234 5678</p>
-                    <p className="text-gray-700">Email: uk@richyelectricals.com</p>
+                    <p className="text-gray-700 mb-2">Phone: +44 123 456 789</p>
+                    <p className="text-gray-700">Email: info@richyelectricals.co.uk</p>
                   </div>
                   <div className="bg-gray-50 p-5 rounded-lg">
                     <h3 className="text-lg font-semibold text-gray-900 mb-3">Ghana Office</h3>
-                    <p className="text-gray-700 mb-2">456 Power Street</p>
+                    <p className="text-gray-700 mb-2">Regimanuel estate balloon gate 4th link house 9</p>
                     <p className="text-gray-700 mb-2">Accra</p>
                     <p className="text-gray-700 mb-2">Ghana</p>
-                    <p className="text-gray-700 mb-2">Phone: +233 30 987 6543</p>
-                    <p className="text-gray-700">Email: ghana@richyelectricals.com</p>
+                    <p className="text-gray-700 mb-2">Phone: +233 020 922 2856</p>
+                    <p className="text-gray-700">Email: info@richyelectricals.co.uk</p>
                   </div>
                 </div>
               </div>

@@ -3,11 +3,25 @@ import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import Script from 'next/script';
 import { useEffect, useState } from 'react';
+
+
+
+const GA_MEASUREMENT_ID = 'G-BX6W20PS0K'
 export default function App({ Component, pageProps }) {
   const [backgroundImage, setBackgroundImage] = useState('');
   const router = useRouter();
   
+
+  useEffect(() => {
+    if (window.gtag) return;
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', GA_MEASUREMENT_ID);
+  }, []);
+
   // Define your background images
   const bgImages = [
     '/bg/bg1.jpeg',
@@ -62,7 +76,22 @@ export default function App({ Component, pageProps }) {
 
   return (
     <div className="w-full overflow-x-hidden">
+             <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </Script>
        <Head>
+
+       
+
   {/* Schema for Organization */}
   <script type="application/ld+json" dangerouslySetInnerHTML={{
     __html: JSON.stringify({

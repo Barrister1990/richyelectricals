@@ -884,6 +884,7 @@ export default function Gallery() {
         <title>Our Gallery | Richy Electricals</title>
         <meta name="description" content="Explore our gallery of electrical engineering and generator installation projects across the UK, Ghana, and worldwide." />
         <link rel="icon" href="/favicon.ico" />
+       
       </Head>
 
       {/* Hero Section */}

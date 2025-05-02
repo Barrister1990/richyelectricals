@@ -31,7 +31,9 @@ export default function Seo({
       <meta property="twitter:title" content={siteTitle} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={`https://richyelectricals.co.uk${ogImage}`} />
-      
+      <meta name="keywords" content="Electrician UK, Electrical Services UK, Local Electrician Walsall, Walsall Electrician, Electrician in Walsall, West Midlands Electrical Services, Emergency Electrician Walsall, Generator Repairs Walsall, Solar Panel Installation UK, Solar Electrician West Midlands, Electrical Maintenance Services, Domestic Electrician UK, Commercial Electrician UK, Certified Electrician Near Me, NICEIC Electrician, Electrical Wiring Services, Fuse Box Repair Walsall, Electrical Inspection Walsall, Richy Electricals, Affordable Electrician UK, Electrician for Home Rewiring, 24 Hour Electrician Walsall, EV Charger Installation Walsall" />
+
+
       {/* Structured Data for Local Business */}
       <script
         type="application/ld+json"
@@ -39,7 +41,7 @@ export default function Seo({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ElectricalContractor",
-            "name": "Richy Electricals",
+            "name": "Richy Electrical Services",
             "url": "https://richyelectricals.co.uk",
             "logo": "/images/logo.jpg",
             "image": "https://richyelectricals.co.uk/images/richy-electricals-building.jpg",

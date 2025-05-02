@@ -252,8 +252,8 @@ export default function HomePage() {
   return (
     <>
      <Seo 
-        title="Professional Electrical Services in the UK" 
-        description="Richy Electricals provides expert electrical services across the UK including emergency repairs, installations, and maintenance for residential and commercial properties."
+        title="Professional Electrical Services" 
+        description="Richy Electrical Services provides expert electrical services across the UK including emergency repairs and maintenance for residential and commercial properties."
         canonical="/"
       />
     <div className="min-h-screen relative">

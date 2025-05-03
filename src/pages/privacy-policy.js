@@ -1,16 +1,19 @@
+import Seo from '@/components/Seo';
 import { motion } from 'framer-motion';
 import { ChevronRight, Eye, FileText, Globe, Lock, Phone, Shield } from 'lucide-react';
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function PrivacyPolicy() {
   return (
+    <>
+    <Seo 
+                title="Privacy Policy | Richy Electrical Services UK" 
+                description="Find out how Richy Electrical Services collects, uses, and protects your personal data. We value your privacy and comply with UK GDPR regulations."
+                canonical="https://richyelectricals.co.uk/terms-of-service"
+              />
+    
     <div className="min-h-screen bg-gray-50 pt-24">
-      <Head>
-        <title>Privacy Policy | Richy Electricals</title>
-        <meta name="description" content="Our commitment to protecting your privacy and personal data at Richy Electricals." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+   
 
       {/* Header Banner */}
       <section className="relative w-full h-[60vh] flex items-center overflow-hidden text-white">
@@ -336,5 +339,6 @@ export default function PrivacyPolicy() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -9,7 +9,7 @@ export default function Sitemap() {
       <Seo
         title="HTML Sitemap - Richy Electrical Services"
         description="HTML sitemap for Richy Electrical Services. Explore our services, company info, and contact options all in one place."
-        canonical="/sitemap"
+        canonical="https://richyelectricals.co.uk/sitemap"
       />
       <main className="max-w-6xl mx-auto px-4 py-16 bg-gray-50 ">
         <div className="text-center mb-12 pt-24">

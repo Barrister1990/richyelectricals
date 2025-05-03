@@ -188,7 +188,7 @@ export default function Services() {
     <Seo 
         title="Our Electrical Services – UK Installations, Repairs & More" 
         description="Discover all our electrical services, including rewiring, fuse board upgrades, lighting, and emergency callouts – available across the UK."
-        canonical="/services"
+        canonical="https://richyelectricals.co.uk/services"
       />
     <div className="min-h-screen pt-24">
      

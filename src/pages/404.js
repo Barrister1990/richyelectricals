@@ -83,8 +83,13 @@ export default function Custom404() {
       <Seo
         title="Page Not Found - Richy Electrical Services"
         description="Sorry, the page you're looking for doesn't exist. Explore our website to find what you need."
-        canonical="/404"
+        canonical="https://richyelectricals.co.uk/404"
+        
       />
+
+<Head>
+       <meta name="robots" content="noindex, nofollow" />
+      </Head>
       <main className="min-h-screen bg-gradient-to-br from-orange-50 to-gray-50 flex items-center justify-center p-4">
         <div className="max-w-2xl w-full bg-white rounded-2xl shadow-lg overflow-hidden pt-24">
           {/* Header with illustration */}

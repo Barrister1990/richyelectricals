@@ -1,16 +1,19 @@
+import Seo from '@/components/Seo';
 import { motion } from 'framer-motion';
 import { AlertTriangle, Briefcase, ChevronRight, FileText, Info, Phone, Scale, Shield } from 'lucide-react';
-import Head from 'next/head';
 import Link from 'next/link';
 
 export default function TermsAndConditions() {
   return (
+<>
+<Seo 
+            title="Terms & Conditions | Richy Electrical Services UK" 
+            description="Review the terms and conditions for using Richy Electrical Services. Learn about our service agreements, liability limits, and your responsibilities as a customer."
+            canonical="https://richyelectricals.co.uk/terms-of-service"
+          />
+
     <div className="min-h-screen bg-gray-50 pt-24">
-      <Head>
-        <title>Terms and Conditions | Richy Electricals</title>
-        <meta name="description" content="Terms and conditions for using Richy Electricals services, applicable across our UK and Ghana operations." />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+     
 
       {/* Header Banner */}
       <section className="relative w-full h-[60vh] flex items-center overflow-hidden text-white">
@@ -308,5 +311,6 @@ export default function TermsAndConditions() {
 
  
     </div>
+    </>
   );
 }

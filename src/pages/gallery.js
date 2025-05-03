@@ -1,7 +1,6 @@
 import Seo from '@/components/Seo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Calendar, ChevronLeft, ChevronRight, Filter, Play, X } from 'lucide-react';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -885,16 +884,11 @@ export default function Gallery() {
      <Seo 
             title="Project Gallery – Richy Electrical Services UK" 
             description="View our gallery of electrical projects across the UK. From home installations to commercial work, see the quality Richy Electrical delivers."
-            canonical="/gallery"
+            canonical="https://richyelectricals.co.uk/gallery"
           />
   
     <div className="min-h-screen pt-12">
-      <Head>
-        <title>Our Gallery | Richy Electricals</title>
-        <meta name="description" content="Explore our gallery of electrical engineering and generator installation projects across the UK, Ghana, and worldwide." />
-        <link rel="icon" href="/favicon.ico" />
-       
-      </Head>
+
 
       {/* Hero Section */}
       <section className="relative w-full h-80 md:h-96 flex items-center overflow-hidden">

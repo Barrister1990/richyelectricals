@@ -252,8 +252,8 @@ export default function HomePage() {
   return (
     <>
      <Seo 
-        title="Professional Electrical Services" 
-        description="Richy Electrical Services provides expert electrical services across the UK including emergency repairs and maintenance for residential and commercial properties."
+        title="Richy Electrical Services – Trusted Electricians in the UK" 
+        description="Looking for reliable electricians in the UK? Richy Electrical Services provides expert electrical installations, repairs, and inspections for homes and businesses."
         canonical="/"
       />
     <div className="min-h-screen relative">
@@ -502,7 +502,7 @@ export default function HomePage() {
   className="w-full h-full object-cover" // Tailwind CSS classes for styling
   width={1200} // Specify the width of the image
   height={800} // Specify the height of the image
-  layout="intrinsic" // Optional: keeps aspect ratio intact
+  style={{ objectFit: 'cover' }}
 />
               </div>
               {/* Floating badge */}
@@ -1047,6 +1047,10 @@ export default function HomePage() {
                     <p className="text-gray-600">
                     115 Butts Road, Walsall, West Midlands, WS4 2BL, United Kingdom
                     </p>
+                    <p className="text-gray-600">
+                    88 Canalside, Redhill, Surrey, RH1 2NH, London, United Kingdom
+                    </p>
+                    
                   </div>
                 </div>
 

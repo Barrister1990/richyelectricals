@@ -233,10 +233,10 @@ export default function Footer() {
                 Terms of Service
               </Link>
               <Link
-                href="/cookies"
+                href="/sitemap"
                 className="text-gray-400 hover:text-orange-500 text-sm transition-colors"
               >
-                Cookies
+                Sitemap
               </Link>
             </div>
           </div>

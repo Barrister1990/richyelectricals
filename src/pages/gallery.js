@@ -1,6 +1,8 @@
+import Seo from '@/components/Seo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Calendar, ChevronLeft, ChevronRight, Filter, Play, X } from 'lucide-react';
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
@@ -879,6 +881,13 @@ export default function Gallery() {
   };
 
   return (
+    <>
+     <Seo 
+            title="Project Gallery – Richy Electrical Services UK" 
+            description="View our gallery of electrical projects across the UK. From home installations to commercial work, see the quality Richy Electrical delivers."
+            canonical="/gallery"
+          />
+  
     <div className="min-h-screen pt-12">
       <Head>
         <title>Our Gallery | Richy Electricals</title>
@@ -997,10 +1006,13 @@ export default function Gallery() {
                 <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                   <div className="relative h-64 overflow-hidden">
                     {item.type === "image" ? (
-                      <img 
+                      <Image 
                         src={item.media} 
                         alt={item.title} 
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        width={200}
+                        height={100}
+                        
                       />
                     ) : (
                       <div className="w-full h-full relative">
@@ -1236,5 +1248,6 @@ export default function Gallery() {
   )}
 </AnimatePresence>
     </div>
+    </>
   );
 }

@@ -8,7 +8,7 @@ export default function Seo({
   ogType = "website",
   ogImage = "/images/logo.jpg" 
 }) {
-  const siteTitle = `${title} | Richy Electricals`;
+  const siteTitle = `${title}`;
   
   return (
     <Head>
@@ -40,12 +40,12 @@ export default function Seo({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ElectricalContractor",
+            "@type": "Electrican",
             "name": "Richy Electrical Services",
             "url": "https://richyelectricals.co.uk",
             "logo": "/images/logo.jpg",
-            "image": "https://richyelectricals.co.uk/images/richy-electricals-building.jpg",
-            "description": "Professional electrical services across the UK including generator repairs, solar installations, and electrical maintenance.",
+            "image": "https://richyelectricals.co.uk/images/logo.jpg",
+            "description": "UK-based professional electricians offering installation, rewiring, inspection & maintenance services.",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "115 Butts Road, Walsall, West Midlands",
@@ -58,7 +58,11 @@ export default function Seo({
               "latitude": "51.5074",
               "longitude": "0.1278"
             },
-            "telephone": "+447491565676",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+447491565676",
+             "contactType": "Customer Service",
+            },
             "openingHoursSpecification": [
               {
                 "@type": "OpeningHoursSpecification",
@@ -75,8 +79,8 @@ export default function Seo({
             ],
             "priceRange": "££",
             "sameAs": [
-              "https://www.facebook.co.uk/richyelectricals",
               "https://www.instagram.com/richyelectricalservices?igsh=Z2I5eXdoMWgwNHAw&utm_source=qr",
+              "https://www.tiktok.com/@richy_electric?_t=ZN-8vbqj7KYN4o&_r=1"
             ]
           })
         }}

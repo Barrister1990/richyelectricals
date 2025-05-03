@@ -186,8 +186,8 @@ export default function Services() {
   return (
     <>
     <Seo 
-        title="Our Professional Electrical Services" 
-        description="Comprehensive electrical services including fuse board upgrades, electrical inspections, new installations, fault finding, garden lighting, rewiring, and 24/7 emergency electrical services."
+        title="Our Electrical Services – UK Installations, Repairs & More" 
+        description="Discover all our electrical services, including rewiring, fuse board upgrades, lighting, and emergency callouts – available across the UK."
         canonical="/services"
       />
     <div className="min-h-screen pt-24">

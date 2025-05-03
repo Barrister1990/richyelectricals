@@ -1,6 +1,7 @@
 // pages/404.tsx
 import Seo from "@/components/Seo";
 import { ArrowLeft, Home, Search, Zap } from "lucide-react";
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";

@@ -164,7 +164,7 @@ export default function HomePage() {
     };
   
     try {
-      const response = await fetch('https://www.richyelectricals.co.uk//api/home', {
+      const response = await fetch('/api/home', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

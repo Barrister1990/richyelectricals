@@ -40,7 +40,7 @@ export default function Contact() {
   
     try {
       // Send data to the API route
-      const response = await fetch('https://richyelectricals.vercel.app/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

@@ -4,7 +4,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const allowedOrigins = [
   'https://richyelectricals.co.uk',
-  'https://richyelectricalsgh.com'
+  'https://richyelectricalsgh.com',
+  'https://www.richyelectricals.co.uk'
 ];
 export default async function handler(req, res) {
   const origin = req.headers.origin;

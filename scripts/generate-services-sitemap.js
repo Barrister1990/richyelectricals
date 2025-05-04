@@ -31,7 +31,7 @@ const generateSitemap = () => {
   // Add static pages
   staticPages.forEach(page => {
     sitemap += `  <url>
-    <loc>https://https://www.richyelectricals.co.uk/${page.slug}</loc>
+    <loc>https://www.richyelectricals.co.uk/${page.slug}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${page.priority}</priority>

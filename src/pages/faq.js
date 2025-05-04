@@ -343,7 +343,7 @@ export default function FAQ() {
       <Seo
         title="Electrical FAQs"
         description="Find answers to frequently asked questions about our electrical services, pricing, emergency support, and safety standards in the UK."
-        canonical="/faq/"
+        canonical="/faq"
       />
 
       <div className="min-h-screen pt-12 relative">

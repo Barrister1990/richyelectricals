@@ -25,7 +25,7 @@ export default function ServiceSchemaMarkup({ service }) {
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Electrical Services",
+      "name": "Richy Electrical Services",
       "itemListElement": service.features.map((feature, index) => ({
         "@type": "Offer",
         "itemOffered": {

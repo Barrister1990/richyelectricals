@@ -21,7 +21,7 @@ export default function About() {
     <Seo 
         title="About Richy Electrical" 
         description="Learn more about Richy Electrical Services. We’re a UK-based team offering quality electrical work with a commitment to safety and excellence."
-        canonical="/about/"
+        canonical="/about"
       />
     <div className="min-h-screen w-screen pt-24">
      

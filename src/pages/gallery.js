@@ -884,7 +884,7 @@ export default function Gallery() {
      <Seo 
             title="Project Gallery" 
             description="View our gallery of electrical projects across the UK. From home installations to commercial work, see the quality Richy Electrical delivers."
-            canonical="/gallery/"
+            canonical="/gallery"
           />
   
     <div className="min-h-screen pt-12">

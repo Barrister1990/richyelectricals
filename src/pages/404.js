@@ -84,7 +84,7 @@ export default function Custom404() {
       <Seo
         title="Page Not Found "
         description="Sorry, the page you're looking for doesn't exist. Explore our website to find what you need."
-        canonical="/404/"
+        canonical="/404"
         
       />
 

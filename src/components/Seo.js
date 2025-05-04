@@ -1,38 +1,42 @@
-// co.ukponents/Seo.js
 import Head from 'next/head';
 
 export default function Seo({ 
   title, 
   description, 
-  canonical, 
-  ogType = "website",
-  ogImage = "/images/logo.jpg" 
+  canonical = '', 
+  ogType = 'website',
+  ogImage = '/images/logo.jpg' 
 }) {
   const siteTitle = `${title} – Trusted Electricians in the UK`;
-  
+
+  // ✅ Normalize the canonical path
+  const cleanCanonical = canonical
+    ? '/' + canonical.replace(/^\/+/, '').replace(/\/+$/, '')
+    : '';
+  const fullCanonical = `https://richyelectricals.co.uk${cleanCanonical}`;
+
   return (
     <Head>
       <title>{siteTitle}</title>
       <meta name="description" content={description} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
-      <link rel="canonical" href={`https://richyelectricals.co.uk${canonical}`} />
-      
+      <link rel="canonical" href={fullCanonical} />
+
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={`https://richyelectricals.co.uk${canonical}`} />
+      <meta property="og:url" content={fullCanonical} />
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={`https://richyelectricals.co.uk${ogImage}`} />
-      
+
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={`https://richyelectricals.co.uk${canonical}`} />
+      <meta property="twitter:url" content={fullCanonical} />
       <meta property="twitter:title" content={siteTitle} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={`https://richyelectricals.co.uk${ogImage}`} />
       <meta name="keywords" content="Electrician UK, Electrical Services UK, Local Electrician Walsall, Walsall Electrician, Electrician in Walsall, West Midlands Electrical Services, Emergency Electrician Walsall, Generator Repairs Walsall, Solar Panel Installation UK, Solar Electrician West Midlands, Electrical Maintenance Services, Domestic Electrician UK, Commercial Electrician UK, Certified Electrician Near Me, NICEIC Electrician, Electrical Wiring Services, Fuse Box Repair Walsall, Electrical Inspection Walsall, Richy Electricals, Affordable Electrician UK, Electrician for Home Rewiring, 24 Hour Electrician Walsall, EV Charger Installation Walsall" />
-
 
       {/* Structured Data for Local Business */}
       <script
@@ -40,7 +44,7 @@ export default function Seo({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Electrican",
+            "@type": "Electrician",
             "name": "Richy Electrical Services",
             "url": "https://richyelectricals.co.uk",
             "logo": "/images/logo.jpg",
@@ -61,7 +65,7 @@ export default function Seo({
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+447491565676",
-             "contactType": "Customer Service",
+              "contactType": "Customer Service"
             },
             "openingHoursSpecification": [
               {

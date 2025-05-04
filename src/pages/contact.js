@@ -110,9 +110,9 @@ export default function Contact() {
   return (
     <>
      <Seo 
-        title="Contact Richy Electrical – Get a Free Quote Today" 
+        title="Contact Richy Electrical" 
         description="Need a UK electrician you can trust? Contact Richy Electrical Services for fast support, free quotes, or to book an appointment."
-        canonical="https://richyelectricals.co.uk/contact"
+        canonical="/contact"
       />
     <div className="min-h-screen pt-24">
       

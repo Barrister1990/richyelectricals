@@ -252,9 +252,9 @@ export default function HomePage() {
   return (
     <>
      <Seo 
-        title="Richy Electrical Services – Trusted Electricians in the UK" 
+        title="Richy Electrical Services" 
         description="Looking for reliable electricians in the UK? Richy Electrical Services provides expert electrical installations, repairs, and inspections for homes and businesses."
-        canonical="https://richyelectricals.co.uk/"
+        canonical="/"
       />
     <div className="min-h-screen relative">
 

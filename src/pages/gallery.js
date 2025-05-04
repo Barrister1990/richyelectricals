@@ -882,9 +882,9 @@ export default function Gallery() {
   return (
     <>
      <Seo 
-            title="Project Gallery – Richy Electrical Services UK" 
+            title="Project Gallery" 
             description="View our gallery of electrical projects across the UK. From home installations to commercial work, see the quality Richy Electrical delivers."
-            canonical="https://richyelectricals.co.uk/gallery"
+            canonical="/gallery"
           />
   
     <div className="min-h-screen pt-12">

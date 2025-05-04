@@ -9,7 +9,7 @@ export default function TermsAndConditions() {
 <Seo 
             title="Terms & Conditions | Richy Electrical Services UK" 
             description="Review the terms and conditions for using Richy Electrical Services. Learn about our service agreements, liability limits, and your responsibilities as a customer."
-            canonical="https://richyelectricals.co.uk/terms-of-service"
+            canonical="/terms-of-service"
           />
 
     <div className="min-h-screen bg-gray-50 pt-24">

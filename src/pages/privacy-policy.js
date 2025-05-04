@@ -7,9 +7,9 @@ export default function PrivacyPolicy() {
   return (
     <>
     <Seo 
-                title="Privacy Policy | Richy Electrical Services UK" 
+                title="Privacy Policy " 
                 description="Find out how Richy Electrical Services collects, uses, and protects your personal data. We value your privacy and comply with UK GDPR regulations."
-                canonical="https://richyelectricals.co.uk/terms-of-service"
+                canonical="/privacy-policy"
               />
     
     <div className="min-h-screen bg-gray-50 pt-24">

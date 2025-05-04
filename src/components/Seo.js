@@ -8,7 +8,7 @@ export default function Seo({
   ogType = "website",
   ogImage = "/images/logo.jpg" 
 }) {
-  const siteTitle = `${title}`;
+  const siteTitle = `${title} – Trusted Electricians in the UK`;
   
   return (
     <Head>

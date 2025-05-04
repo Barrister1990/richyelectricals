@@ -341,9 +341,9 @@ export default function FAQ() {
   return (
     <>
       <Seo
-        title="Electrical FAQs – Richy Electrical Services UK"
+        title="Electrical FAQs"
         description="Find answers to frequently asked questions about our electrical services, pricing, emergency support, and safety standards in the UK."
-        canonical="https://richyelectricals.co.uk/faq"
+        canonical="/faq"
       />
 
       <div className="min-h-screen pt-12 relative">

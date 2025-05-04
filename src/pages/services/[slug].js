@@ -79,7 +79,7 @@ export default function ServiceDetail({ serviceData }) {
     <Seo 
       title={service.title} 
       description={service.metaDescription || service.description}
-      canonical={`/services/${service.id}`}
+      canonical={`/services/${service.id}/`}
       ogImage={service.ogImage || "/images/services/default-service.jpg"}
     />
     <ServiceSchemaMarkup service={service} />

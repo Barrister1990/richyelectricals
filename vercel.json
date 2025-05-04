@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      {
+        "source": "https://richyelectricals.co.uk/:path*",
+        "destination": "https://www.richyelectricals.co.uk/:path*",
+        "permanent": true
+      }
+    ]
+  }
+  

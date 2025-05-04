@@ -2,7 +2,7 @@
 
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://richyelectricals.co.uk',
+  siteUrl: 'https://www.richyelectricals.co.uk',
   generateRobotsTxt: true,
   outDir: './public',
 
@@ -16,7 +16,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://richyelectricals.co.uk/sitemap-services.xml',
+      'https://www.richyelectricals.co.uk/sitemap-services.xml',
     ],
   },
 };

@@ -13,7 +13,7 @@ export default function Seo({
   const cleanCanonical = canonical
     ? '/' + canonical.replace(/^\/+/, '').replace(/\/+$/, '')
     : '';
-  const fullCanonical = `https://richyelectricals.co.uk${cleanCanonical}`;
+  const fullCanonical = `https://www.richyelectricals.co.uk${cleanCanonical}`;
 
   return (
     <Head>
@@ -28,14 +28,14 @@ export default function Seo({
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={`https://richyelectricals.co.uk${ogImage}`} />
+      <meta property="og:image" content={`https://www.richyelectricals.co.uk${ogImage}`} />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content={fullCanonical} />
       <meta property="twitter:title" content={siteTitle} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={`https://richyelectricals.co.uk${ogImage}`} />
+      <meta property="twitter:image" content={`https://www.richyelectricals.co.uk${ogImage}`} />
       <meta name="keywords" content="Electrician UK, Electrical Services UK, Local Electrician Walsall, Walsall Electrician, Electrician in Walsall, West Midlands Electrical Services, Emergency Electrician Walsall, Generator Repairs Walsall, Solar Panel Installation UK, Solar Electrician West Midlands, Electrical Maintenance Services, Domestic Electrician UK, Commercial Electrician UK, Certified Electrician Near Me, NICEIC Electrician, Electrical Wiring Services, Fuse Box Repair Walsall, Electrical Inspection Walsall, Richy Electricals, Affordable Electrician UK, Electrician for Home Rewiring, 24 Hour Electrician Walsall, EV Charger Installation Walsall" />
 
       {/* Structured Data for Local Business */}
@@ -46,9 +46,9 @@ export default function Seo({
             "@context": "https://schema.org",
             "@type": "Electrician",
             "name": "Richy Electrical Services",
-            "url": "https://richyelectricals.co.uk",
+            "url": "https://www.richyelectricals.co.uk",
             "logo": "/images/logo.jpg",
-            "image": "https://richyelectricals.co.uk/images/logo.jpg",
+            "image": "https://www.richyelectricals.co.uk/images/logo.jpg",
             "description": "UK-based professional electricians offering installation, rewiring, inspection & maintenance services.",
             "address": {
               "@type": "PostalAddress",

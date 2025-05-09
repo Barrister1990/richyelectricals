@@ -1,3 +1,4 @@
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
@@ -152,6 +153,7 @@ export default function App({ Component, pageProps }) {
   }} />
 </Head>
       <Navbar />
+      <BreadcrumbSchema />
       <div
         className="fixed inset-0 z-0 pointer-events-none"
         style={modernBoxPattern}

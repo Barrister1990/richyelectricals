@@ -52,9 +52,9 @@ export default function Seo({
             "description": "UK-based professional electricians offering installation, rewiring, inspection & maintenance services.",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "115 Butts Road, Walsall, West Midlands",
+              "streetAddress": "88 Canalside, Redhill, Surrey, London United Kingdom",
               "addressLocality": "London",
-              "postalCode": "WS4 2BL",
+              "postalCode": "RH1 2NH",
               "addressCountry": "GB"
             },
             "geo": {

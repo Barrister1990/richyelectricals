@@ -9,7 +9,7 @@ export default function ServiceSchemaMarkup({ service }) {
     "description": service.metaDescription,
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Richy Electricals",
+      "name": "Richy Electrical Services",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "London",

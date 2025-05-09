@@ -170,7 +170,7 @@ export default async function handler(req, res) {
       // 2. Auto-reply to user
       await resend.emails.send({
         to: email,
-        from: 'Richy Electricals <noreply@richyelectricals.co.uk>', // Must be same or another verified sender
+        from: 'Richy Electricals <info@richyelectricals.co.uk>', // Must be same or another verified sender
         subject: 'We Received Your Request - Richy Electricals',
         html: autoReplyContent,
       });

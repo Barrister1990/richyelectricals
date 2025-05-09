@@ -113,7 +113,7 @@ export default async function handler(req, res) {
     // 2. Send auto-reply to user
     await resend.emails.send({
       to: email,
-      from: 'Richy Electricals <noreply@richyelectricals.co.uk>', // Same verified sender
+      from: 'Richy Electricals <imfo@richyelectricals.co.uk>', // Same verified sender
       subject: 'Thank You for Contacting Richy Electricals',
       html: `
         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; max-width: 650px; margin: auto;">

@@ -186,8 +186,8 @@ export default function Services() {
   return (
     <>
     <Seo 
-        title="Our Electrical Services – Installations, Repairs & More" 
-        description="Discover all our electrical services, including rewiring, fuse board upgrades, lighting, and emergency callouts – available across the UK."
+        title="Electrical Services London | Installations & Repairs" 
+        description="Complete electrical services in London: rewiring, fuse board upgrades, inspections, emergency repairs. NICEIC certified. Free quotes. Call today."
         canonical="/services"
       />
     <div className="min-h-screen pt-24">
@@ -241,7 +241,7 @@ export default function Services() {
               transition={{ duration: 0.7 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                Our Professional <span className="text-orange-500">Electrical Services</span>
+                Professional <span className="text-orange-500">Electrical Services</span> in London & West Midlands
               </h1>
               <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
                 From generator repairs and solar installations to comprehensive electrical solutions,

@@ -82,8 +82,8 @@ export default function Custom404() {
   return (
     <>
       <Seo
-        title="Page Not Found "
-        description="Sorry, the page you're looking for doesn't exist. Explore our website to find what you need."
+        title="404 Page Not Found | Richy Electrical Services" 
+        description="Page not found. Return to homepage or browse our electrical services in London. Expert electricians available 24/7."
         canonical="/404"
         
       />

@@ -13,6 +13,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import toast, { Toaster } from 'react-hot-toast';
 import Seo from '../components/Seo';
+import FaqSchema from '../components/FaqSchema';
+import TrustSignals from '../components/TrustSignals';
 export default function HomePage() {
   // For counting animation
   const [counting, setCounting] = useState(false);
@@ -252,10 +254,24 @@ export default function HomePage() {
   return (
     <>
      <Seo 
-        title="Richy Electrical Services" 
-        description="Looking for reliable electricians in the UK? Richy Electrical Services provides expert electrical installations, repairs, and inspections for homes and businesses."
+        title="Electrician London | 24/7 Emergency | Richy Electrical" 
+        description="Expert electricians in London. 24/7 emergency service, NICEIC certified. Free quotes, same-day service. Call +44 7491565676 for installations, rewiring & repairs."
         canonical=""
       />
+      <FaqSchema faqs={[
+        {
+          question: "Do you serve all London areas?",
+          answer: "Yes, we offer our electrical services throughout all London boroughs and some surrounding areas. Our central London headquarters allows us to respond quickly to clients across the capital."
+        },
+        {
+          question: "How often should I have an electrical inspection?",
+          answer: "For homeowners, we recommend an Electrical Installation Condition Report (EICR) every 10 years. For rental properties, UK regulations require an EICR every 5 years. Commercial properties should have inspections more frequently, typically every 3-5 years depending on the type of business."
+        },
+        {
+          question: "Do you provide 24/7 emergency electrical services?",
+          answer: "Yes, we offer 24/7 emergency electrical services throughout London. Our emergency electricians are fully qualified to handle any urgent electrical issue, from power outages to electrical failures. We aim to respond within 2-4 hours."
+        }
+      ]} />
     <div className="min-h-screen relative">
 
 
@@ -307,8 +323,8 @@ export default function HomePage() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              <span className="block">Premier Electrical Solutions</span>
-              <span className="text-orange-500">in London</span>
+              <span className="block">Expert Electricians in London</span>
+              <span className="text-orange-500">24/7 Emergency Service</span>
             </h1>
             <p className="text-lg md:text-xl text-orange-400 mb-8">
               Specializing in fuse board upgrades, electrical inspections, and complete electrical installations for homes and businesses across London.
@@ -403,56 +419,56 @@ export default function HomePage() {
                 title: "Fuse Board Upgrades",
                 description:
                   "Modern fuse board installations to improve safety and meet current electrical regulations in your London property.",
-                link: "/services#fuse-board-upgrades",
+                link: "/services/fuse-board-upgrades",
               },
               {
                 icon: <FileText className="w-10 h-10 text-orange-500" />,
                 title: "Electrical Inspections",
                 description:
                   "Thorough condition reports and periodic inspections to ensure your electrical systems are safe and compliant.",
-                link: "/services#electrical-inspections",
+                link: "/services/electrical-inspections",
               },
               {
                 icon: <Home className="w-10 h-10 text-orange-500" />,
                 title: "New Installations",
                 description:
                   "Complete electrical system installations for new builds, renovations, and property developments in London.",
-                link: "/services#new-installations",
+                link: "/services/new-installations",
               },
               {
                 icon: <Search className="w-10 h-10 text-orange-500" />,
                 title: "Fault Finding",
                 description:
                   "Expert diagnosis and resolution of electrical faults, trips, and other electrical issues in your home or business.",
-                link: "/services#fault-finding",
+                link: "/services/fault-finding",
               },
               {
                 icon: <Lightbulb className="w-10 h-10 text-orange-500" />,
                 title: "Garden Lighting",
                 description:
                   "Beautiful and functional outdoor lighting solutions for gardens, pathways, and exterior spaces in London properties.",
-                link: "/services#garden-lighting",
+                link: "/services/garden-lighting",
               },
               {
                 icon: <Zap className="w-10 h-10 text-orange-500" />,
                 title: "Rewiring Services",
                 description:
                   "Partial or full property rewiring with minimal disruption, upgrading old or dangerous wiring systems.",
-                link: "/services#rewiring",
+                link: "/services/rewiring",
               },
               {
                 icon: <ShieldCheck className="w-10 h-10 text-orange-500" />,
                 title: "Renewable Energy",
                 description:
                   "Installation of eco-friendly electrical systems including solar panels and EV charging points for London residents.",
-                link: "/services#renewable-energy",
+                link: "/services",
               },
               {
                 icon: <Clock className="w-10 h-10 text-orange-500" />,
                 title: "Emergency Call-outs",
                 description:
                   "24/7 emergency electrical assistance with rapid response throughout London when you need it most.",
-                link: "/services#emergency",
+                link: "/services/emergency-services",
               },
             ].map((service, index) => (
               <motion.div
@@ -497,13 +513,16 @@ export default function HomePage() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
                 <Image
-  src="/atwork.jpg" // The image source
-  alt="Richy Electricals engineers at work" // Alt text for the image
-  className="w-full h-full object-cover" // Tailwind CSS classes for styling
-  width={1200} // Specify the width of the image
-  height={800} // Specify the height of the image
-  style={{ objectFit: 'cover' }}
-/>
+                  src="/atwork.jpg"
+                  alt="Professional electricians installing electrical systems in London - Richy Electrical Services"
+                  className="w-full h-full object-cover"
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  quality={85}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                />
               </div>
               {/* Floating badge */}
               <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-lg p-4 z-20">
@@ -529,12 +548,12 @@ export default function HomePage() {
                 London&#39;s Trusted Electrical Experts
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                With over 15 years of experience across London, Richy Electricals has built a reputation for excellence,
+                With over 15 years of experience across London, Richy Electrical Services has built a reputation for excellence,
                 reliability, and exceptional service throughout the capital.
               </p>
               <p className="text-lg text-gray-600 mb-8">
                 Our team of certified electrical engineers specializes in complete electrical solutions,
-                providing high-quality services tailored to UK standards and regulations.
+                providing high-quality services tailored to UK standards and regulations. We serve London, Walsall, Birmingham, and surrounding areas.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
@@ -680,6 +699,9 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+      {/* Trust Signals Section */}
+      <TrustSignals />
+
       <section className="py-16 border-t border-gray-200">
   <div className="container mx-auto px-6 lg:px-8">
     <div className="text-center mb-12">
@@ -698,7 +720,7 @@ export default function HomePage() {
         <div className="p-6">
           <div className="flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <h3 className="text-xl font-bold text-center text-gray-800 mb-2">EAL Level 3 Diploma</h3>
@@ -711,7 +733,7 @@ export default function HomePage() {
         <div className="p-6">
           <div className="flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <h3 className="text-xl font-bold text-center text-gray-800 mb-2">City & Guilds 2391-50</h3>
@@ -725,7 +747,7 @@ export default function HomePage() {
         <div className="p-6">
           <div className="flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <h3 className="text-xl font-bold text-center text-gray-800 mb-2">City & Guilds 2391-51</h3>
@@ -739,7 +761,7 @@ export default function HomePage() {
         <div className="p-6">
           <div className="flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <h3 className="text-xl font-bold text-center text-gray-800 mb-2">Building Regulations</h3>
@@ -753,7 +775,7 @@ export default function HomePage() {
         <div className="p-6">
           <div className="flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <h3 className="text-xl font-bold text-center text-gray-800 mb-2">EAL Level 3 Award</h3>
@@ -767,7 +789,7 @@ export default function HomePage() {
         <div className="p-6">
           <div className="flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <h3 className="text-xl font-bold text-center text-gray-800 mb-2">BPEC Certification</h3>
@@ -1048,7 +1070,8 @@ export default function HomePage() {
                     115 Butts Road, Walsall, West Midlands, WS4 2BL, United Kingdom
                     </p>
                     <p className="text-gray-600">
-                    88 Canalside, Redhill, Surrey, RH1 2NH, London, United Kingdom
+                    <strong>London Office:</strong> 88 Canalside, Redhill, Surrey, RH1 2NH<br />
+                    <strong>West Midlands Office:</strong> 115 Butts Road, Walsall, WS4 2BL
                     </p>
                     
                   </div>

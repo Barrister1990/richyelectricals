@@ -19,8 +19,8 @@ export default function About() {
   return (
     <>
     <Seo 
-        title="About Richy Electrical" 
-        description="Learn more about Richy Electrical Services. We’re a UK-based team offering quality electrical work with a commitment to safety and excellence."
+        title="About Us | Expert Electricians London | Richy Electrical" 
+        description="Meet Richy Electrical Services - London's trusted electricians since 2010. NICEIC certified, 15+ years experience. Quality electrical work across London."
         canonical="/about"
       />
     <div className="min-h-screen w-screen pt-24">
@@ -33,7 +33,7 @@ export default function About() {
           <div className="absolute inset-0 bg-[url('/about-hero.jpg')] bg-cover bg-center opacity-70 mix-blend-overlay"></div>
         </div>
 
-        <div className="container mx-auto px-6 lg:px-8 relative z-20">
+        <div className="container  px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -41,8 +41,8 @@ export default function About() {
             className="max-w-3xl"
           >
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              <span className="block">About</span>
-              <span className="text-orange-500">Richy Electricals</span>
+              <span className="block">About Our Expert Electricians</span>
+              <span className="text-orange-500">in London</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-200 mb-8">
               Our story, our mission, and the expert team powering electrical solutions across London since 2010.
@@ -65,7 +65,7 @@ export default function About() {
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <Image 
               src="/images/ceo.jpg" 
-              alt="Richy Electricals founder" 
+              alt="Richy Electrical Services founder" 
               width={600}
               height={600}
               className="w-full h-full object-cover"
@@ -92,7 +92,7 @@ export default function About() {
         </div>
         
         <p className="text-lg text-gray-600 mb-6">
-          Founded in 2010 by Richard Antwi, a certified electrical engineer with deep roots in London, Richy Electricals began as a small electrical shop in East London specializing in fuse board upgrades, rewiring, and electrical inspections.
+          Founded in 2010 by Richard Antwi, a certified electrical engineer with deep roots in London, Richy Electrical Services began as a small electrical shop in East London specializing in fuse board upgrades, rewiring, and electrical inspections.
         </p>
         
         <p className="text-lg text-gray-600 mb-6">
@@ -141,7 +141,7 @@ export default function About() {
               <h2 className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider border-b-2 border-orange-500 pb-1 mb-2">Our Purpose</h2>
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Mission, Vision & Values</h3>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                The principles that guide everything we do at Richy Electricals
+                The principles that guide everything we do at Richy Electrical Services
               </p>
             </motion.div>
           </div>
@@ -232,11 +232,11 @@ export default function About() {
             >
               <div className="mb-6">
                 <h2 className="inline-block text-sm font-semibold text-orange-500 uppercase tracking-wider border-b-2 border-orange-500 pb-1 mb-2">Why Choose Us</h2>
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">The Richy Electricals Difference</h3>
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">The Richy Electrical Services Difference</h3>
               </div>
               
               <p className="text-lg text-gray-600 mb-8">
-                At Richy Electricals, we distinguish ourselves through unwavering commitment to quality, safety, and customer satisfaction throughout London. Here is what sets us apart:
+                At Richy Electrical Services, we distinguish ourselves through unwavering commitment to quality, safety, and customer satisfaction throughout London. Here is what sets us apart:
               </p>
               
               <div className="space-y-6">
@@ -294,31 +294,39 @@ export default function About() {
               <div className="grid grid-cols-2 gap-4">
                 <Image 
                   src="/atwork.jpg" 
-                  alt="Richy Electricals engineer at work in London" 
+                  alt="NICEIC certified electrician performing electrical installation work in London - Richy Electrical Services" 
                   width={300}
                   height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md transform translate-y-6"
+                  loading="lazy"
+                  quality={85}
                 />
                 <Image 
                   src="/ingh.jpg" 
-                  alt="Electrical installation in London" 
+                  alt="Professional electrical installation service in London homes and businesses - expert electricians" 
                   width={300}
                   height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md"
+                  loading="lazy"
+                  quality={85}
                 />
                 <Image 
                   src="/source.jpg" 
-                  alt="Generator project in London" 
+                  alt="Generator installation and maintenance services by qualified electricians in London" 
                   width={300}
                   height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md"
+                  loading="lazy"
+                  quality={85}
                 />
                 <Image 
                   src="/panel.jpg" 
-                  alt="Team working on electrical panel in London" 
+                  alt="Electrical panel upgrade and fuse board installation by certified electricians in London" 
                   width={300}
                   height={300}
                   className="w-full h-full object-cover rounded-lg shadow-md transform translate-y-6"
+                  loading="lazy"
+                  quality={85}
                 />
               </div>
               {/* Floating badge */}
@@ -550,9 +558,9 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Work with London Trusted Electrical Team?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Work with Trusted Electrical Experts?</h2>
               <p className="text-xl text-gray-300 mb-10">
-                Let Richy Electricals bring our London expertise to your project, anywhere in the city.
+                Let Richy Electrical Services bring our expertise to your project. We serve London, Walsall, Birmingham, and surrounding areas across the UK.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
                 <motion.div

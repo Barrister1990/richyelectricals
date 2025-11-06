@@ -1,4 +1,5 @@
 import Seo from '@/components/Seo';
+import VideoSchema from '@/components/VideoSchema';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Calendar, ChevronLeft, ChevronRight, Filter, Play, X } from 'lucide-react';
 import Image from 'next/image';
@@ -882,10 +883,11 @@ export default function Gallery() {
   return (
     <>
      <Seo 
-            title="Project Gallery" 
-            description="View our gallery of electrical projects across the UK. From home installations to commercial work, see the quality Richy Electrical delivers."
+            title="Electrical Projects Gallery | London | Richy Electrical" 
+            description="View our electrical project gallery. Professional installations, rewiring, and commercial work across London. See our quality craftsmanship."
             canonical="/gallery"
           />
+      <VideoSchema videos={galleryItems} />
   
     <div className="min-h-screen pt-12">
 
@@ -1002,11 +1004,12 @@ export default function Gallery() {
                     {item.type === "image" ? (
                       <Image 
                         src={item.media} 
-                        alt={item.title} 
+                        alt={`${item.title} - Electrical project by Richy Electrical Services in London`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        width={200}
-                        height={100}
-                        
+                        width={400}
+                        height={256}
+                        loading="lazy"
+                        quality={85}
                       />
                     ) : (
                       <div className="w-full h-full relative">

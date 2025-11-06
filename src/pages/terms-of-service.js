@@ -7,8 +7,8 @@ export default function TermsAndConditions() {
   return (
 <>
 <Seo 
-            title="Terms & Conditions | Richy Electrical Services UK" 
-            description="Review the terms and conditions for using Richy Electrical Services. Learn about our service agreements, liability limits, and your responsibilities as a customer."
+            title="Terms & Conditions | Richy Electrical Services" 
+            description="Terms and conditions for Richy Electrical Services. Review service agreements, warranties, liability, and customer responsibilities. UK electricians."
             canonical="/terms-of-service"
           />
 
@@ -78,7 +78,7 @@ export default function TermsAndConditions() {
                   <h2 className="text-2xl font-bold text-gray-900">Introduction</h2>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Welcome to Richy Electricals. These Terms and Conditions (Terms) govern your use of our website and services provided by Richy Electricals, whether through our UK or Ghana operations, or elsewhere globally.
+                  Welcome to Richy Electrical Services. These Terms and Conditions (Terms) govern your use of our website and services provided by Richy Electrical Services, whether through our UK or Ghana operations, or elsewhere globally.
                 </p>
                 <p className="text-gray-700 mb-4">
                   By accessing our website or using our services, you agree to be bound by these Terms. If you disagree with any part of these Terms, please do not use our website or services.
@@ -100,9 +100,9 @@ export default function TermsAndConditions() {
                   For the purpose of these Terms:
                 </p>
                 <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-                  <li><strong>Company</strong>, We, Us, or Our refers to Richy Electricals, with operations in both the UK and Ghana.</li>
-                  <li><strong>Services</strong> refers to all electrical services, generator sales, repairs, maintenance, and other related services provided by Richy Electricals.</li>
-                  <li><strong>Website</strong> refers to the Richy Electricals website, accessible from www.richyelectricals.com.</li>
+                  <li><strong>Company</strong>, We, Us, or Our refers to Richy Electrical Services, with operations in both the UK and Ghana.</li>
+                  <li><strong>Services</strong> refers to all electrical services, generator sales, repairs, maintenance, and other related services provided by Richy Electrical Services.</li>
+                  <li><strong>Website</strong> refers to the Richy Electrical Services website, accessible from www.richyelectricals.com.</li>
                   <li><strong>You</strong> refers to the individual or entity accessing the website or using our services.</li>
                   <li><strong>Terms</strong> refers to these Terms and Conditions that form the entire agreement between You and the Company regarding the use of our services.</li>
                 </ul>
@@ -119,7 +119,7 @@ export default function TermsAndConditions() {
                   <h2 className="text-2xl font-bold text-gray-900">Services</h2>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Richy Electricals provides electrical engineering services, generator sales, repairs, and maintenance to clients in the UK, Ghana, and worldwide. All services are subject to the following conditions:
+                  Richy Electrical Services provides electrical engineering services, generator sales, repairs, and maintenance to clients in the UK, Ghana, and worldwide. All services are subject to the following conditions:
                 </p>
                 <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
                   <li>All services are provided in accordance with the relevant regulations and industry standards applicable in the country of service delivery.</li>
@@ -162,11 +162,11 @@ export default function TermsAndConditions() {
                   <h2 className="text-2xl font-bold text-gray-900">Warranties and Guarantees</h2>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  Richy Electricals is committed to providing high-quality services and products. Our warranties and guarantees are as follows:
+                  Richy Electrical Services is committed to providing high-quality services and products. Our warranties and guarantees are as follows:
                 </p>
                 <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
                   <li>All workmanship is guaranteed for a period of 12 months from the date of completion.</li>
-                  <li>Products and parts supplied by Richy Electricals carry their manufacturers warranty, details of which will be provided at the time of purchase.</li>
+                  <li>Products and parts supplied by Richy Electrical Services carry their manufacturers warranty, details of which will be provided at the time of purchase.</li>
                   <li>Warranties do not cover damage caused by improper use, accidents, unauthorized repairs, or natural disasters.</li>
                   <li>To claim under warranty, you must provide proof of purchase and notify us of any defects in writing within 7 days of discovery.</li>
                   <li>Our liability is limited to the repair or replacement of defective parts or workmanship and does not extend to consequential losses.</li>
@@ -206,10 +206,10 @@ export default function TermsAndConditions() {
                   The intellectual property rights related to our services and website are protected as follows:
                 </p>
                 <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-                  <li>All content on our website, including text, graphics, logos, images, and software, is the property of Richy Electricals and is protected by copyright and other intellectual property laws.</li>
+                  <li>All content on our website, including text, graphics, logos, images, and software, is the property of Richy Electrical Services and is protected by copyright and other intellectual property laws.</li>
                   <li>You may not reproduce, distribute, modify, or create derivative works from any content without our express written permission.</li>
                   <li>Any feedback, suggestions, or ideas provided by you regarding our services may be used by us without any obligation to compensate you.</li>
-                  <li>The Richy Electricals name, logo, and brand elements are trademarks and may not be used without written permission.</li>
+                  <li>The Richy Electrical Services name, logo, and brand elements are trademarks and may not be used without written permission.</li>
                 </ul>
               </div>
 
@@ -225,7 +225,7 @@ export default function TermsAndConditions() {
                   By using our services, you acknowledge and agree to the following limitations of liability:
                 </p>
                 <ul className="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-                  <li>To the maximum extent permitted by applicable law, Richy Electricals shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</li>
+                  <li>To the maximum extent permitted by applicable law, Richy Electrical Services shall not be liable for any indirect, incidental, special, consequential, or punitive damages.</li>
                   <li>Our total liability for any claim arising out of or relating to these Terms or our services shall not exceed the amount paid by you for the specific service giving rise to such claim.</li>
                   <li>We do not guarantee uninterrupted, secure, or error-free operation of our services or website.</li>
                   <li>We are not liable for any delays or failures in performance due to circumstances beyond our reasonable control.</li>

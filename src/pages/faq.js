@@ -1,5 +1,6 @@
 // pages/faq.js
 import Seo from "@/components/Seo";
+import FaqSchema from "@/components/FaqSchema";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -338,13 +339,17 @@ export default function FAQ() {
   // Check if we have search results
   const hasSearchResults = Object.keys(filteredFaqs).length > 0;
 
+  // Flatten all FAQs for schema markup
+  const allFaqs = faqCategories.flatMap(category => category.faqs);
+
   return (
     <>
       <Seo
-        title="Electrical FAQs"
-        description="Find answers to frequently asked questions about our electrical services, pricing, emergency support, and safety standards in the UK."
+        title="Electrician FAQs | Common Questions | London" 
+        description="Frequently asked questions about electrical services in London. Get answers on pricing, emergency support, NICEIC certification, and safety standards."
         canonical="/faq"
       />
+      <FaqSchema faqs={allFaqs} />
 
       <div className="min-h-screen pt-12 relative">
         {/* Hero Section */}

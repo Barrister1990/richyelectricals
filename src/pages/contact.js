@@ -110,8 +110,8 @@ export default function Contact() {
   return (
     <>
      <Seo 
-        title="Contact Richy Electrical" 
-        description="Need a UK electrician you can trust? Contact Richy Electrical Services for fast support, free quotes, or to book an appointment."
+        title="Contact Us | Electrician London | Richy Electrical" 
+        description="Contact Richy Electrical Services for free quotes. Call +44 7491565676 or book online. 24/7 emergency electricians in London. Same-day service available."
         canonical="/contact"
       />
     <div className="min-h-screen pt-24">
@@ -164,7 +164,7 @@ export default function Contact() {
             className="max-w-4xl"
           >
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-              Contact <span className="text-orange-500">Richy Electricals</span>
+              Contact Expert <span className="text-orange-500">Electricians in London</span>
             </h1>
             <p className="text-lg text-gray-200">
               Get in touch with our team of experts for all your electrical needs in London
@@ -188,7 +188,7 @@ export default function Contact() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Get In Touch</h2>
               <p className="text-lg text-gray-600 mb-8">
                 Have questions about our services? Need a quote for your electrical project? 
-                Our team is ready to assist you from our office in London.
+                Our team is ready to assist you from our offices in London and West Midlands, serving customers across the UK.
               </p>
               
               <div className="space-y-8 mb-10">

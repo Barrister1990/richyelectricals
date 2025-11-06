@@ -10,6 +10,9 @@ import {
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import ExternalLink from '../../components/ExternalLink';
+import FaqSchema from '../../components/FaqSchema';
+import HowToSchema from '../../components/HowToSchema';
 import Seo from '../../components/Seo';
 import ServiceSchemaMarkup from '../../components/ServiceSchemaMarkup';
 import { getServiceData } from '../../lib/services';
@@ -79,10 +82,24 @@ export default function ServiceDetail({ serviceData }) {
     <Seo 
       title={service.title} 
       description={service.metaDescription || service.description}
-      canonical={`/services/${service.id}/`}
+      canonical={`/services/${service.id}`}
       ogImage={service.ogImage || "/images/services/default-service.jpg"}
     />
     <ServiceSchemaMarkup service={service} />
+    {service.faq && service.faq.length > 0 && (
+      <FaqSchema faqs={service.faq} />
+    )}
+    {service.processSteps && service.processSteps.length > 0 && (
+      <HowToSchema
+        name={`How to ${service.title}`}
+        description={`Step-by-step process for ${service.title.toLowerCase()} by Richy Electrical Services`}
+        steps={service.processSteps.map(step => ({
+          name: step.title,
+          text: step.description
+        }))}
+        totalTime={`PT${service.processSteps.length * 2}H`}
+      />
+    )}
     <div className="min-h-screen pt-10">
      
       {/* Hero Section */}
@@ -145,7 +162,7 @@ export default function ServiceDetail({ serviceData }) {
                 </span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-                {service.headline || service.title}
+                {service.title} <span className="text-orange-500">in London</span>
               </h1>
               <p className="text-xl text-gray-600 mb-10 max-w-3xl">
                 {service.description || service.shortDescription}
@@ -181,11 +198,15 @@ export default function ServiceDetail({ serviceData }) {
             {/* Main Content */}
             <div className="lg:col-span-2">
               <div className="prose prose-lg max-w-none mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Overview</h2>
-                <p className="text-gray-700">{service.longDescription || service.fullDescription}</p>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6">Professional {service.title} Services in London</h2>
+                <p className="text-gray-700 text-lg leading-relaxed mb-4">{service.longDescription || service.fullDescription}</p>
+                
+                <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                  As <strong>NICEIC certified electricians</strong> in London and West Midlands, we ensure all our work complies with the latest UK electrical regulations, including the <ExternalLink href="https://www.gov.uk/government/publications/electrical-safety-standards-in-the-private-rented-sector">Electrical Safety Standards in the Private Rented Sector</ExternalLink> and <ExternalLink href="https://www.niceic.com">NICEIC standards</ExternalLink>. Our team of qualified electricians follows the <ExternalLink href="https://www.gov.uk/government/publications/electricity-at-work-regulations-1989">Electricity at Work Regulations 1989</ExternalLink> to ensure the highest safety standards.
+                </p>
                 
                 <div className="mt-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Key Features</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Key Features of Our {service.title} Service</h3>
                   <ul className="space-y-3">
                     {service.features.map((feature, index) => (
                       <motion.li 
@@ -211,7 +232,10 @@ export default function ServiceDetail({ serviceData }) {
               {/* Process Steps */}
               {service.processSteps && (
                 <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-gray-900 mb-8">Our Process</h2>
+                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Our {service.title} Process</h2>
+                  <p className="text-gray-600 mb-8">
+                    We follow a systematic approach to ensure every {service.title.toLowerCase()} project is completed to the highest standards. Our process is designed to minimize disruption while delivering exceptional results.
+                  </p>
                   <div className="space-y-8">
                     {service.processSteps.map((step, index) => (
                       <motion.div 
@@ -240,9 +264,38 @@ export default function ServiceDetail({ serviceData }) {
                 </div>
               )}
 
+              {/* Certifications & Compliance */}
+              <div className="mb-12 bg-blue-50 rounded-xl p-8 border-l-4 border-blue-500">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">Certifications & Compliance</h2>
+                <p className="text-gray-700 mb-4">
+                  Richy Electrical Services is fully certified and compliant with all UK electrical safety standards. We are proud to be <strong>NICEIC approved contractors</strong>, ensuring all our electrical work meets the highest industry standards.
+                </p>
+                <ul className="space-y-2 mb-4">
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">✓</span>
+                    <span className="text-gray-700"><strong>NICEIC Approved:</strong> All our electricians are registered with the <ExternalLink href="https://www.niceic.com">NICEIC (National Inspection Council for Electrical Installation Contracting)</ExternalLink></span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">✓</span>
+                    <span className="text-gray-700"><strong>18th Edition Wiring Regulations:</strong> All work complies with <ExternalLink href="https://www.gov.uk/government/publications/electricity-at-work-regulations-1989">BS 7671:2018</ExternalLink> standards</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">✓</span>
+                    <span className="text-gray-700"><strong>Public Liability Insurance:</strong> Fully insured up to £10 million for your peace of mind</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">✓</span>
+                    <span className="text-gray-700"><strong>Building Regulations Part P:</strong> All domestic electrical work complies with <ExternalLink href="https://www.gov.uk/government/publications/electrical-safety-standards-in-the-private-rented-sector">Part P Building Regulations</ExternalLink></span>
+                  </li>
+                </ul>
+                <p className="text-gray-600 text-sm italic">
+                  For more information about electrical safety standards, visit the <ExternalLink href="https://www.electricalsafetyfirst.org.uk">Electrical Safety First</ExternalLink> website.
+                </p>
+              </div>
+
               {/* Benefits */}
               <div className="mb-12 bg-gray-50 rounded-xl p-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">{service.benefitsHeading || "Benefits"}</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-8">{service.benefitsHeading || "Why Choose Our " + service.title + " Service?"}</h2>
                 <div className="grid md:grid-cols-2 gap-6">
                   {service.benefits.map((benefit, index) => (
                     <motion.div 
@@ -339,29 +392,36 @@ export default function ServiceDetail({ serviceData }) {
               </div>
               
               {/* Related Services */}
-              <div className="bg-gray-50 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Related Services</h3>
-                <div className="space-y-4">
-                  {service.relatedServices && service.relatedServices.map((relatedServiceId, index) => (
-                    <Link 
-                      key={index}
-                      href={`/services/${relatedServiceId}`}
-                      className="flex items-center p-3 rounded-lg hover:bg-white group transition-colors duration-300"
-                    >
-                      <div className="bg-orange-100 rounded-full p-2 mr-3 group-hover:bg-orange-200 transition-colors duration-300">
-                        <Wrench className="w-5 h-5 text-orange-500" />
-                      </div>
-                      <div>
-                        <h4 className="font-medium text-gray-900">{relatedServiceId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
-                        <p className="text-sm text-gray-500">Learn more</p>
-                      </div>
-                      <div className="ml-auto">
-                        <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-orange-500 transition-colors duration-300" />
-                      </div>
-                    </Link>
-                  ))}
+              {service.relatedServices && service.relatedServices.length > 0 && (
+                <div className="bg-gray-50 rounded-xl p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Related Services</h3>
+                  <div className="space-y-4">
+                    {service.relatedServices.map((relatedServiceId, index) => {
+                      const relatedService = getServiceData(relatedServiceId);
+                      const serviceTitle = relatedService ? relatedService.title : relatedServiceId.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+                      
+                      return (
+                        <Link 
+                          key={index}
+                          href={`/services/${relatedServiceId}`}
+                          className="flex items-center p-3 rounded-lg hover:bg-white group transition-colors duration-300"
+                        >
+                          <div className="bg-orange-100 rounded-full p-2 mr-3 group-hover:bg-orange-200 transition-colors duration-300">
+                            <Wrench className="w-5 h-5 text-orange-500" />
+                          </div>
+                          <div>
+                            <h4 className="font-medium text-gray-900">{serviceTitle}</h4>
+                            <p className="text-sm text-gray-500">Learn more about {serviceTitle.toLowerCase()}</p>
+                          </div>
+                          <div className="ml-auto">
+                            <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-orange-500 transition-colors duration-300" />
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

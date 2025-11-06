@@ -7,8 +7,8 @@ export default function Sitemap() {
   return (
     <>
       <Seo
-        title="HTML Sitemap "
-        description="HTML sitemap for Richy Electrical Services. Explore our services, company info, and contact options all in one place."
+        title="Sitemap | Richy Electrical Services" 
+        description="HTML sitemap for Richy Electrical Services. Find all pages, services, and contact information. London electricians directory."
         canonical="/sitemap"
       />
       <main className="max-w-6xl mx-auto px-4 py-16 bg-gray-50 ">

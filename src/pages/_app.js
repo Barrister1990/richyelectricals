@@ -98,7 +98,7 @@ export default function App({ Component, pageProps }) {
     __html: JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Richyelectricals UK",
+      "name": "Richy Electrical Services",
       "url": "https://www.richyelectricals.co.uk",
       "logo": "https://www.richyelectricals.co.uk/logo.jpg",
       "contactPoint": {
@@ -109,7 +109,26 @@ export default function App({ Component, pageProps }) {
       },
       "sameAs": [
         "https://www.facebook.com/richyelectricalsgh",
-        "https://https://www.instagram.com/richyelectricalservices?igsh=Z2I5eXdoMWgwNHAw&utm_source=qr"
+        "https://www.instagram.com/richyelectricalservices?igsh=Z2I5eXdoMWgwNHAw&utm_source=qr",
+        "https://www.tiktok.com/@richy_electric?_t=ZN-8vbqj7KYN4o&_r=1"
+      ],
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "88 Canalside, Redhill, Surrey",
+          "addressLocality": "London",
+          "addressRegion": "Greater London",
+          "postalCode": "RH1 2NH",
+          "addressCountry": "GB"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "115 Butts Road",
+          "addressLocality": "Walsall",
+          "addressRegion": "West Midlands",
+          "postalCode": "WS4 2BL",
+          "addressCountry": "GB"
+        }
       ]
     })
   }} />
@@ -154,9 +173,14 @@ export default function App({ Component, pageProps }) {
 </Head>
       <Navbar />
       <BreadcrumbSchema />
+      {/* Background pattern - prevent layout shift */}
       <div
         className="fixed inset-0 z-0 pointer-events-none"
-        style={modernBoxPattern}
+        style={{
+          ...modernBoxPattern,
+          willChange: 'auto', // Optimize for performance
+        }}
+        aria-hidden="true"
       ></div>
       <main className="w-full relative z-10">
         <Component {...pageProps} />

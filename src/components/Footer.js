@@ -66,7 +66,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-6">Richy Electricals</h3>
+            <h3 className="text-xl font-bold mb-6">Richy Electrical Services</h3>
             <p className="text-gray-400 mb-6">
               Professional electrical services throughout London, providing
               high-quality solutions for your home and business.
@@ -117,27 +117,22 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                "Home",
-                "About",
-                "Services",
-                "Gallery",
-                "Contact",
-              ].map((link, index) => {
-                const href =
-                  link === "Home"
-                    ? "/"
-                    : `/${link.toLowerCase().replace(/\s+/g, "-")}`;
-                return (
-                  <li key={index}>
-                    <Link
-                      href={href}
-                      className="text-gray-400 hover:text-orange-500 transition-colors flex items-center"
-                    >
-                      <span className="mr-2">›</span> {link}
-                    </Link>
-                  </li>
-                );
-              })}
+                { name: "Home", href: "/" },
+                { name: "About", href: "/about" },
+                { name: "Services", href: "/services" },
+                { name: "Gallery", href: "/gallery" },
+                { name: "Contact", href: "/contact" },
+                { name: "Locations", href: "/locations/london" },
+              ].map((link, index) => (
+                <li key={index}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-400 hover:text-orange-500 transition-colors flex items-center"
+                  >
+                    <span className="mr-2">›</span> {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -148,19 +143,20 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                "Fuse Board Upgrades",
-                "Electrical Inspections",
-                "New Installations",
-                "Fault Finding",
-                "Garden Lighting",
-                "Rewiring",
+                { name: "Fuse Board Upgrades", slug: "fuse-board-upgrades" },
+                { name: "Electrical Inspections", slug: "electrical-inspections" },
+                { name: "New Installations", slug: "new-installations" },
+                { name: "Fault Finding", slug: "fault-finding" },
+                { name: "Garden Lighting", slug: "garden-lighting" },
+                { name: "Rewiring", slug: "rewiring" },
+                { name: "Emergency Services", slug: "emergency-services" },
               ].map((service, index) => (
                 <li key={index}>
                   <Link
-                    href={`/services#${service.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`/services/${service.slug}`}
                     className="text-gray-400 hover:text-orange-500 transition-colors flex items-center"
                   >
-                    <span className="mr-2">›</span> {service}
+                    <span className="mr-2">›</span> {service.name}
                   </Link>
                 </li>
               ))}
@@ -176,10 +172,11 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 text-orange-500 mr-3 mt-1" />
                 <span className="text-gray-400">
-                  115 Butts Road, Walsall
-                  <br /> West Midlands, WS4 2BL,
-                  <br />
-                  United Kingdom
+                  <strong className="text-white">London Office:</strong><br />
+                  88 Canalside, Redhill, Surrey, RH1 2NH<br />
+                  <strong className="text-white mt-2 block">West Midlands Office:</strong>
+                  115 Butts Road, Walsall<br />
+                  West Midlands, WS4 2BL, UK
                 </span>
               </li>
               <li className="flex items-center">
@@ -217,7 +214,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © {currentYear} Richy Electricals. All rights reserved.
+              © {currentYear} Richy Electrical Services. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link

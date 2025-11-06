@@ -40,17 +40,17 @@ export default async function handler(req, res) {
       minute: 'numeric'
     });
     
-    // 1. Send notification email to business (Richy Electricals)
+    // 1. Send notification email to business (Richy Electrical Services)
     await resend.emails.send({
       to: 'info@richyelectricals.co.uk',
-      from: 'Richy Electricals <noreply@richyelectricals.co.uk>', // Replace with verified Resend sender
+      from: 'Richy Electrical Services <noreply@richyelectricals.co.uk>', // Replace with verified Resend sender
       subject: `New Contact Message: ${name}`,
       html: `
         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; max-width: 650px; margin: auto;">
           <!-- Header -->
           <div style="background-color: #FF9933; padding: 25px; border-radius: 8px 8px 0 0; text-align: center;">
             <h1 style="color: white; margin: 0; font-size: 24px;">New Website Inquiry</h1>
-            <p style="color: white; margin: 5px 0 0; font-size: 16px; opacity: 0.9;">From Richy Electricals Contact Form</p>
+            <p style="color: white; margin: 5px 0 0; font-size: 16px; opacity: 0.9;">From Richy Electrical Services Contact Form</p>
           </div>
           
           <!-- Content -->
@@ -104,7 +104,7 @@ export default async function handler(req, res) {
           
           <!-- Footer -->
           <div style="background-color: #333; color: white; padding: 15px; border-radius: 0 0 8px 8px; text-align: center;">
-            <p style="margin: 0; font-size: 14px;">This is an automated notification from the Richy Electricals website.</p>
+            <p style="margin: 0; font-size: 14px;">This is an automated notification from the Richy Electrical Services website.</p>
           </div>
         </div>
       `,
@@ -113,13 +113,13 @@ export default async function handler(req, res) {
     // 2. Send auto-reply to user
     await resend.emails.send({
       to: email,
-      from: 'Richy Electricals <imfo@richyelectricals.co.uk>', // Same verified sender
-      subject: 'Thank You for Contacting Richy Electricals',
+      from: 'Richy Electrical Services <imfo@richyelectricals.co.uk>', // Same verified sender
+      subject: 'Thank You for Contacting Richy Electrical Services',
       html: `
         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; max-width: 650px; margin: auto;">
           <!-- Header with Logo -->
           <div style="background-color: #FF9933; padding: 30px; border-radius: 8px 8px 0 0; text-align: center;">
-            <h1 style="color: white; margin: 0; font-size: 28px;">Richy Electricals</h1>
+            <h1 style="color: white; margin: 0; font-size: 28px;">Richy Electrical Services</h1>
             <p style="color: white; margin: 10px 0 0; font-size: 16px;">Expert Electrical Solutions</p>
           </div>
           
@@ -129,7 +129,7 @@ export default async function handler(req, res) {
             
             <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">Hello ${name},</p>
             
-            <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">Thank you for reaching out to <strong>Richy Electricals</strong>. This automatic confirmation is to let you know we've received your message and one of our team members will be in touch with you soon.</p>
+            <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">Thank you for reaching out to <strong>Richy Electrical Services</strong>. This automatic confirmation is to let you know we've received your message and one of our team members will be in touch with you soon.</p>
             
             <div style="background-color: #f9f9f9; border-radius: 8px; padding: 25px; margin: 30px 0;">
               <h3 style="color: #FF9933; margin-top: 0; font-size: 18px;">Your Message Details:</h3>
@@ -157,7 +157,7 @@ export default async function handler(req, res) {
             <p style="font-size: 16px; line-height: 1.6;">We typically respond to all inquiries within 24-48 hours during business days. If your matter requires immediate attention, please don't hesitate to call us directly.</p>
             
             <div style="text-align: center; margin: 35px 0 25px;">
-              <div style="display: inline-block; background-color: #FF9933; color: white; padding: 15px 30px; border-radius: 4px; font-weight: bold; font-size: 16px;">Thank You For Choosing Richy Electricals!</div>
+              <div style="display: inline-block; background-color: #FF9933; color: white; padding: 15px 30px; border-radius: 4px; font-weight: bold; font-size: 16px;">Thank You For Choosing Richy Electrical Services!</div>
             </div>
           </div>
           
@@ -189,7 +189,7 @@ export default async function handler(req, res) {
           
           <!-- Footer -->
           <div style="background-color: #333; color: white; padding: 20px; border-radius: 0 0 8px 8px; text-align: center;">
-            <p style="margin: 0 0 10px; font-size: 14px;">© ${new Date().getFullYear()} Richy Electricals. All rights reserved.</p>
+            <p style="margin: 0 0 10px; font-size: 14px;">© ${new Date().getFullYear()} Richy Electrical Services. All rights reserved.</p>
             <p style="margin: 0; font-size: 12px; color: #aaa;">Please do not reply to this automated message. To contact us, please use the contact information provided above.</p>
           </div>
         </div>

@@ -51,32 +51,36 @@ const Navbar = () => {
       >
         {/* Top Info Bar - now part of the fixed navbar */}
         <div
-          className={`w-full transition-all duration-500 ${
+          className={`w-full transition-all duration-500 hidden sm:block ${
             scrolled ? "bg-orange-50/95 py-1" : "bg-orange-50 py-2"
           }`}
         >
-          <div className="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
-            <div className="flex space-x-4">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div className="flex space-x-2 sm:space-x-4">
               <Link
                 href="/faq"
-                className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
+                className="text-xs sm:text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
               >
-                Frequently Asked Questions
+                <span className="hidden md:inline">Frequently Asked Questions</span>
+                <span className="md:hidden">FAQ</span>
               </Link>
               <a
                 href="https://richyelectricalsgh.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
+                className="text-xs sm:text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
               >
-                RichyElectricals Ghana
+                <span className="hidden lg:inline">Richy Electrical Services Ghana</span>
+                <span className="lg:hidden">Ghana Branch</span>
               </a>
             </div>
             <a
               href="tel:+447491565676"
-              className="flex items-center text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
+              className="flex items-center text-xs sm:text-sm font-medium text-gray-700 hover:text-orange-600 transition-colors duration-300"
             >
-              <Phone className="h-4 w-4 mr-2" /> + (44) 7491565676
+              <Phone className="h-3 w-3 sm:h-4 sm:w-4 mr-1 sm:mr-2" /> 
+              <span className="hidden sm:inline">+ (44) 7491565676</span>
+              <span className="sm:hidden">Call Us</span>
             </a>
           </div>
         </div>
@@ -86,36 +90,38 @@ const Navbar = () => {
           className={`w-full transition-all duration-500 backdrop-blur-md ${
             scrolled
               ? "bg-white/95 shadow-[0_8px_30px_rgb(0,0,0,0.12)] py-2 border-b border-orange-100"
-              : "bg-transparent py-4 border-b border-transparent"
+              : "bg-transparent py-2 sm:py-4 border-b border-transparent"
           }`}
         >
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center">
               {/* Logo */}
               <div className="flex-shrink-0 group">
                 <Link href="/" className="flex items-center">
                   {/* Company Logo Container */}
                   <div
-                    className={`relative h-12 w-12 rounded-xl overflow-hidden flex items-center justify-center mr-3 shadow-lg group-hover:shadow-orange-300/50 transition-all duration-300 transform group-hover:scale-105 ${
+                    className={`relative h-10 w-10 sm:h-12 sm:w-12 rounded-xl overflow-hidden flex items-center justify-center mr-2 sm:mr-3 shadow-lg group-hover:shadow-orange-300/50 transition-all duration-300 transform group-hover:scale-105 ${
                       scrolled ? "bg-white" : "bg-white/90"
                     }`}
                   >
                     {/* Using the actual logo image */}
                     <Image
                       src="/images/logo.jpg"
-                      alt="Richy Electricals Services Logo"
+                      alt="Richy Electrical Services - Professional Electricians in London - NICEIC Certified"
                       width={200}
                       height={100}
                       style={{ objectFit: "cover" }}
+                      priority
+                      quality={90}
                     />
                   </div>
                   <div className="flex flex-col">
                     <span
-                      className={`text-lg font-bold transition-colors duration-300 ${scrolled ? "text-orange-600" : "text-orange-500"}`}
+                      className={`text-sm sm:text-base md:text-lg font-bold transition-colors duration-300 leading-tight ${scrolled ? "text-orange-600" : "text-orange-500"}`}
                     >
-                      RichyElectricals
+                      Richy Electrical Services
                     </span>
-                    <span className="text-xs text-gray-500">
+                    <span className="text-[10px] sm:text-xs text-gray-500 hidden sm:block">
                       Powering Your Future
                     </span>
                   </div>
@@ -182,9 +188,9 @@ const Navbar = () => {
         }`}
         style={{ top: navHeight ? `${navHeight}px` : "120px" }}
       >
-        <div className="px-4 pt-6 pb-20 space-y-4 flex flex-col items-center max-h-[calc(100vh-120px)] overflow-y-auto">
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center mb-6 shadow-lg shadow-orange-300/30">
-            <span className="text-white font-bold text-xl">RE</span>
+        <div className="px-4 pt-6 pb-20 space-y-3 flex flex-col items-center max-h-[calc(100vh-120px)] overflow-y-auto">
+          <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center mb-4 shadow-lg shadow-orange-300/30">
+            <span className="text-white font-bold text-lg sm:text-xl">RE</span>
           </div>
 
           <MobileNavLink href="/" text="Home" onClick={toggleMenu} />
@@ -200,21 +206,22 @@ const Navbar = () => {
             href="https://richyelectricalsgh.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full max-w-xs text-center text-gray-800 hover:text-orange-500 px-4 py-4 rounded-lg text-lg font-medium border-b border-gray-100 transition-all duration-300 hover:bg-orange-50"
+            className="w-full max-w-xs text-center text-gray-800 hover:text-orange-500 px-4 py-3 rounded-lg text-sm sm:text-base font-medium border-b border-gray-100 transition-all duration-300 hover:bg-orange-50"
             onClick={toggleMenu}
           >
-            RichyElectricals Ghana
+            <span className="hidden sm:inline">Richy Electrical Services Ghana</span>
+            <span className="sm:hidden">Ghana Branch</span>
           </a>
           <Link
             href="/contact"
-            className="w-full max-w-xs text-center bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-3 rounded-full font-medium shadow-lg shadow-orange-300/20 transition-all duration-300 mt-6 hover:shadow-orange-300/40 transform hover:scale-105"
+            className="w-full max-w-xs text-center bg-gradient-to-r from-orange-500 to-orange-600 text-white px-5 py-3 rounded-full text-sm sm:text-base font-medium shadow-lg shadow-orange-300/20 transition-all duration-300 mt-4 hover:shadow-orange-300/40 transform hover:scale-105"
             onClick={toggleMenu}
           >
             Contact Us
           </Link>
           <a
             href="tel:+447491565676"
-            className="w-full max-w-xs text-center border border-orange-300 text-orange-600 px-5 py-3 rounded-full font-medium shadow-sm transition-all duration-300 mt-2 hover:bg-orange-50 flex items-center justify-center"
+            className="w-full max-w-xs text-center border border-orange-300 text-orange-600 px-5 py-3 rounded-full text-sm sm:text-base font-medium shadow-sm transition-all duration-300 mt-2 hover:bg-orange-50 flex items-center justify-center"
             onClick={toggleMenu}
           >
             <Phone className="h-4 w-4 mr-2" /> Call Us
@@ -244,7 +251,7 @@ const NavLink = ({ href, text, scrolled }) => (
 const MobileNavLink = ({ href, text, onClick }) => (
   <Link
     href={href}
-    className="w-full max-w-xs text-center text-gray-800 hover:text-orange-500 px-4 py-4 rounded-lg text-lg font-medium border-b border-gray-100 transition-all duration-300 hover:bg-orange-50"
+    className="w-full max-w-xs text-center text-gray-800 hover:text-orange-500 px-4 py-3 rounded-lg text-sm sm:text-base font-medium border-b border-gray-100 transition-all duration-300 hover:bg-orange-50"
     onClick={onClick}
   >
     {text}

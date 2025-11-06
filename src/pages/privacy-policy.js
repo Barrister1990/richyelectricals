@@ -7,8 +7,8 @@ export default function PrivacyPolicy() {
   return (
     <>
     <Seo 
-                title="Privacy Policy " 
-                description="Find out how Richy Electrical Services collects, uses, and protects your personal data. We value your privacy and comply with UK GDPR regulations."
+                title="Privacy Policy | Richy Electrical Services" 
+                description="Privacy policy for Richy Electrical Services. Learn how we collect, use, and protect your personal data. GDPR compliant. UK-based electricians."
                 canonical="/privacy-policy"
               />
     
@@ -78,7 +78,7 @@ export default function PrivacyPolicy() {
                   <h2 className="text-2xl font-bold text-gray-900">Introduction</h2>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  At Richy Electricals, we are committed to protecting your privacy and the security of your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                  At Richy Electrical Services, we are committed to protecting your privacy and the security of your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.
                 </p>
                 <p className="text-gray-700 mb-4">
                   This policy applies to information we collect through our website, in email, text, or other electronic communications, and through our services provided both in the UK, Ghana, and worldwide.
@@ -162,7 +162,7 @@ export default function PrivacyPolicy() {
                   <li><strong>International Operations:</strong> As a company with operations in both the UK and Ghana, some of your information may be transferred between our global offices when necessary to fulfill our services.</li>
                   <li><strong>Business Transfers:</strong> If we are involved in a merger, acquisition, or sale of all or a portion of our assets, your information may be transferred as part of that transaction.</li>
                   <li><strong>Legal Requirements:</strong> We may disclose your information if required to do so by law or in response to valid requests by public authorities.</li>
-                  <li><strong>Protection:</strong> We may disclose your information to protect the rights, property, or safety of Richy Electricals, our customers, or others.</li>
+                  <li><strong>Protection:</strong> We may disclose your information to protect the rights, property, or safety of Richy Electrical Services, our customers, or others.</li>
                 </ul>
                 
                 <h3 className="text-xl font-bold text-gray-900 mb-3">International Data Transfers</h3>

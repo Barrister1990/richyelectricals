@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     const { firstName, lastName, email, phone, company, address, service, message } = req.body;
 
     try {
-      // Internal notification email to Richy Electricals
+      // Internal notification email to Richy Electrical Services
       const emailContent = `
         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; max-width: 650px; margin: auto;">
           <!-- Header -->
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
           
           <!-- Content -->
           <div style="background-color: #ffffff; padding: 30px; border-left: 1px solid #e0e0e0; border-right: 1px solid #e0e0e0;">
-            <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Hello Richy Electricals team,</p>
+            <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Hello Richy Electrical Services team,</p>
             <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">You've received a new request for a quote. Here are the details:</p>
             
             <div style="background-color: #f9f9f9; border-radius: 8px; padding: 20px; margin-bottom: 25px;">
@@ -82,7 +82,7 @@ export default async function handler(req, res) {
           
           <!-- Footer -->
           <div style="background-color: #333; color: white; padding: 20px; border-radius: 0 0 8px 8px; text-align: center;">
-            <p style="margin: 0; font-size: 14px;">This message was automatically generated from the Richy Electricals website.</p>
+            <p style="margin: 0; font-size: 14px;">This message was automatically generated from the Richy Electrical Services website.</p>
           </div>
         </div>
       `;
@@ -92,7 +92,7 @@ export default async function handler(req, res) {
         <div style="font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; max-width: 650px; margin: auto;">
           <!-- Header with Logo -->
           <div style="background-color: #FF9933; padding: 30px; border-radius: 8px 8px 0 0; text-align: center;">
-            <h1 style="color: white; margin: 0; font-size: 28px;">Richy Electricals</h1>
+            <h1 style="color: white; margin: 0; font-size: 28px;">Richy Electrical Services</h1>
             <p style="color: white; margin: 10px 0 0; font-size: 16px;">Quality Electrical Solutions</p>
           </div>
           
@@ -102,7 +102,7 @@ export default async function handler(req, res) {
             
             <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">Hello ${firstName},</p>
             
-            <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">Thank you for reaching out to <strong>Richy Electricals</strong>. We've received your quote request and our team is reviewing it now.</p>
+            <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">Thank you for reaching out to <strong>Richy Electrical Services</strong>. We've received your quote request and our team is reviewing it now.</p>
             
             <div style="background-color: #f9f9f9; border-radius: 8px; padding: 25px; margin: 30px 0;">
               <h3 style="color: #FF9933; margin-top: 0; font-size: 18px;">Your Request Summary:</h3>
@@ -154,24 +154,24 @@ export default async function handler(req, res) {
           
           <!-- Footer -->
           <div style="background-color: #333; color: white; padding: 20px; border-radius: 0 0 8px 8px; text-align: center;">
-            <p style="margin: 0; font-size: 14px;">© ${new Date().getFullYear()} Richy Electricals. All rights reserved.</p>
+            <p style="margin: 0; font-size: 14px;">© ${new Date().getFullYear()} Richy Electrical Services. All rights reserved.</p>
           </div>
         </div>
       `;
 
-      // 1. Send email to Richy Electricals
+      // 1. Send email to Richy Electrical Services
       await resend.emails.send({
         to: 'info@richyelectricals.co.uk',
-        from: 'Richy Electricals <noreply@richyelectricals.co.uk>', // Use a verified domain from Resend
-        subject: 'New Quote Request from Richy Electricals Website',
+        from: 'Richy Electrical Services <noreply@richyelectricals.co.uk>', // Use a verified domain from Resend
+        subject: 'New Quote Request from Richy Electrical Services Website',
         html: emailContent,
       });
 
       // 2. Auto-reply to user
       await resend.emails.send({
         to: email,
-        from: 'Richy Electricals <info@richyelectricals.co.uk>', // Must be same or another verified sender
-        subject: 'We Received Your Request - Richy Electricals',
+        from: 'Richy Electrical Services <info@richyelectricals.co.uk>', // Must be same or another verified sender
+        subject: 'We Received Your Request - Richy Electrical Services',
         html: autoReplyContent,
       });
 

@@ -37,7 +37,7 @@ export default function TrustSignals() {
             Why Trust Richy Electrical Services?
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            We're committed to providing the highest quality electrical services with complete peace of mind.
+            We&apos;re committed to providing the highest quality electrical services with complete peace of mind.
           </p>
         </div>
         

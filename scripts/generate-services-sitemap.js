@@ -5,12 +5,21 @@ const path = require('path');
 const staticPages = [
   { slug: '', priority: 1.0 }, // Homepage
   { slug: 'about', priority: 0.8 },
+  { slug: 'services', priority: 0.9 }, // Services hub page
   { slug: 'privacy-policy', priority: 0.6 },
-  { slug: 'faq', priority: 0.6 },
-  { slug: 'contact', priority: 0.7 },
-  { slug: 'gallery', priority: 0.6 },
+  { slug: 'faq', priority: 0.7 },
+  { slug: 'contact', priority: 0.8 },
+  { slug: 'gallery', priority: 0.7 },
+  { slug: 'sitemap', priority: 0.5 },
+  { slug: 'terms-of-service', priority: 0.5 },
 ];
 
+// Location pages
+const locations = [
+  { slug: 'london', priority: 0.8 },
+  { slug: 'walsall', priority: 0.8 },
+  { slug: 'birmingham', priority: 0.8 },
+];
 
 // Dynamic service pages
 const services = [
@@ -30,11 +39,22 @@ const generateSitemap = () => {
 
   // Add static pages
   staticPages.forEach(page => {
+    const url = page.slug ? `https://www.richyelectricals.co.uk/${page.slug}` : 'https://www.richyelectricals.co.uk';
     sitemap += `  <url>
-    <loc>https://www.richyelectricals.co.uk/${page.slug}</loc>
+    <loc>${url}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${page.priority}</priority>
+  </url>\n`;
+  });
+
+  // Add location pages
+  locations.forEach(location => {
+    sitemap += `  <url>
+    <loc>https://www.richyelectricals.co.uk/locations/${location.slug}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>${location.priority}</priority>
   </url>\n`;
   });
 

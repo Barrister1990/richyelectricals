@@ -1,80 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://richyelectricals.co.uk/</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>1</priority>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/about</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/about</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/privacy-policy</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/services</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/faq</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/contact</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/contact</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/faq</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/gallery</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/gallery</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.richyelectricals.co.uk/privacy-policy</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/services/fuse-board-upgrades</loc>
-    <lastmod>2025-05-03T19:24:19.926Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/terms-of-service</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.richyelectricals.co.uk/sitemap</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.richyelectricals.co.uk/locations/london</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/services/electrical-inspections</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/locations/walsall</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/services/new-installations</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/locations/birmingham</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/services/fault-finding</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/services/fuse-board-upgrades</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.richyelectricals.co.uk/services/electrical-inspections</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.richyelectricals.co.uk/services/new-installations</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.richyelectricals.co.uk/services/fault-finding</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/services/garden-lighting</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/services/garden-lighting</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/services/rewiring</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/services/rewiring</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://richyelectricals.co.uk/services/emergency-services</loc>
-    <lastmod>2025-05-03T19:24:19.928Z</lastmod>
+    <loc>https://www.richyelectricals.co.uk/services/emergency-services</loc>
+    <lastmod>2025-01-27T00:00:00.000Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
